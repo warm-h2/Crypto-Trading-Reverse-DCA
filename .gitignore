@@ -1,0 +1,11 @@
+*.csv
+*.json
+*.xlsx
+*.doc
+*.docx
+*.db
+*.zip
+*.pyc
+*.DS_Store
+.VSCodeCounter
+.vscode
