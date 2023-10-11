@@ -33,16 +33,17 @@ def main():
     binance_api_secret = config['binance']['test_api_secret']
 
     binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
-    # print(binance_client.futures_account_balance())
-    order = binance_client.futures_create_order(symbol='BTCUSDT', side=SIDE_BUY, type=ORDER_TYPE_MARKET, quantity=0.01)
-    time.sleep(2)
-    order_status = binance_client.futures_get_order(symbol='BTCUSDT', orderId=order['orderId'])['status'].lower()
+    # # print(binance_client.futures_account_balance())
+    # order = binance_client.futures_create_order(symbol='BTCUSDT', side=SIDE_BUY, type=ORDER_TYPE_MARKET, quantity=0.01)
+    # time.sleep(2)
+    # order = binance_client.futures_get_order(symbol='BTCUSDT', orderId=order['orderId'])
+    # order_status = binance_client.futures_get_order(symbol='BTCUSDT', orderId=order['orderId'])['status'].lower()
     
-    fill_price = binance_client.futures_position_information(symbol='BTCUSDT')[0]['entryPrice']
-    position_size = binance_client.futures_position_information(symbol='BTCUSDT')[0]
+    # fill_price = binance_client.futures_position_information(symbol='BTCUSDT')[0]['entryPrice']
+    # position_size = binance_client.futures_position_information(symbol='BTCUSDT')[0]
 
-    if order_status == "filled":
-        print("Order filled, fill price = " + str(fill_price) + ", size = " + str(position_size))
+    # if order_status == "filled":
+    #     print("Order filled, fill price = " + str(fill_price) + ", size = " + str(position_size))
 
     # initializing and running the strategy
     obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct)
