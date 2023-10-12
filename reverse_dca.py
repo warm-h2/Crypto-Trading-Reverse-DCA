@@ -23,9 +23,8 @@ class ReverseDCA:
     def get_mark_price(self):
         while True:
             try:
-                # return round(float(self.binance_client.get_margin_price_index(symbol=self.ticker)['price']), 2)
-                # return round(float(self.binance_client.futures_mark_price(symbol=self.ticker)['markPrice']), 2)
-                return round(float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price']), 2)
+                # return round(float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price']), 2)  # testnet futures price
+                return round(float(self.binance_client.get_margin_price_index(symbol="BTCUSDT")['price']), 2)   # production margin price
             except:
                 time.sleep(5)
                 self.telegram_bot.send_message("Exception! Fetching mark price. Retrying...")
@@ -73,7 +72,8 @@ class ReverseDCA:
         
         while True:
             try:
-                order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=size)
+                # order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=size)   # futures (testnet)
+                order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin (production)
                 break
             except:
                 time.sleep(5)
@@ -82,7 +82,8 @@ class ReverseDCA:
         time.sleep(2)
         while True:
             try:
-                _order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order['orderId'])
+                # _order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order['orderId'])   # futures (testnet)
+                _order = self.binance_client.get_margin_order(symbol=self.ticker, orderId=order['orderId'])      # margin (production)
                 break
             except:
                 time.sleep(5)

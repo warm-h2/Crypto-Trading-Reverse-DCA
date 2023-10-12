@@ -1,5 +1,5 @@
 set CONDAPATH=%CONDAPATH%
-set ENVNAME=millions
+set ENVNAME=rdca
 
 if %ENVNAME%==base (set ENVPATH=%CONDAPATH%) else (set ENVPATH=%CONDAPATH%\envs\%ENVNAME%)
 

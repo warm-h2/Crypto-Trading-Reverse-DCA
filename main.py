@@ -31,6 +31,8 @@ def main():
 
     binance_api_key = config['binance']['test_api_key']
     binance_api_secret = config['binance']['test_api_secret']
+    # binance_api_key = config['binance']['api_key']
+    # binance_api_secret = config['binance']['api_secret']
 
     binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
 
