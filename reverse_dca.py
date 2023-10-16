@@ -23,11 +23,11 @@ class ReverseDCA:
     def get_mark_price(self):
         while True:
             try:
-                # return round(float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price']), 2)  # testnet futures price
-                return round(float(self.binance_client.get_margin_price_index(symbol="BTCUSDT")['price']), 2)   # production margin price
-            except:
+                return round(float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price']), 2)  # futures price
+                # return round(float(self.binance_client.get_margin_price_index(symbol="BTCUSDT")['price']), 2)   # margin price
+            except Exception as e:
+                self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
                 time.sleep(5)
-                self.telegram_bot.send_message("Exception! Fetching mark price. Retrying...")
     
     def get_open_position(self):
         while True:
@@ -37,9 +37,9 @@ class ReverseDCA:
                     return -1
                 return open_positions[0]
 
-            except:
+            except Exception as e:
+                self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
                 time.sleep(5)
-                self.telegram_bot.send_message("Exception! Get open positions. Retrying...")
     
     def close_position(self):
         open_position = self.get_open_position()
@@ -72,22 +72,22 @@ class ReverseDCA:
         
         while True:
             try:
-                # order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=size)   # futures (testnet)
-                order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin (production)
+                order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=size)   # futures 
+                # order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
                 break
-            except:
+            except Exception as e:
+                self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
                 time.sleep(5)
-                self.telegram_bot.send_message("Exception! Placing market order. Retrying...")
 
         time.sleep(2)
         while True:
             try:
-                # _order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order['orderId'])   # futures (testnet)
-                _order = self.binance_client.get_margin_order(symbol=self.ticker, orderId=order['orderId'])      # margin (production)
+                _order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order['orderId'])   # futures 
+                # _order = self.binance_client.get_margin_order(symbol=self.ticker, orderId=order['orderId'])      # margin 
                 break
-            except:
+            except Exception as e:
+                self.telegram_bot.send_message(f"Exception! Getting order information. Retrying... {e}")
                 time.sleep(5)
-                self.telegram_bot.send_message("Exception! Getting order information. Retrying...")
         
         order_status = _order['status'].lower()
         fill_price = round(float(_order['avgPrice']), 2)
@@ -97,11 +97,6 @@ class ReverseDCA:
                 position_size = float(open_position['positionAmt'])
                 self.avg_entry_price = float(open_position['entryPrice'])
                 self.telegram_bot.send_message(f"Market {direction} order of size {round(size, 4)} {self.ticker} filled at ${fill_price}. Mark price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}. Average entry price: ${self.avg_entry_price}")
-        
-    
-    # def get_average_entry_price(self):
-    #     avg_entry_price = 26000
-    #     return avg_entry_price
     
     def reset(self):
         self.first_entry_price = 0
