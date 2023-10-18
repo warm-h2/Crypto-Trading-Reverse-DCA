@@ -179,7 +179,7 @@ class ReverseDCA:
             
             else:    # already in position
                 current_price = self.get_mark_price()
-                print(current_price)
+                # print(current_price)
                 if self.initial_direction.lower() == "buy":
                     self.buy_check_tp_sl_increment(current_price)
 
