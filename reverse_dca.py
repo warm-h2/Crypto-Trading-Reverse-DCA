@@ -19,6 +19,15 @@ class ReverseDCA:
         self.hit_tp = False
         self.current_volume = self.base_order_size
         self.current_increment_pct = self.base_increment_pct
+
+        try:
+            futures_exchange_info = self.binance_client.futures_exchange_info()
+            symbol_info = next(item for item in futures_exchange_info['symbols'] if item['symbol'] == ticker)
+            self.quantity_precision = int(symbol_info['quantityPrecision'])
+            self.price_precision = int(symbol_info['pricePrecision'])
+        except Exception as e:
+            self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
+            exit()
     
     def get_mark_price(self):
         while True:
@@ -33,7 +42,7 @@ class ReverseDCA:
         while True:
             try:
                 open_positions = self.binance_client.futures_position_information(symbol=self.ticker)
-                if len(open_positions) == 0:
+                if float(open_positions[0]['entryPrice']) == 0:
                     return -1
                 return open_positions[0]
 
@@ -96,7 +105,7 @@ class ReverseDCA:
             if open_position != -1:
                 position_size = float(open_position['positionAmt'])
                 self.avg_entry_price = float(open_position['entryPrice'])
-                self.telegram_bot.send_message(f"Market {direction} order of size {round(size, 4)} {self.ticker} filled at ${fill_price}. Mark price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}. Average entry price: ${self.avg_entry_price}")
+                self.telegram_bot.send_message(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Mark price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}. Average entry price: ${self.avg_entry_price}")
     
     def reset(self):
         self.first_entry_price = 0
@@ -114,15 +123,17 @@ class ReverseDCA:
             stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
 
         if current_price > take_profit_price:       # hit take profit
-            self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position.")
+            self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
             self.close_position()
             self.reset()
+            time.sleep(10)
             return
         
         if current_price < stop_loss_price:         # hit stop loss
-            self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position.")
+            self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
             self.close_position()
             self.reset()
+            time.sleep(10)
             return
 
         if current_price > increment_price:         # increment level exceeded
@@ -130,7 +141,7 @@ class ReverseDCA:
             scaled_volume = self.current_volume * self.volume_scale
             self.current_volume = scaled_volume + self.current_volume
             mark_price = self.get_mark_price()
-            self.place_market_order(round(scaled_volume / mark_price, 3), self.initial_direction, mark_price)
+            self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
             # self.avg_entry_price = self.get_average_entry_price()
             self.current_increment_pct += self.base_increment_pct
             self.hit_tp = True
@@ -144,15 +155,17 @@ class ReverseDCA:
             stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct*-1)  # multiplied by -1 since the positives and negatives will opposite in case of short
 
         if current_price < take_profit_price:       # hit take profit
-            self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position.")
+            self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds")
             self.close_position()
             self.reset()
+            time.sleep(10)
             return
         
         if current_price > stop_loss_price:         # hit stop loss
-            self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position.")
+            self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
             self.close_position()
             self.reset()
+            time.sleep(10)
             return
 
         if current_price < increment_price:         # increment level exceeded
@@ -160,7 +173,7 @@ class ReverseDCA:
             scaled_volume = self.current_volume * self.volume_scale
             self.current_volume = scaled_volume + self.current_volume
             mark_price = self.get_mark_price()
-            self.place_market_order(round(scaled_volume / mark_price, 3), self.initial_direction, mark_price)
+            self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
             # self.avg_entry_price = self.get_average_entry_price()
             self.current_increment_pct += self.base_increment_pct
             self.hit_tp = True
@@ -171,11 +184,10 @@ class ReverseDCA:
             time.sleep(1.5)
             if self.avg_entry_price == 0:    # not in position
                 mark_price = self.get_mark_price()
-                order_size = round(self.current_volume / mark_price, 3)
+                order_size = round(self.current_volume / mark_price, self.quantity_precision)
                 self.telegram_bot.send_message(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
                 self.place_market_order(order_size, self.initial_direction, mark_price)
                 self.first_entry_price = self.avg_entry_price
-                # self.first_entry_price = self.avg_entry_price = self.get_average_entry_price()
             
             else:    # already in position
                 current_price = self.get_mark_price()

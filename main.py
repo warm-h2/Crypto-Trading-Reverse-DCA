@@ -41,6 +41,7 @@ def main():
 
     # initializing and running the strategy
     obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct)
+    # obj_reverse_dca.close_position()
     obj_reverse_dca.run()
 
 
