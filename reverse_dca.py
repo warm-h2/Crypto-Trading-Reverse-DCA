@@ -23,7 +23,7 @@ class ReverseDCA:
     def get_mark_price(self):
         while True:
             try:
-                return round(float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price']), 2)  # futures price
+                return float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price'])  # futures price
                 # return round(float(self.binance_client.get_margin_price_index(symbol="BTCUSDT")['price']), 2)   # margin price
             except Exception as e:
                 self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
