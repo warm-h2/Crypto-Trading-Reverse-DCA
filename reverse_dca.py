@@ -81,7 +81,7 @@ class ReverseDCA:
         
         while True:
             try:
-                order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=size)   # futures 
+                order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=abs(size))   # futures 
                 # order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
                 break
             except Exception as e:
