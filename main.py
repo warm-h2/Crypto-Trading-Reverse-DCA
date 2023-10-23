@@ -29,13 +29,13 @@ def main():
     telegram_channel_chat_id = config['telegram']['channel_chat_id']
     telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id)
 
-    binance_api_key = config['binance']['test_api_key']
-    binance_api_secret = config['binance']['test_api_secret']
-    binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
+    # binance_api_key = config['binance']['test_api_key']
+    # binance_api_secret = config['binance']['test_api_secret']
+    # binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
 
-    # binance_api_key = config['binance']['api_key']
-    # binance_api_secret = config['binance']['api_secret']
-    # binance_client = Client(binance_api_key, binance_api_secret, testnet=False)
+    binance_api_key = config['binance']['api_key']
+    binance_api_secret = config['binance']['api_secret']
+    binance_client = Client(binance_api_key, binance_api_secret, testnet=False)
 
     # info = binance_client.get_account_api_permissions()
 
