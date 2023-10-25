@@ -22,6 +22,6 @@ class TelegramBot:
                 with open(os.path.join(self.logs_dir_path, self.file_name), "a") as file:
                     file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " | "  + message + "\n")
             response = requests.post(api_url, json={'chat_id': self.chat_id, 'text': message})
-            print(response.text)
+            # # print(response.text)
         except Exception as e:
             print("Exception! Telegram Bot.", e)

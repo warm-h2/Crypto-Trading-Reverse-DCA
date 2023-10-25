@@ -3,197 +3,331 @@ import time
 from binance.enums import *
 
 class ReverseDCA:
-    def __init__(self, binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct):
-        self.binance_client = binance_client
-        self.telegram_bot = telegram_bot
-        self.ticker = ticker
-        self.initial_direction = initial_direction
-        self.base_order_size = base_order_size
-        self.volume_scale = volume_scale
-        self.breakeven_threshold_pct = breakeven_threshold_pct / 100
-        self.stop_loss_pct = stop_loss_pct / 100
-        self.base_increment_pct = increment_pct / 100
-        self.take_profit_pct = take_profit_pct / 100
-        self.first_entry_price = 0
-        self.avg_entry_price = 0
-        self.hit_tp = False
-        self.current_volume = self.base_order_size
-        self.current_increment_pct = self.base_increment_pct
+	def __init__(self, binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct):
+		self.binance_client = binance_client
+		self.telegram_bot = telegram_bot
+		self.ticker = ticker
+		self.initial_direction = initial_direction
+		self.base_order_size = base_order_size
+		self.volume_scale = volume_scale
+		self.breakeven_threshold_pct = breakeven_threshold_pct / 100
+		self.stop_loss_pct = stop_loss_pct / 100
+		self.base_increment_pct = increment_pct / 100
+		self.take_profit_pct = take_profit_pct / 100
+		self.first_entry_price = 0
+		self.avg_entry_price = 0
+		self.hit_tp = False
+		self.current_volume = self.base_order_size
+		self.current_increment_pct = self.base_increment_pct
+		self.stop_loss_order_id = 0
+		self.take_profit_order_id = 0
 
-        try:
-            futures_exchange_info = self.binance_client.futures_exchange_info()
-            symbol_info = next(item for item in futures_exchange_info['symbols'] if item['symbol'] == ticker)
-            self.quantity_precision = int(symbol_info['quantityPrecision'])
-            self.price_precision = int(symbol_info['pricePrecision'])
-        except Exception as e:
-            self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
-            exit()
-    
-    def get_mark_price(self):
-        while True:
-            try:
-                return float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price'])    # futures price
-                # return float(self.binance_client.get_margin_price_index(symbol="BTCUSDT")['price'])   # margin price
-            except Exception as e:
-                self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
-                time.sleep(5)
-    
-    def get_open_position(self):
-        while True:
-            try:
-                open_positions = self.binance_client.futures_position_information(symbol=self.ticker)
-                if float(open_positions[0]['entryPrice']) == 0:
-                    return -1
-                return open_positions[0]
+		if self.initial_direction.lower() == "buy":
+			self.stop_market_direction = SIDE_SELL
+		elif self.initial_direction.lower() == "sell":
+			self.stop_market_direction = SIDE_BUY
+		else:
+			self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+			exit()
 
-            except Exception as e:
-                self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
-                time.sleep(5)
-    
-    def close_position(self):
-        open_position = self.get_open_position()
-        if open_position != -1:
-            size = float(open_position['positionAmt'])
-            if size > 0:
-                side = "sell"
-            elif size < 0:
-                side = "buy"
-            else:
-                self.telegram_bot.send_message("Invalid position size!")
-                return
+		try:
+			futures_exchange_info = self.binance_client.futures_exchange_info()
+			symbol_info = next(item for item in futures_exchange_info['symbols'] if item['symbol'] == ticker)
+			self.quantity_precision = int(symbol_info['quantityPrecision'])
+			self.price_precision = int(symbol_info['pricePrecision'])
+		except Exception as e:
+			self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
+			exit()
+	
+	def get_mark_price(self):
+		while True:
+			try:
+				return float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price'])    # futures price
+				# return float(self.binance_client.get_margin_price_index(symbol="BTCUSDT")['price'])   # margin price
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
+				time.sleep(5)
+	
+	def get_open_position(self):
+		while True:
+			try:
+				open_positions = self.binance_client.futures_position_information(symbol=self.ticker)
+				if float(open_positions[0]['entryPrice']) == 0:
+					return -1
+				return open_positions[0]
 
-            # side = open_position['positionSide']
-            # if side == SIDE_BUY:
-            #     side = "sell"
-            # elif side == SIDE_SELL:
-            #     side = "buy"
-            
-            self.place_market_order(size, side, self.get_mark_price())
-    
-    def place_market_order(self, size, direction, mark_price):
-        if direction.lower() == "buy":
-            direction = SIDE_BUY
-        elif direction.lower() == "sell":
-            direction = SIDE_SELL
-        else:
-            self.telegram_bot.send_message(f"Invalid direction {direction}!")
-            return
-        
-        while True:
-            try:
-                order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=abs(size))   # futures 
-                # order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
-                break
-            except Exception as e:
-                self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
-                time.sleep(5)
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
+				time.sleep(5)
+	
+	def close_position(self):
+		open_position = self.get_open_position()
+		if open_position != -1:
+			size = float(open_position['positionAmt'])
+			if size > 0:
+				side = "sell"
+			elif size < 0:
+				side = "buy"
+			else:
+				self.telegram_bot.send_message("Invalid position size!")
+				return
 
-        time.sleep(2)
-        while True:
-            try:
-                _order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order['orderId'])   # futures 
-                # _order = self.binance_client.get_margin_order(symbol=self.ticker, orderId=order['orderId'])      # margin 
-                break
-            except Exception as e:
-                self.telegram_bot.send_message(f"Exception! Getting order information. Retrying... {e}")
-                time.sleep(5)
-        
-        order_status = _order['status'].lower()
-        fill_price = float(_order['avgPrice'])
-        if order_status == "filled":
-            open_position = self.get_open_position()
-            if open_position != -1:
-                position_size = float(open_position['positionAmt'])
-                self.avg_entry_price = float(open_position['entryPrice'])
-                self.telegram_bot.send_message(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Mark price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}. Average entry price: ${self.avg_entry_price}")
-    
-    def reset(self):
-        self.first_entry_price = 0
-        self.avg_entry_price = 0
-        self.hit_tp = False
-        self.current_volume = self.base_order_size
-        self.current_increment_pct = self.base_increment_pct
-    
-    def buy_check_tp_sl_increment(self, current_price):
-        increment_price = self.first_entry_price * (1 + self.current_increment_pct)
-        take_profit_price = self.first_entry_price * (1 + self.take_profit_pct)
-        if not self.hit_tp:
-            stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
-        else:
-            stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
+			# side = open_position['positionSide']
+			# if side == SIDE_BUY:
+			#     side = "sell"
+			# elif side == SIDE_SELL:
+			#     side = "buy"
+			
+			self.place_market_order(size, side, self.get_mark_price())
+	
+	def place_market_order(self, size, direction, mark_price):
+		if direction.lower() == "buy":
+			direction = SIDE_BUY
+		elif direction.lower() == "sell":
+			direction = SIDE_SELL
+		else:
+			self.telegram_bot.send_message(f"Invalid direction {direction}!")
+			return
+		
+		while True:
+			try:
+				order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, quantity=abs(size))   # futures 
+				# order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
+				break
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				time.sleep(5)
 
-        if current_price > take_profit_price:       # hit take profit
-            self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
-            self.close_position()
-            self.reset()
-            time.sleep(10)
-            return
-        
-        if current_price < stop_loss_price:         # hit stop loss
-            self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
-            self.close_position()
-            self.reset()
-            time.sleep(10)
-            return
+		time.sleep(2)
+		while True:
+			try:
+				_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order['orderId'])   # futures 
+				# _order = self.binance_client.get_margin_order(symbol=self.ticker, orderId=order['orderId'])      # margin 
+				break
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Getting order information. Retrying... {e}")
+				time.sleep(5)
+		
+		order_status = _order['status'].lower()
+		fill_price = float(_order['avgPrice'])
+		if order_status == "filled":
+			open_position = self.get_open_position()
+			if open_position != -1:
+				position_size = float(open_position['positionAmt'])
+				self.avg_entry_price = float(open_position['entryPrice'])
+				self.telegram_bot.send_message(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Mark price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}. Average entry price: ${self.avg_entry_price}")
 
-        if current_price > increment_price:         # increment level exceeded
-            self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
-            scaled_volume = self.current_volume * self.volume_scale
-            self.current_volume = scaled_volume + self.current_volume
-            mark_price = self.get_mark_price()
-            self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
-            # self.avg_entry_price = self.get_average_entry_price()
-            self.current_increment_pct += self.base_increment_pct
-            self.hit_tp = True
-    
-    def sell_check_tp_sl_increment(self, current_price):
-        increment_price = self.first_entry_price * (1 - self.current_increment_pct)
-        take_profit_price = self.first_entry_price * (1 - self.take_profit_pct)
-        if not self.hit_tp:
-            stop_loss_price = self.first_entry_price * (1 + self.stop_loss_pct)
-        else:
-            stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct*-1)  # multiplied by -1 since the positives and negatives will opposite in case of short
+	def cancel_order(self, order_id):
+		order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order_id)   # futures
+		order_status = order['status'].lower()
+		if order_status.lower() != "filled":
+			while True:
+				try:
+					self.binance_client.futures_cancel_order(symbol=self.ticker, orderId=order_id)
+					self.telegram_bot.send_message("Order canceled!")
+					break
+				except Exception as e:
+					self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
+					time.sleep(5)
 
-        if current_price < take_profit_price:       # hit take profit
-            self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds")
-            self.close_position()
-            self.reset()
-            time.sleep(10)
-            return
-        
-        if current_price > stop_loss_price:         # hit stop loss
-            self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
-            self.close_position()
-            self.reset()
-            time.sleep(10)
-            return
+		
+	def place_stop_market_order(self, stop_price):
+		open_position = self.get_open_position()
+		if open_position != -1:
+			size = float(open_position['positionAmt'])
 
-        if current_price < increment_price:         # increment level exceeded
-            self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
-            scaled_volume = self.current_volume * self.volume_scale
-            self.current_volume = scaled_volume + self.current_volume
-            mark_price = self.get_mark_price()
-            self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
-            # self.avg_entry_price = self.get_average_entry_price()
-            self.current_increment_pct += self.base_increment_pct
-            self.hit_tp = True
+		stop_price = round(stop_price, self.price_precision)
+		while True:
+			try:
+				order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, type=FUTURE_ORDER_TYPE_STOP_MARKET, stopPrice=stop_price, quantity=abs(size))   # futures 
+				# order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
+				break
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				time.sleep(5)
 
-    def run(self):
-        self.telegram_bot.send_message("Running Reverse DCA...")
-        while True:
-            time.sleep(1.5)
-            if self.avg_entry_price == 0:    # not in position
-                mark_price = self.get_mark_price()
-                order_size = round(self.current_volume / mark_price, self.quantity_precision)
-                self.telegram_bot.send_message(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
-                self.place_market_order(order_size, self.initial_direction, mark_price)
-                self.first_entry_price = self.avg_entry_price
-            
-            else:    # already in position
-                current_price = self.get_mark_price()
-                # print(current_price)
-                if self.initial_direction.lower() == "buy":
-                    self.buy_check_tp_sl_increment(current_price)
+		time.sleep(2)
+		self.stop_order_id = order['orderId']
+		self.telegram_bot.send_message(f"Stop market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		return self.stop_order_id
+	
+	def place_take_profit_market_order(self, stop_price):
+		open_position = self.get_open_position()
+		if open_position != -1:
+			size = float(open_position['positionAmt'])
 
-                elif self.initial_direction.lower() == "sell":
-                    self.sell_check_tp_sl_increment(current_price)
+		stop_price = round(stop_price, self.price_precision)
+		while True:
+			try:
+				order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, type=FUTURE_ORDER_TYPE_TAKE_PROFIT_MARKET, stopPrice=stop_price, quantity=abs(size))   # futures 
+				# order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
+				break
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				time.sleep(5)
+
+		time.sleep(2)
+		self.stop_order_id = order['orderId']
+		self.telegram_bot.send_message(f"Take profit market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		return self.stop_order_id
+	
+	def reset(self):
+		self.first_entry_price = 0
+		self.avg_entry_price = 0
+		self.hit_tp = False
+		self.current_volume = self.base_order_size
+		self.current_increment_pct = self.base_increment_pct
+		if self.stop_loss_order_id != 0:
+			self.cancel_order(self.stop_loss_order_id)
+		if self.take_profit_order_id != 0:
+			self.cancel_order(self.take_profit_order_id)
+		self.stop_loss_order_id = 0
+		self.take_profit_order_id = 0
+	
+	def check_tp_sl_increment(self, current_price):
+		if self.initial_direction.lower() == "buy":
+			increment_price = self.first_entry_price * (1 + self.current_increment_pct)
+		else:
+			increment_price = self.first_entry_price * (1 - self.current_increment_pct)
+		# take_profit_price = self.first_entry_price * (1 + self.take_profit_pct)
+		# if not self.hit_tp:
+		#     stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
+		# else:
+		#     stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
+
+		take_profit_status = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.take_profit_order_id)['status']   # futures
+		# if current_price > take_profit_price:       # hit take profit
+		if take_profit_status.lower() == "filled":
+			self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open orders and sleeping for 10 seconds.")
+			# self.close_position()
+			self.reset()
+			time.sleep(10)
+			return
+		
+		stop_loss_status = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.stop_loss_order_id)['status']   # futures
+		# if current_price < stop_loss_price:         # hit stop loss
+		if stop_loss_status.lower() == "filled":
+			self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open orders and sleeping for 10 seconds")
+			# self.close_position()
+			self.reset()
+			time.sleep(10)
+			return
+
+		if (current_price > increment_price and self.initial_direction.lower() == "buy") or ((current_price < increment_price and self.initial_direction.lower() == "sell")):         # increment level exceeded
+			self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
+			scaled_volume = self.current_volume * self.volume_scale
+			self.current_volume = scaled_volume + self.current_volume
+			mark_price = self.get_mark_price()
+			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
+			# self.avg_entry_price = self.get_average_entry_price()
+			self.current_increment_pct += self.base_increment_pct
+			# self.hit_tp = True
+			self.update_stop_loss_order()
+
+	def buy_check_tp_sl_increment(self, current_price):
+		increment_price = self.first_entry_price * (1 + self.current_increment_pct)
+		take_profit_price = self.first_entry_price * (1 + self.take_profit_pct)
+		if not self.hit_tp:
+			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
+		else:
+			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
+
+		if current_price > take_profit_price:       # hit take profit
+			self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			self.close_position()
+			self.reset()
+			time.sleep(10)
+			return
+		
+		if current_price < stop_loss_price:         # hit stop loss
+			self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			self.close_position()
+			self.reset()
+			time.sleep(10)
+			return
+
+		if current_price > increment_price:         # increment level exceeded
+			self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
+			scaled_volume = self.current_volume * self.volume_scale
+			self.current_volume = scaled_volume + self.current_volume
+			mark_price = self.get_mark_price()
+			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
+			# self.avg_entry_price = self.get_average_entry_price()
+			self.current_increment_pct += self.base_increment_pct
+			self.hit_tp = True
+	
+	def sell_check_tp_sl_increment(self, current_price):
+		increment_price = self.first_entry_price * (1 - self.current_increment_pct)
+		take_profit_price = self.first_entry_price * (1 - self.take_profit_pct)
+		if not self.hit_tp:
+			stop_loss_price = self.first_entry_price * (1 + self.stop_loss_pct)
+		else:
+			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct*-1)  # multiplied by -1 since the positives and negatives will opposite in case of short
+
+		if current_price < take_profit_price:       # hit take profit
+			self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds")
+			self.close_position()
+			self.reset()
+			time.sleep(10)
+			return
+		
+		if current_price > stop_loss_price:         # hit stop loss
+			self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			self.close_position()
+			self.reset()
+			time.sleep(10)
+			return
+
+		if current_price < increment_price:         # increment level exceeded
+			self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
+			scaled_volume = self.current_volume * self.volume_scale
+			self.current_volume = scaled_volume + self.current_volume
+			mark_price = self.get_mark_price()
+			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
+			# self.avg_entry_price = self.get_average_entry_price()
+			self.current_increment_pct += self.base_increment_pct
+			self.hit_tp = True
+
+	def place_initial_tpsl_orders(self):
+		if self.initial_direction.lower() == "buy":
+			take_profit_price = self.first_entry_price * (1 + self.take_profit_pct)
+			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
+		else:
+			take_profit_price = self.first_entry_price * (1 - self.take_profit_pct)
+			stop_loss_price = self.first_entry_price * (1 + self.stop_loss_pct)
+
+		self.telegram_bot.send_message(f"Placing initial Take profit order.")
+		self.take_profit_order_id = self.place_take_profit_market_order(take_profit_price)
+		self.telegram_bot.send_message(f"Placing initial Stop loss order.")
+		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price)
+	
+	def update_stop_loss_order(self):
+		if self.initial_direction.lower() == "buy":
+			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
+		else:
+			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct*-1)  # multiplied by -1 since the positives and negatives will opposite in case of short
+		self.telegram_bot.send_message(f"Canceling existing stop loss order and creating a new one at updated price!")
+		self.cancel_order(self.stop_loss_order_id)
+		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price)
+
+	def run(self):
+		self.telegram_bot.send_message("Running Reverse DCA...")
+		while True:
+			time.sleep(1.5)
+			if self.avg_entry_price == 0:    # not in position
+				mark_price = self.get_mark_price()
+				order_size = round(self.current_volume / mark_price, self.quantity_precision)
+				self.telegram_bot.send_message(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
+				self.place_market_order(order_size, self.initial_direction, mark_price)
+				self.first_entry_price = self.avg_entry_price
+				self.place_initial_tpsl_orders()
+			
+			else:    # already in position
+				current_price = self.get_mark_price()
+				self.check_tp_sl_increment(current_price)
+				# # print(current_price)
+				# if self.initial_direction.lower() == "buy":
+				#     self.buy_check_tp_sl_increment(current_price)
+
+				# elif self.initial_direction.lower() == "sell":
+				#     self.sell_check_tp_sl_increment(current_price)
