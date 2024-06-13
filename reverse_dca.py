@@ -105,7 +105,7 @@ class ReverseDCA:
 				break
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Getting order information. Retrying... {e}")
-				print(f"Exception! Getting order information. Retrying... {e}")
+				# print(f"Exception! Getting order information. Retrying... {e}")
 				time.sleep(5)
 		
 		order_status = _order['status'].lower()
@@ -125,7 +125,7 @@ class ReverseDCA:
 			while True:
 				try:
 					self.binance_client.futures_cancel_order(symbol=self.ticker, orderId=order_id)
-					self.telegram_bot.send_message("Order canceled!")
+					# self.telegram_bot.send_message("Order canceled!")
 					# print("Order Canceled!")
 					break
 				except Exception as e:
