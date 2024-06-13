@@ -2,7 +2,8 @@ import time
 from binance.enums import *
 
 class ReverseDCA:
-	def __init__(self, binance_client, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct):
+	def __init__(self, binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct):
+		self.telegram_bot = telegram_bot
 		self.binance_client = binance_client
 		self.ticker = ticker
 		self.initial_direction = initial_direction
@@ -25,8 +26,8 @@ class ReverseDCA:
 		elif self.initial_direction.lower() == "sell":
 			self.stop_market_direction = SIDE_BUY
 		else:
-			# self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
-			print("Invalid initial direction provided in the config. Exiting!")
+			self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+			# print("Invalid initial direction provided in the config. Exiting!")
 			exit()
 
 		try:
@@ -35,8 +36,8 @@ class ReverseDCA:
 			self.quantity_precision = int(symbol_info['quantityPrecision'])        # indicates the number of decimal places allowed for the quantity of a particular trading pair.
 			self.price_precision = int(symbol_info['pricePrecision'])          # indicates the number of decimal places allowed for the price of a particular trading pair on Binance's futures market.
 		except Exception as e:
-			# self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
-			print(f"Exception! Getting futures exchange info. {e}. Exiting!")
+			self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
+			# print(f"Exception! Getting futures exchange info. {e}. Exiting!")
 			exit()
 	
 	def get_mark_price(self):
@@ -45,8 +46,8 @@ class ReverseDCA:
 				return float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price'])    # futures price
 				# return float(self.binance_client.get_margin_price_index(symbol="BTCUSDT")['price'])   # margin price
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
-				print(f"Exception! Getting mark price. Retrying... {e}")
+				self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
+				# print(f"Exception! Getting mark price. Retrying... {e}")
 				time.sleep(2)
 	
 	def check_opened_position(self):
@@ -58,7 +59,7 @@ class ReverseDCA:
 				return open_positions[0]
 
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
+				self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
 				time.sleep(5)
 	
 	def close_position(self):
@@ -70,8 +71,8 @@ class ReverseDCA:
 			elif size < 0:
 				side = "buy"
 			else:
-				# self.telegram_bot.send_message("Invalid position size!")
-				print("Invalid position size!")
+				self.telegram_bot.send_message("Invalid position size!")
+				# print("Invalid position size!")
 				return
 			
 			self.place_market_order(size, side, self.get_mark_price())
@@ -82,8 +83,8 @@ class ReverseDCA:
 		elif direction.lower() == "sell":
 			direction = SIDE_SELL
 		else:
-			# self.telegram_bot.send_message(f"Invalid direction {direction}!")
-			print(f"Invalid direction {direction}!")
+			self.telegram_bot.send_message(f"Invalid direction {direction}!")
+			# print(f"Invalid direction {direction}!")
 			return
 		
 		while True:
@@ -92,8 +93,8 @@ class ReverseDCA:
 				# order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
 				break
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
-				print(f"Exception! Placing market order. Retrying... {e}")
+				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# print(f"Exception! Placing market order. Retrying... {e}")
 				time.sleep(5)
 
 		time.sleep(1)
@@ -103,7 +104,7 @@ class ReverseDCA:
 				# _order = self.binance_client.get_margin_order(symbol=self.ticker, orderId=order['orderId'])      # margin 
 				break
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Getting order information. Retrying... {e}")
+				self.telegram_bot.send_message(f"Exception! Getting order information. Retrying... {e}")
 				print(f"Exception! Getting order information. Retrying... {e}")
 				time.sleep(5)
 		
@@ -114,8 +115,8 @@ class ReverseDCA:
 			if open_position != -1:
 				position_size = float(open_position['positionAmt'])
 				self.avg_entry_price = float(open_position['entryPrice'])
-				# self.telegram_bot.send_message(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Mark price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}. Average entry price: ${self.avg_entry_price}")
-				print(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Market price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}.")
+				self.telegram_bot.send_message(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Market price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}.")
+				# print(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Market price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}.")
 
 	def cancel_order(self, order_id):
 		order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order_id)   # futures
@@ -124,12 +125,12 @@ class ReverseDCA:
 			while True:
 				try:
 					self.binance_client.futures_cancel_order(symbol=self.ticker, orderId=order_id)
-					# self.telegram_bot.send_message("Order canceled!")
-					print("Order Canceled!")
+					self.telegram_bot.send_message("Order canceled!")
+					# print("Order Canceled!")
 					break
 				except Exception as e:
-					# self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
-					print(f"Exception! Canceling order. Retrying... {e}")
+					self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
+					# print(f"Exception! Canceling order. Retrying... {e}")
 					time.sleep(5)
 					
 	def place_stop_market_order(self, stop_price):
@@ -144,13 +145,13 @@ class ReverseDCA:
 				# order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
 				break
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
-				print(f"Exception! Placing stop market order. Retrying... {e}")
+				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# print(f"Exception! Placing stop market order. Retrying... {e}")
 				time.sleep(5)
 
 		self.stop_order_id = order['orderId']
-		# self.telegram_bot.send_message(f"Stop market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
-		print(f"Stop market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		self.telegram_bot.send_message(f"Stop market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		# print(f"Stop market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
 		return self.stop_order_id
 
 	def place_take_profit_market_order(self, stop_price):
@@ -165,13 +166,13 @@ class ReverseDCA:
 				# order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
 				break
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
-				print(f"Exception! Placing market order(take profit). Retrying... {e}")
+				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# print(f"Exception! Placing market order(take profit). Retrying... {e}")
 				time.sleep(5)
 
 		self.stop_order_id = order['orderId']
-		# self.telegram_bot.send_message(f"Take profit market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
-		print(f"Take profit market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		self.telegram_bot.send_message(f"Take profit market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		# print(f"Take profit market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
 		return self.stop_order_id
 	
 	def place_initial_tpsl_orders(self):
@@ -179,14 +180,14 @@ class ReverseDCA:
 			self.take_profit_price = self.first_entry_price * (1 + self.take_profit_pct)
 			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
 		else:
-			take_profit_price = self.first_entry_price * (1 - self.take_profit_pct)
+			self.take_profit_price = self.first_entry_price * (1 - self.take_profit_pct)
 			stop_loss_price = self.first_entry_price * (1 + self.stop_loss_pct)
 
-		# self.telegram_bot.send_message(f"Placing initial Take profit order.")
-		print(f"Placing initial Take profit order.")
+		self.telegram_bot.send_message(f"Placing initial Take profit order.")
+		# print(f"Placing initial Take profit order.")
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
-		# self.telegram_bot.send_message(f"Placing initial Stop loss order.")
-		print(f"Placing initial Stop Loss order.")
+		self.telegram_bot.send_message(f"Placing initial Stop loss order.")
+		# print(f"Placing initial Stop Loss order.")
 		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price) 
 		
 	def reset(self):
@@ -210,22 +211,22 @@ class ReverseDCA:
 		sl_order_status = stop_loss_order['status'].lower()
 
 		if tp_order_status == 'filled':       # hit take profit
-			# self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
-			print(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			# print(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
 			self.reset()
 			time.sleep(10)
 			return
 		
 		if sl_order_status == 'filled':         # hit stop loss
-			# self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
-			print(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds.")
+			self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			# print(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds.")
 			self.reset()
 			time.sleep(10)
 			return
 
 		if current_price >= increment_price:         # increment level exceeded
-			# self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
-			print(f"Increment price reached. Scaling volume by {self.volume_scale}x")
+			self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
+			# print(f"Increment price reached. Scaling volume by {self.volume_scale}x")
 			scaled_volume = self.current_volume * self.volume_scale
 			self.current_volume = scaled_volume
 			mark_price = self.get_mark_price()
@@ -237,23 +238,23 @@ class ReverseDCA:
 			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
 		else:
 			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct*-1)  # multiplied by -1 since the positives and negatives will opposite in case of short
-		# self.telegram_bot.send_message(f"Canceling existing stop loss order and creating a new one at updated price!")
-		print(f"Canceling existing stop loss & take profit order and creating new one at updated price!")
+		self.telegram_bot.send_message(f"Canceling existing stop loss order and creating a new one at updated price!")
+		# print(f"Canceling existing stop loss & take profit order and creating new one at updated price!")
 		self.cancel_order(self.stop_loss_order_id)
 		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price)
 		self.cancel_order(self.take_profit_order_id)
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
 
 	def run(self):
-		# self.telegram_bot.send_message("Running Reverse DCA...")
-		print("Running Reverse DCA Strategy...")
+		self.telegram_bot.send_message("Running Reverse DCA Stategy...")
+		# print("Running Reverse DCA Strategy...")
 		while True:
 			time.sleep(1)
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()
 				order_size = round(self.current_volume / mark_price, self.quantity_precision)
-				# self.telegram_bot.send_message(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
-				print(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
+				self.telegram_bot.send_message(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
+				# print(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
 				self.place_market_order(order_size, self.initial_direction, mark_price)			
 				self.first_entry_price = self.avg_entry_price
 
