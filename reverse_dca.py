@@ -150,8 +150,8 @@ class ReverseDCA:
 				time.sleep(5)
 
 		self.stop_order_id = order['orderId']
-		self.telegram_bot.send_message(f"Stop market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
-		# print(f"Stop market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		self.telegram_bot.send_message(f"Stop Loss Market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		# print(f"Stop Loss Market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
 		return self.stop_order_id
 
 	def place_take_profit_market_order(self, stop_price):
@@ -171,8 +171,8 @@ class ReverseDCA:
 				time.sleep(5)
 
 		self.stop_order_id = order['orderId']
-		self.telegram_bot.send_message(f"Take profit market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
-		# print(f"Take profit market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		self.telegram_bot.send_message(f"Take Profit Market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		# print(f"Take Profit Market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
 		return self.stop_order_id
 	
 	def place_initial_tpsl_orders(self):
@@ -211,15 +211,15 @@ class ReverseDCA:
 		sl_order_status = stop_loss_order['status'].lower()
 
 		if tp_order_status == 'filled':       # hit take profit
-			self.telegram_bot.send_message(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
-			# print(f"TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			self.telegram_bot.send_message(f"$$$TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			# print(f"$$$TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
 			self.reset()
 			time.sleep(10)
 			return
 		
 		if sl_order_status == 'filled':         # hit stop loss
-			self.telegram_bot.send_message(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
-			# print(f"STOP LOSS HIT! Closing open position and sleeping for 10 seconds.")
+			self.telegram_bot.send_message(f"!!!STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			# print(f"!!!STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
 			self.reset()
 			time.sleep(10)
 			return
@@ -238,23 +238,23 @@ class ReverseDCA:
 			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
 		else:
 			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct*-1)  # multiplied by -1 since the positives and negatives will opposite in case of short
-		self.telegram_bot.send_message(f"Canceling existing stop loss order and creating a new one at updated price!")
-		# print(f"Canceling existing stop loss & take profit order and creating new one at updated price!")
+		self.telegram_bot.send_message(f"Canceling existing Stop Loss & Take Profit order to update them!")
+		# print(f"Canceling existing Stop Loss & Take Profit order to update them!")
 		self.cancel_order(self.stop_loss_order_id)
 		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price)
 		self.cancel_order(self.take_profit_order_id)
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
 
 	def run(self):
-		self.telegram_bot.send_message("-------------------------------------------- \n Running Reverse DCA Stategy...")
-		# print("Running Reverse DCA Strategy...")
+		self.telegram_bot.send_message("--------------------------------------------------------\nRunning Reverse DCA Stategy...")
+		# print("-------------------------------------------------------- \n Running Reverse DCA Stategy...")
 		while True:
 			time.sleep(1)
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()
 				order_size = round(self.current_volume / mark_price, self.quantity_precision)
-				self.telegram_bot.send_message(f"********************************************** \n First entry. Opening new position with base volume {order_size} {self.ticker}")
-				# print(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
+				self.telegram_bot.send_message(f"****************************************************\n First entry. Opening new position with base volume {order_size} {self.ticker}")
+				# print(f"**************************************************** \nFirst entry. Opening new position with base volume {order_size} {self.ticker}")
 				self.place_market_order(order_size, self.initial_direction, mark_price)			
 				self.first_entry_price = self.avg_entry_price
 
