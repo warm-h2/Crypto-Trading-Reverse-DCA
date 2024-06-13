@@ -3,9 +3,8 @@ from telegram import Bot
 import time
 import configparser
 import os
-from telegram_utils import TelegramBot
-from reverse_dca import ReverseDCA
-from binance import Client
+from DCA_reverse import ReverseDCA
+from binance.client import Client
 from binance.enums import *
 
 
@@ -25,22 +24,18 @@ def main():
     increment_pct = float(config['settings']['increment_pct'])
     take_profit_pct = float(config['settings']['take_profit_pct'])
 
-    telegram_api_token = config['telegram']['api_token']
-    telegram_channel_chat_id = config['telegram']['channel_chat_id']
-    telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id)
-
     # binance_api_key = config['binance']['test_api_key']
     # binance_api_secret = config['binance']['test_api_secret']
     # binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
 
     binance_api_key = config['binance']['api_key']
     binance_api_secret = config['binance']['api_secret']
-    binance_client = Client(binance_api_key, binance_api_secret, testnet=False)
+    binance_client = Client(binance_api_key, binance_api_secret)
 
     # info = binance_client.get_account_api_permissions()
 
     # initializing and running the strategy
-    obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct)
+    obj_reverse_dca = ReverseDCA(binance_client, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct)
     # obj_reverse_dca.close_position()
     # obj_reverse_dca.cancel_all_open_orders()
     obj_reverse_dca.run()
