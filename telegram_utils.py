@@ -4,9 +4,10 @@ import os
 import datetime
 
 class TelegramBot:
-    def __init__(self, api_token, chat_id):
+    def __init__(self, api_token, chat_id_1, chat_id_2):
         self.api_token = api_token
-        self.chat_id = chat_id
+        self.chat_id_1 = chat_id_1
+        self.chat_id_2 = chat_id_2
         self.logs_dir_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
         self.file_name = "logs_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + ".txt"
         if not os.path.exists(self.logs_dir_path):
@@ -21,7 +22,8 @@ class TelegramBot:
             if log_file:
                 with open(os.path.join(self.logs_dir_path, self.file_name), "a") as file:
                     file.write(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + " | "  + message + "\n")
-            response = requests.post(api_url, json={'chat_id': self.chat_id, 'text': message})
+            response_1 = requests.post(api_url, json={'chat_id': self.chat_id_1, 'text': message})
+            response_2 = requests.post(api_url, json={'chat_id': self.chat_id_2, 'text': message})
             # # print(response.text)
         except Exception as e:
             print("Exception! Telegram Bot.", e)

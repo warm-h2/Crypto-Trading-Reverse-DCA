@@ -28,8 +28,7 @@ def main():
     telegram_api_token = config['telegram']['api_token']
     telegram_channel_chat_id_1 = config['telegram']['channel_chat_id_1']
     telegram_channel_chat_id_2 = config['telegram']['channel_chat_id_2']
-    telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_1)    
-    telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_2)
+    telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_1, telegram_channel_chat_id_2)    
 
     # binance_api_key = config['binance']['test_api_key']
     # binance_api_secret = config['binance']['test_api_secret']
