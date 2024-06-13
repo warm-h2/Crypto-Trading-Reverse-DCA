@@ -246,14 +246,14 @@ class ReverseDCA:
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
 
 	def run(self):
-		self.telegram_bot.send_message("Running Reverse DCA Stategy...")
+		self.telegram_bot.send_message("-------------------------------------------- \n Running Reverse DCA Stategy...")
 		# print("Running Reverse DCA Strategy...")
 		while True:
 			time.sleep(1)
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()
 				order_size = round(self.current_volume / mark_price, self.quantity_precision)
-				self.telegram_bot.send_message(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
+				self.telegram_bot.send_message(f"********************************************** \n First entry. Opening new position with base volume {order_size} {self.ticker}")
 				# print(f"First entry. Opening new position with base volume {order_size} {self.ticker}")
 				self.place_market_order(order_size, self.initial_direction, mark_price)			
 				self.first_entry_price = self.avg_entry_price
