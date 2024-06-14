@@ -2,7 +2,7 @@ import time
 from binance.enums import *
 
 class ReverseDCA:
-	def __init__(self, binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct):
+	def __init__(self, binance_client, telegram_bot, ticker, initial_direction, base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, increment_pct, take_profit_pct, setting_message):
 		self.telegram_bot = telegram_bot
 		self.binance_client = binance_client
 		self.ticker = ticker
@@ -20,6 +20,7 @@ class ReverseDCA:
 		self.stop_loss_order_id = 0
 		self.take_profit_order_id = 0
 		self.take_profit_price = 0
+		self.setting_message = setting_message
 
 		if self.initial_direction.lower() == "buy":
 			self.stop_market_direction = SIDE_SELL
@@ -211,14 +212,17 @@ class ReverseDCA:
 		sl_order_status = stop_loss_order['status'].lower()
 
 		if tp_order_status == 'filled':       # hit take profit
-			self.telegram_bot.send_message(f"$$$TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			self.telegram_bot.send_message(f"$$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
 			# print(f"$$$TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
 			self.reset()
 			time.sleep(10)
 			return
 		
 		if sl_order_status == 'filled':         # hit stop loss
-			self.telegram_bot.send_message(f"!!!STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			if not self.hit_tp:
+				self.telegram_bot.send_message(f"!!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			else:
+				self.telegram_bot.send_message(f"### BREAK EVEN HIT! Closing open position and sleeping for 10 seconds")
 			# print(f"!!!STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
 			self.reset()
 			time.sleep(10)
@@ -232,6 +236,7 @@ class ReverseDCA:
 			mark_price = self.get_mark_price()
 			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
 			self.update_sl_tp_order()
+			self.hit_tp = True
 
 	def update_sl_tp_order(self):
 		if self.initial_direction.lower() == "buy":
@@ -247,6 +252,7 @@ class ReverseDCA:
 
 	def run(self):
 		self.telegram_bot.send_message("--------------------------------------------------------\nRunning Reverse DCA Stategy...")
+		self.telegram_bot.send_message(self.setting_message)
 		# print("-------------------------------------------------------- \n Running Reverse DCA Stategy...")
 		while True:
 			time.sleep(1)
