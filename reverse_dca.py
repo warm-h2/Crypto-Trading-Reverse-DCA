@@ -109,9 +109,18 @@ class ReverseDCA:
 		while True:
 			try:
 				open_positions = self.binance_client.futures_position_information(symbol=self.ticker)    # returns details relevant to your position in that specific futures contract.
-				if float(open_positions[0]['entryPrice']) == 0:
-					return -1
-				return open_positions[0]
+				if self.initial_direction.lower() == "buy":
+					if float(open_positions[0]['entryPrice']) == 0:
+						return -1
+					return open_positions[0]
+				elif self.initial_direction.lower() == "sell":
+					if float(open_positions[1]['entryPrice']) == 0:
+						return -1
+					return open_positions[1]
+				else:
+					self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+					# print("Invalid initial direction provided in the config. Exiting!")
+					exit()
 
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
@@ -138,7 +147,7 @@ class ReverseDCA:
 			position_side = 'LONG'
 		elif direction.lower() == "sell":
 			direction = SIDE_SELL
-			position_side = 'LONG'
+			position_side = 'SHORT'
 		else:
 			self.telegram_bot.send_message(f"Invalid direction {direction}!")
 			# print(f"Invalid direction {direction}!")
@@ -295,6 +304,40 @@ class ReverseDCA:
 			self.update_sl_tp_order()
 			self.hit_tp = True
 
+	def sell_check_tp_sl_increment(self, current_price):
+		increment_price = self.avg_entry_price - self.avg_entry_price*self.base_increment_pct
+		take_profit_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.take_profit_order_id)
+		stop_loss_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.stop_loss_order_id)
+		tp_order_status = take_profit_order['status'].lower()
+		sl_order_status = stop_loss_order['status'].lower()
+
+		if tp_order_status == 'filled':       # hit take profit
+			self.telegram_bot.send_message(f"$$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			# print(f"$$$TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
+			self.reset()
+			time.sleep(10)
+			return
+		
+		if sl_order_status == 'filled':         # hit stop loss
+			if not self.hit_tp:
+				self.telegram_bot.send_message(f"!!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			else:
+				self.telegram_bot.send_message(f"### BREAK EVEN HIT! Closing open position and sleeping for 10 seconds")
+			# print(f"!!!STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
+			self.reset()
+			time.sleep(10)
+			return
+
+		if current_price < increment_price:         # increment level exceeded
+			self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x")
+			# print(f"Increment price reached. Scaling volume by {self.volume_scale}x")
+			scaled_volume = self.current_volume * self.volume_scale
+			self.current_volume = scaled_volume
+			mark_price = self.get_mark_price()
+			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
+			self.update_sl_tp_order()
+			self.hit_tp = True
+
 	def update_sl_tp_order(self):
 		if self.initial_direction.lower() == "buy":
 			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
@@ -384,7 +427,14 @@ class ReverseDCA:
 			else:    # already in position
 				current_price = self.get_mark_price()
 				if last_closed_candle > current_sma and last_closed_candle > current_hma:
-					self.buy_check_tp_sl_increment(current_price)
+					if self.initial_direction.lower() == "buy":
+						self.buy_check_tp_sl_increment(current_price)
+					elif self.initial_direction.lower() == "sell":
+						self.sell_check_tp_sl_increment(current_price)
+					else:
+						self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+						# print("Invalid initial direction provided in the config. Exiting!")
+						exit()
 				else:
 					self.telegram_bot.send_message(f"Signals reversed. Closing positions!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
 					self.close_position()
