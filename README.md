@@ -28,6 +28,47 @@ This project contains the implementation and execution (on Binance) of the rever
     * python main.py
 * Or Run _run.bat_ to start the execution
 
+## How to Run on Ubuntu Server
+* To install Python 3.10 on Ubuntu, follow these steps:
+    * Open the Terminal and run the following command.
+        
+        Update Ubuntu Linux Before Installing Python 3.10
+        ```shell
+        sudo apt update && sudo apt upgrade
+        ```
+
+        Install Python 3.10 on Ubuntu via APT Command
+        ```shell
+        sudo apt install python3.10
+        ```
+
+        Verifying the Python 3.10 Installation on Ubuntu    
+        ```shell
+        python3.10 --version
+        ```
+
+        Installing Python Pip on Ubuntu via Python 3.10
+        ```shell
+        sudo apt install python3-pip
+        ```
+
+        Upgrade Pip to the Latest Version on Ubuntu via Python 3.10
+        ```shell
+        python3 -m pip install --upgrade pip
+        ```
+* To install VS Code on Ubuntu, follow these steps:
+
+    * Open the Terminal and run the following command.
+
+        Install VS code using Snap package
+        ```shell
+        sudo snap install --classic code
+        ```
+* Install the required Python packages mentioned in requirements.txt in the root directory using the following command:
+    
+    ```shell
+    pip install -r requirements.txt
+    ```
 ## Notes
 * The logs will be sent to the Telegram channel while the execution is running.
 * If the execution stops for any reason, close the running terminal and positions manually and restart the terminal.
