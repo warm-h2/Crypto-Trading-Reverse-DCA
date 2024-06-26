@@ -271,7 +271,7 @@ class ReverseDCA:
 		self.take_profit_price = 0     
 
 	def buy_check_tp_sl_increment(self, current_price):
-		increment_price = self.avg_entry_price + self.avg_entry_price*self.base_increment_pct
+		increment_price = self.first_entry_price + self.first_entry_price*self.base_increment_pct
 		take_profit_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.take_profit_order_id)
 		stop_loss_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.stop_loss_order_id)
 		tp_order_status = take_profit_order['status'].lower()
@@ -301,11 +301,12 @@ class ReverseDCA:
 			self.current_volume = scaled_volume
 			mark_price = self.get_mark_price()
 			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
+			self.first_entry_price = mark_price
 			self.update_sl_tp_order()
 			self.hit_tp = True
 
 	def sell_check_tp_sl_increment(self, current_price):
-		increment_price = self.avg_entry_price - self.avg_entry_price*self.base_increment_pct
+		increment_price = self.first_entry_price - self.first_entry_price*self.base_increment_pct
 		take_profit_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.take_profit_order_id)
 		stop_loss_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.stop_loss_order_id)
 		tp_order_status = take_profit_order['status'].lower()
@@ -335,6 +336,7 @@ class ReverseDCA:
 			self.current_volume = scaled_volume
 			mark_price = self.get_mark_price()
 			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
+			self.first_entry_price = mark_price
 			self.update_sl_tp_order()
 			self.hit_tp = True
 
