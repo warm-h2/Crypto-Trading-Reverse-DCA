@@ -424,31 +424,54 @@ class ReverseDCA:
 			
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()
-							
-				if last_closed_candle > current_sma and last_closed_candle > current_hma:
-					self.telegram_bot.send_message(f"Conditions have been met, so Starting the bot!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
-					order_size = round(self.current_volume / mark_price, self.quantity_precision)
-					self.telegram_bot.send_message(f"****************************************************\n First entry. Opening new position with base volume {order_size} {self.ticker}")
-					# print(f"**************************************************** \nFirst entry. Opening new position with base volume {order_size} {self.ticker}")
-					self.place_market_order(order_size, self.initial_direction, mark_price)			
-					self.first_entry_price = self.avg_entry_price
-					# Place initial take profit and stop loss orders.
-					self.place_initial_tpsl_orders()		
-				elif (last_closed_candle < current_sma or last_closed_candle < current_hma) and not self.filter_met:
-					self.telegram_bot.send_message(f"Pauses the bot until the condition is met!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
-					self.filter_met = True
+				
+				if self.initial_direction.lower() == "buy":
+					if last_closed_candle > current_sma and last_closed_candle > current_hma:
+						self.telegram_bot.send_message(f"Conditions have been met, so Starting the bot!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
+						order_size = round(self.current_volume / mark_price, self.quantity_precision)
+						self.telegram_bot.send_message(f"****************************************************\n First entry. Opening new position with base volume {order_size} {self.ticker}")
+						# print(f"**************************************************** \nFirst entry. Opening new position with base volume {order_size} {self.ticker}")
+						self.place_market_order(order_size, self.initial_direction, mark_price)			
+						self.first_entry_price = self.avg_entry_price
+						# Place initial take profit and stop loss orders.
+						self.place_initial_tpsl_orders()		
+					elif (last_closed_candle < current_sma or last_closed_candle < current_hma) and not self.filter_met:
+						self.telegram_bot.send_message(f"Pauses the bot until the condition is met!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
+						self.filter_met = True
+				elif self.initial_direction.lower() == "sell":
+					if (last_closed_candle < current_sma or current_sma == 0) and (last_closed_candle < current_hma or current_hma == 0):
+						self.telegram_bot.send_message(f"Conditions have been met, so Starting the bot!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
+						order_size = round(self.current_volume / mark_price, self.quantity_precision)
+						self.telegram_bot.send_message(f"****************************************************\n First entry. Opening new position with base volume {order_size} {self.ticker}")
+						# print(f"**************************************************** \nFirst entry. Opening new position with base volume {order_size} {self.ticker}")
+						self.place_market_order(order_size, self.initial_direction, mark_price)			
+						self.first_entry_price = self.avg_entry_price
+						# Place initial take profit and stop loss orders.
+						self.place_initial_tpsl_orders()		
+					elif (last_closed_candle > current_sma or last_closed_candle > current_hma) and not self.filter_met:
+						self.telegram_bot.send_message(f"Pauses the bot until the condition is met!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
+						self.filter_met = True
+				else:
+					self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+					# print("Invalid initial direction provided in the config. Exiting!")
+					exit()
 			else:    # already in position
 				current_price = self.get_mark_price()
-				if last_closed_candle > current_sma and last_closed_candle > current_hma:
-					if self.initial_direction.lower() == "buy":
+				if self.initial_direction.lower() == "buy":
+					if last_closed_candle > current_sma and last_closed_candle > current_hma:
 						self.buy_check_tp_sl_increment(current_price)
-					elif self.initial_direction.lower() == "sell":
+					else:
+						self.telegram_bot.send_message(f"Signals reversed. Closing positions!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
+						self.close_position()
+						self.reset()
+				elif self.initial_direction.lower() == "sell":
+					if (last_closed_candle < current_sma or current_sma == 0) and (last_closed_candle < current_hma or current_hma == 0):
 						self.sell_check_tp_sl_increment(current_price)
 					else:
-						self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
-						# print("Invalid initial direction provided in the config. Exiting!")
-						exit()
+						self.telegram_bot.send_message(f"Signals reversed. Closing positions!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
+						self.close_position()
+						self.reset()
 				else:
-					self.telegram_bot.send_message(f"Signals reversed. Closing positions!!! \nLast Candle's Price is {last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
-					self.close_position()
-					self.reset()
+					self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+					# print("Invalid initial direction provided in the config. Exiting!")
+					exit()
