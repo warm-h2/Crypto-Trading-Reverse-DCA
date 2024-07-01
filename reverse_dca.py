@@ -130,16 +130,27 @@ class ReverseDCA:
 		open_position = self.check_opened_position()
 		if open_position != -1:
 			size = float(open_position['positionAmt'])
+			current_positionSide = open_position['positionSide']
 			if size > 0:
-				side = "sell"
+				side = SIDE_SELL
+				close_positionSide = "LONG"
 			elif size < 0:
-				side = "buy"
+				side = SIDE_BUY
+				close_positionSide = "SHORT"
 			else:
 				self.telegram_bot.send_message("Invalid position size!")
 				# print("Invalid position size!")
 				return
 			
-			self.place_market_order(size, side, self.get_mark_price())
+		while True:
+			try:
+				order = self.binance_client.futures_create_order(symbol=self.ticker, side=side, type=ORDER_TYPE_MARKET, quantity=abs(size), positionSide=close_positionSide)   # futures 
+				# order = self.binance_client.create_margin_order(symbol=self.ticker, side=direction, type=ORDER_TYPE_MARKET, timeInForce=TIME_IN_FORCE_GTC, quantity=size)      # margin
+				break
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Placing Close position market order. Retrying... {e}")
+				# print(f"Exception! Placing market order. Retrying... {e}")
+				time.sleep(5)
 	
 	def place_market_order(self, size, direction, mark_price):
 		if direction.lower() == "buy":
