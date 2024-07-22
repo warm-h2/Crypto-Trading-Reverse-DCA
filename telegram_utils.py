@@ -18,7 +18,7 @@ class TelegramBot:
 
         # Set up logging configuration
         logging.basicConfig(
-            level=logging.DEBUG,
+            level=logging.INFO,
             format='%(asctime)s || %(message)s',
             handlers=[
                 logging.FileHandler(os.path.join(self.logs_dir_path, self.file_name)),

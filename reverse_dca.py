@@ -107,7 +107,16 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
 				# print(f"Exception! Getting mark price. Retrying... {e}")
-				time.sleep(2)
+				time.sleep(10)
+
+	def get_order_info(self, order_id):
+		while True:
+			try:
+				order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order_id)
+				return order
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Getting Order information. Retrying...{e}")
+				time.sleep(10)
 	
 	def check_opened_position(self):
 		while True:
@@ -128,7 +137,7 @@ class ReverseDCA:
 
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
-				time.sleep(5)
+				time.sleep(10)
 	
 	def close_position(self):
 		open_position = self.check_opened_position()
@@ -154,7 +163,7 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing Close position market order. Retrying... {e}")
 				# print(f"Exception! Placing market order. Retrying... {e}")
-				time.sleep(5)
+				time.sleep(10)
 	
 	def place_market_order(self, size, direction, mark_price):
 		if direction.lower() == "buy":
@@ -176,18 +185,10 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				# print(f"Exception! Placing market order. Retrying... {e}")
-				time.sleep(5)
+				time.sleep(10)
 
 		time.sleep(1)
-		while True:
-			try:
-				_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order['orderId'])   # futures 
-				# _order = self.binance_client.get_margin_order(symbol=self.ticker, orderId=order['orderId'])      # margin 
-				break
-			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Getting order information. Retrying... {e}")
-				# print(f"Exception! Getting order information. Retrying... {e}")
-				time.sleep(5)
+		_order = self.get_order_info(order['orderId'])
 		
 		order_status = _order['status'].lower()
 		fill_price = float(_order['avgPrice'])
@@ -200,7 +201,7 @@ class ReverseDCA:
 				# print(f"Market {direction} order of size {round(size, self.quantity_precision)} {self.ticker} filled at ${fill_price}. Market price at that time: ${mark_price}. Current {direction} position size: {position_size} {self.ticker}.")
 
 	def cancel_order(self, order_id):
-		order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order_id)   # futures
+		order = self.get_order_info(order_id)   # futures
 		order_status = order['status'].lower()
 		if order_status.lower() != "filled":
 			while True:
@@ -212,7 +213,7 @@ class ReverseDCA:
 				except Exception as e:
 					self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
 					# print(f"Exception! Canceling order. Retrying... {e}")
-					time.sleep(5)
+					time.sleep(10)
 					
 	def place_stop_market_order(self, stop_price):
 		open_position = self.check_opened_position()
@@ -228,7 +229,7 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				# print(f"Exception! Placing stop market order. Retrying... {e}")
-				time.sleep(5)
+				time.sleep(10)
 
 		self.stop_order_id = order['orderId']
 		self.telegram_bot.send_message(f"Stop Loss Market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
@@ -249,7 +250,7 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				# print(f"Exception! Placing market order(take profit). Retrying... {e}")
-				time.sleep(5)
+				time.sleep(10)
 
 		self.stop_order_id = order['orderId']
 		self.telegram_bot.send_message(f"Take Profit Market {self.stop_market_direction} order of size {round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
@@ -279,16 +280,16 @@ class ReverseDCA:
 		self.current_volume = self.base_order_size
 		if self.stop_loss_order_id != 0:
 			self.cancel_order(self.stop_loss_order_id)
+			self.stop_loss_order_id = 0
 		if self.take_profit_order_id != 0:
 			self.cancel_order(self.take_profit_order_id)
-		self.stop_loss_order_id = 0
-		self.take_profit_order_id = 0
-		self.take_profit_price = 0     
+			self.take_profit_order_id = 0
+		self.take_profit_price = 0   
 
 	def buy_check_tp_sl_increment(self, current_price):
 		increment_price = self.first_entry_price + self.first_entry_price*self.base_increment_pct
-		take_profit_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.take_profit_order_id)
-		stop_loss_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.stop_loss_order_id)
+		take_profit_order = self.get_order_info(self.take_profit_order_id)
+		stop_loss_order = self.get_order_info(self.stop_loss_order_id)
 		tp_order_status = take_profit_order['status'].lower()
 		sl_order_status = stop_loss_order['status'].lower()
 
@@ -322,8 +323,8 @@ class ReverseDCA:
 
 	def sell_check_tp_sl_increment(self, current_price):
 		increment_price = self.first_entry_price - self.first_entry_price*self.base_increment_pct
-		take_profit_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.take_profit_order_id)
-		stop_loss_order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=self.stop_loss_order_id)
+		take_profit_order = self.get_order_info(self.take_profit_order_id)
+		stop_loss_order = self.get_order_info(self.stop_loss_order_id)
 		tp_order_status = take_profit_order['status'].lower()
 		sl_order_status = stop_loss_order['status'].lower()
 
@@ -396,6 +397,15 @@ class ReverseDCA:
 			
 			return hma.iloc[-1]
 	
+	def get_historical_klines(self, interval, start_str):
+		while True:
+			try:
+				klines = self.binance_client.futures_historical_klines(symbol=self.ticker, interval=interval, start_str=start_str)
+				return klines
+			except Exception as e:
+				self.telegram_bot.send_message(f"Exception! Getting Historical Klines. Retrying... {e}")
+				time.sleep(10)
+	
 	def run(self):
 		self.telegram_bot.send_message("--------------------------------------------------------\nRunning Reverse DCA Stategy...")
 		self.telegram_bot.send_message(self.setting_message)
@@ -404,13 +414,12 @@ class ReverseDCA:
 			time.sleep(1)
 						
 			# getting historical candle data
-			sma_klines = self.binance_client.futures_historical_klines(symbol=self.ticker, interval=self.get_tf_val(self.sma_tf), start_str=self.get_start_str(self.sma_tf, self.sma_period))				
+			sma_klines = self.get_historical_klines(self.get_tf_val(self.sma_tf), self.get_start_str(self.sma_tf, self.sma_period))				
 			# Parse the closing prices
 			sma_prices = [float(kline[4]) for kline in sma_klines]
 
 			# getting historical candle data
-			hma_klines = self.binance_client.futures_historical_klines(symbol=self.ticker, interval=self.get_tf_val(self.hma_tf), start_str=self.get_start_str(self.hma_tf, self.hma_period*3))
-
+			hma_klines = self.get_historical_klines(self.get_tf_val(self.hma_tf), self.get_start_str(self.hma_tf, self.hma_period*3))
 			# Parse the closing prices
 			hma_prices = [float(kline[4]) for kline in hma_klines]
 
@@ -445,7 +454,7 @@ class ReverseDCA:
 						self.place_market_order(order_size, self.initial_direction, mark_price)			
 						self.first_entry_price = self.avg_entry_price
 						# Place initial take profit and stop loss orders.
-						self.place_initial_tpsl_orders()		
+						self.place_initial_tpsl_orders()
 					elif (sma_last_closed_candle > current_sma or hma_last_closed_candle > current_hma) and not self.filter_met:
 						self.telegram_bot.send_message(f"Pauses the bot until the condition is met!!! \nSMA Last Candle's Price is {sma_last_closed_candle}, HMA Last Candle's Price is {hma_last_closed_candle}, SMA_{self.sma_period} is {round(current_sma, 4)} and HMA_{self.hma_period} is {round(current_hma, 4)}.")
 						self.filter_met = True
