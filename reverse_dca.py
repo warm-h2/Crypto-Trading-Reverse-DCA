@@ -426,8 +426,8 @@ class ReverseDCA:
 			# Calculate current SMA and HMA values
 			current_sma = self.calculate_sma(sma_prices, self.sma_period)
 			current_hma = self.calculate_hma(hma_prices, self.hma_period)
-			sma_last_closed_candle = 0 if self.sma_tf == "0" or self.sma_period == 0 else sma_prices[-2]
-			hma_last_closed_candle = 0 if self.hma_tf == "0" or self.hma_period == 0 else hma_prices[-2]
+			sma_last_closed_candle = 0 if self.sma_tf == "0" or self.sma_period == 0 else sma_prices[-1]
+			hma_last_closed_candle = 0 if self.hma_tf == "0" or self.hma_period == 0 else hma_prices[-1]
 			
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()
