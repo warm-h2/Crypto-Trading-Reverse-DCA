@@ -416,12 +416,12 @@ class ReverseDCA:
 			# getting historical candle data
 			sma_klines = self.get_historical_klines(self.get_tf_val(self.sma_tf), self.get_start_str(self.sma_tf, self.sma_period))				
 			# Parse the closing prices
-			sma_prices = [float(kline[4]) for kline in sma_klines]
+			sma_prices = [float(kline[4]) for kline in sma_klines][:-1]
 
 			# getting historical candle data
 			hma_klines = self.get_historical_klines(self.get_tf_val(self.hma_tf), self.get_start_str(self.hma_tf, self.hma_period*3))
 			# Parse the closing prices
-			hma_prices = [float(kline[4]) for kline in hma_klines]
+			hma_prices = [float(kline[4]) for kline in hma_klines][:-1]
 
 			# Calculate current SMA and HMA values
 			current_sma = self.calculate_sma(sma_prices, self.sma_period)
