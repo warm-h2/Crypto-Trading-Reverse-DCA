@@ -19,6 +19,7 @@ class ReverseDCA:
 		self.base_increment_pct = increment_pct / 100
 		self.take_profit_pct = take_profit_pct / 100
 		self.first_entry_price = 0
+		self.filled_price = 0
 		self.avg_entry_price = 0
 		self.hit_tp = False
 		self.current_volume = self.base_order_size
@@ -192,6 +193,7 @@ class ReverseDCA:
 		
 		order_status = _order['status'].lower()
 		fill_price = float(_order['avgPrice'])
+		self.filled_price = fill_price
 		if order_status == "filled":
 			open_position = self.check_opened_position()
 			if open_position != -1:
@@ -274,6 +276,7 @@ class ReverseDCA:
 		
 	def reset(self):
 		self.first_entry_price = 0
+		self.filled_price = 0
 		self.avg_entry_price = 0
 		self.hit_tp = False
 		self.filter_met = False
@@ -317,7 +320,7 @@ class ReverseDCA:
 			self.current_volume = scaled_volume
 			mark_price = self.get_mark_price()
 			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
-			self.first_entry_price = mark_price
+			self.first_entry_price = self.filled_price
 			self.update_sl_tp_order()
 			self.hit_tp = True
 
@@ -352,7 +355,7 @@ class ReverseDCA:
 			self.current_volume = scaled_volume
 			mark_price = self.get_mark_price()
 			self.place_market_order(round(scaled_volume / mark_price, self.quantity_precision), self.initial_direction, mark_price)
-			self.first_entry_price = mark_price
+			self.first_entry_price = self.filled_price
 			self.update_sl_tp_order()
 			self.hit_tp = True
 
