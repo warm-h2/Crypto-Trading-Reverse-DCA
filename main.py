@@ -10,6 +10,7 @@ from binance.enums import *
 
 
 def main():
+
     # Parsing settigns config file
     config = configparser.ConfigParser(inline_comment_prefixes=";")
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -25,9 +26,13 @@ def main():
     increment_pct = float(config['settings']['increment_pct'])
     take_profit_pct = float(config['settings']['take_profit_pct'])
     sma_period = int(config['settings']['sma_period'])
-    hma_period = int(config['settings']['hma_period'])
+    hma1_period = int(config['settings']['hma1_period'])
+    hma2_period = int(config['settings']['hma2_period'])
+    hma3_period = int(config['settings']['hma3_period'])
     sma_tf = config['settings']['sma_timeframe']
-    hma_tf = config['settings']['hma_timeframe']   
+    hma1_tf = config['settings']['hma1_timeframe']   
+    hma2_tf = config['settings']['hma2_timeframe']  
+    hma3_tf = config['settings']['hma3_timeframe']  
     
     setting_message  =  (
                             f"Ticker = {ticker}\n"
@@ -38,10 +43,10 @@ def main():
                             f"Stop Loss Percent = {stop_loss_pct}\n"
                             f"Increment Percent = {increment_pct}\n"
                             f"Take Profit Percent = {take_profit_pct}\n"
-                            f"SMA Filter Period = {sma_period}\n"
-                            f"HMA Filter Period = {hma_period}\n"
-                            f"SMA Filter TimeFrame = {sma_tf}\n"
-                            f"HMA Filter TimeFrame = {hma_tf}"                            
+                            f"SMA = {sma_period}, {sma_tf}\n"
+                            f"HMA 1 = {hma1_period}, {hma1_tf}\n"
+                            f"HMA 2 = {hma2_period}, {hma2_tf}\n"
+                            f"HMA 3 = {hma3_period}, {hma3_tf}"                            
                         )
     
     telegram_api_token = config['telegram']['api_token']
@@ -64,10 +69,15 @@ def main():
                                  initial_direction, base_order_size, 
                                  volume_scale, breakeven_threshold_pct, 
                                  stop_loss_pct, increment_pct, take_profit_pct, 
-                                 setting_message, sma_period, hma_period, sma_tf, hma_tf)
+                                 setting_message, sma_period, sma_tf, hma1_period, 
+                                 hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
     # obj_reverse_dca.close_position()
     # obj_reverse_dca.cancel_all_open_orders()
-    obj_reverse_dca.run()
+    try:
+        obj_reverse_dca.run()
+    except KeyboardInterrupt:
+        telegram_bot.logger.warning("Keyboard interrupt detected, stopping the bot.")
+        print("\nProgram interrupted by user.")
 
 
 if __name__ == '__main__':
