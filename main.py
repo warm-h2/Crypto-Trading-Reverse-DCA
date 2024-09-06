@@ -56,6 +56,7 @@ def get_my_pairs():
     config.read(config_path)
 
     ticker = config['settings']['ticker']
+    max_position = config['settings']['Max-positions']
     initial_direction = config['settings']['initial_direction']
     base_order_size = int(config['settings']['base_order_size'])
     volume_scale = float(config['settings']['volume_scale'])
@@ -145,7 +146,7 @@ def get_my_pairs():
         if obj_reverse_dca.get_order_check()==True:
             top_strategy_volume_pairs.append(ticker)
             pairs_num = pairs_num + 1
-        if pairs_num > 4 or i == 790:
+        if pairs_num > int(max_position) - 1 or i == 790:
             return
     
         i = i + 1
@@ -163,6 +164,7 @@ def main():
     config.read(config_path)
 
     ticker = config['settings']['ticker']
+    max_position = config['settings']['Max-positions']
     initial_direction = config['settings']['initial_direction']
     base_order_size = int(config['settings']['base_order_size'])
     volume_scale = float(config['settings']['volume_scale'])
@@ -224,51 +226,56 @@ def main():
     #     telegram_bot.logger.warning("Keyboard interrupt detected, stopping the bot.")
     # #     print("\nProgram interrupted by user.")
     
-    
-    while True:
-        # time.sleep(1)
-        obj_reverse_dca.telegram_bot.send_message(f"---------------Start!------------------\n" f"Checking coins for Reverse DCA Strategy...")
-        get_my_pairs()
-        obj_reverse_dca.telegram_bot.send_message(f"Checking coins finished.")
-        processes = []
-        print(top_strategy_volume_pairs)
-        if len(top_strategy_volume_pairs) == 0:
-            obj_reverse_dca.telegram_bot.send_message("no suitable coins found")
-        else:
-            obj_reverse_dca.telegram_bot.send_message("suitable coins found")
-            for ticker in top_strategy_volume_pairs:
+    if ticker == "auto":
 
-                setting_message  =  (
-                                    f"Ticker = {ticker}\n"
-                                    f"Initial Direction = {initial_direction}\n"
-                                    f"Base Order Size = {base_order_size}\n"
-                                    f"Volume Scale = {volume_scale}\n"
-                                    f"Breakeven Percent = {breakeven_threshold_pct}\n"
-                                    f"Stop Loss Percent = {stop_loss_pct}\n"
-                                    f"Increment Percent = {increment_pct}\n"
-                                    f"Take Profit Percent = {take_profit_pct}\n"
-                                    f"SMA = {sma_period}, {sma_tf}\n"
-                                    f"HMA 1 = {hma1_period}, {hma1_tf}\n"
-                                    f"HMA 2 = {hma2_period}, {hma2_tf}\n"
-                                    f"HMA 3 = {hma3_period}, {hma3_tf}"                            
-                                )
-                obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, 
-                                    initial_direction, base_order_size, 
-                                    volume_scale, breakeven_threshold_pct, 
-                                    stop_loss_pct, increment_pct, take_profit_pct, 
-                                    setting_message, sma_period, sma_tf, hma1_period, 
-                                    hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
-                obj_reverse_dca.telegram_bot.send_message(setting_message)
-                process = multiprocessing.Process(target=obj_reverse_dca.run(), args=(ticker, ))
-                processes.append(process)
-                process.start()
-                # obj_reverse_dca.run()
-            for process in processes:
-                process.join()
-            
+        while True:
+            # time.sleep(1)
+            obj_reverse_dca.telegram_bot.send_message(f"---------------Start!------------------\n" f"Checking coins for Reverse DCA Strategy...")
+            get_my_pairs()
+            obj_reverse_dca.telegram_bot.send_message(f"Checking coins finished.")
+            processes = []
+            print(top_strategy_volume_pairs)
+            if len(top_strategy_volume_pairs) == 0:
+                obj_reverse_dca.telegram_bot.send_message("no suitable coins found")
+            else:
+                obj_reverse_dca.telegram_bot.send_message("suitable coins found")
+                for ticker in top_strategy_volume_pairs:
 
-            
-      
+                    setting_message  =  (
+                                        f"Ticker = {ticker}\n"
+                                        f"Initial Direction = {initial_direction}\n"
+                                        f"Base Order Size = {base_order_size}\n"
+                                        f"Volume Scale = {volume_scale}\n"
+                                        f"Breakeven Percent = {breakeven_threshold_pct}\n"
+                                        f"Stop Loss Percent = {stop_loss_pct}\n"
+                                        f"Increment Percent = {increment_pct}\n"
+                                        f"Take Profit Percent = {take_profit_pct}\n"
+                                        f"SMA = {sma_period}, {sma_tf}\n"
+                                        f"HMA 1 = {hma1_period}, {hma1_tf}\n"
+                                        f"HMA 2 = {hma2_period}, {hma2_tf}\n"
+                                        f"HMA 3 = {hma3_period}, {hma3_tf}"                            
+                                    )
+                    obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, 
+                                        initial_direction, base_order_size, 
+                                        volume_scale, breakeven_threshold_pct, 
+                                        stop_loss_pct, increment_pct, take_profit_pct, 
+                                        setting_message, sma_period, sma_tf, hma1_period, 
+                                        hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
+                    obj_reverse_dca.telegram_bot.send_message(setting_message)
+                    process = multiprocessing.Process(target=obj_reverse_dca.run(), args=(ticker, ))
+                    processes.append(process)
+                    process.start()
+                    # obj_reverse_dca.run()
+                for process in processes:
+                    process.join()
+
+    else:        
+        obj_reverse_dca.telegram_bot.send_message(f"---------------Start!------------------\n" f"Applying RDCA for {ticker} strategy...")
+        try:
+            obj_reverse_dca.run_single()
+        except KeyboardInterrupt:
+            telegram_bot.logger.warning("Keyboard interrupt detected, stopping the bot.")
+            print("\nProgram interrupted by user.")
 
 
 
