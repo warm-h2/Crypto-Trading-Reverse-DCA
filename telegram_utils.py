@@ -37,7 +37,7 @@ class TelegramBot:
             if print_terminal:
                 self.logger.info(message)
 
-            response_1 = requests.post(api_url, json={'chat_id': self.chat_id_1, 'text': message})
+            # response_1 = requests.post(api_url, json={'chat_id': self.chat_id_1, 'text': message})
             response_2 = requests.post(api_url, json={'chat_id': self.chat_id_2, 'text': message})
             # # print(response.text)
             # print(response_1.status_code)

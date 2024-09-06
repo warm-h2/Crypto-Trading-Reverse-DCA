@@ -3,6 +3,7 @@ import math
 import pandas as pd
 import numpy as np
 from binance.enums import *
+from binance.exceptions import BinanceAPIException
 
 class ReverseDCA:
 	def __init__(self, binance_client, telegram_bot, ticker, initial_direction, 
@@ -37,7 +38,8 @@ class ReverseDCA:
 		self.hma3_tf = hma3_tf
 		self.filter_met = False
 		self.increment_num = 0
-
+		self.quantity_precision = 0
+		self.order_check = False
 		if self.initial_direction.lower() == "buy":
 			self.stop_market_direction = SIDE_SELL
 			self.stop_market_side = 'LONG'
@@ -57,9 +59,15 @@ class ReverseDCA:
 			self.quantity_precision = int(symbol_info['quantityPrecision']) 
 			# indicates the number of decimal places allowed for the price of a particular trading pair on Binance's futures market.
 			self.price_precision = int(symbol_info['pricePrecision']) 
+		# except BinanceAPIException as e:
+		# 	if e.code == -4003:
+		# 		return
 		except Exception as e:
-			self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
-			exit()
+			# self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
+			# exit()
+			pass
+		
+		
  
 	def get_tf_val(self, timeframe):
 		if timeframe == "1M":
@@ -112,22 +120,33 @@ class ReverseDCA:
 			try:
 				return float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price'])    # futures price
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
 				time.sleep(10)
+				return 
 
 	def get_order_info(self, order_id):
 		while True:
 			try:
 				order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order_id)
 				return order
+			except BinanceAPIException as e:
+				if e.code == -4003:
+					return
+				elif e.code == -1121:
+					return
+				elif e.code == -4045:
+					return
+				elif e.code == -2011:
+					return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Getting Order information. Retrying...{e}")
 				time.sleep(10)
-	
+			
 	def check_opened_position(self):
 		while True:
 			try:
 				open_positions = self.binance_client.futures_position_information(symbol=self.ticker)    # returns details relevant to your position.
+				print(open_positions)
 				if self.initial_direction.lower() == "buy":
 					if float(open_positions[0]['entryPrice']) == 0:
 						return -1
@@ -139,10 +158,19 @@ class ReverseDCA:
 				else:
 					self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
 					exit()
-
+			except BinanceAPIException as e:
+				if e.code == -4003:
+					return
+				elif e.code == -1121:
+					return
+				elif e.code == -4045:
+					return
+				elif e.code == -2011:
+					return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
 				time.sleep(10)
+			
 	
 	def close_position(self):
 		open_position = self.check_opened_position()
@@ -166,9 +194,19 @@ class ReverseDCA:
 													 type=ORDER_TYPE_MARKET, quantity=abs(size), 
 													 positionSide=close_positionSide)   # futures 
 				break
+			# except BinanceAPIException as e:
+			# 	if e.code == -4003:
+			# 		return
+			# 	elif e.code == -1121:
+			# 		return
+			# 	elif e.code == -4045:
+			# 		return
+			# 	elif e.code == -2011:
+			# 		return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing Close position market order. Retrying... {e}")
 				time.sleep(10)
+			
 	
 	def place_market_order(self, size, direction, mark_price):
 		if direction.lower() == "buy":
@@ -181,31 +219,62 @@ class ReverseDCA:
 			self.telegram_bot.send_message(f"Invalid direction {direction}!")
 			# print(f"Invalid direction {direction}!")
 			return
-		
+		# server_time =  self.binance_client.get_server_time()['serverTime']
+		# timestamp = int(time.time() * 1000) - 1000 
+		# print("server time:", server_time)
+		# order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
+		# 											 type=ORDER_TYPE_MARKET, quantity=float(abs(size)), positionSide=position_side, 
+		# 											 timestamp=server_time)
+		# order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
+		# 											 type=ORDER_TYPE_MARKET, quantity=float(abs(size)), positionSide=position_side)
 		while True:
 			try:
+				print("order:")
 				order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
-													 type=ORDER_TYPE_MARKET, quantity=abs(size), positionSide=position_side)   # futures 
+													 type=ORDER_TYPE_MARKET, quantity=float(abs(size)), positionSide=position_side)   # futures 
+				print("order:", order)
 				break
+			except BinanceAPIException as e:
+				if e.code == -4003:
+					print('ggg4003')
+					return
+				elif e.code == -1121:
+					print('ggg1121')
+					return
+				elif e.code == -4045:
+					print('ggg4045')
+					return
+				elif e.code == -2011:
+					print('ggg2011')
+					return
+				elif e.code == -4164:
+					print('ggg4164')
+					# order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
+					# 								 type=ORDER_TYPE_MARKET, quantity=float(20/size), positionSide=position_side)
+					return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 
 				time.sleep(10)
-
+			
 		time.sleep(1)
 		_order = self.get_order_info(order['orderId'])
 		
 		order_status = _order['status'].lower()
 		fill_price = float(_order['avgPrice'])
 		self.filled_price = fill_price
+		print(order_status)
 		if order_status == "filled":
+			print('ok!!')
 			open_position = self.check_opened_position()
+			print(open_position)
 			if open_position != -1:
 				position_size = float(open_position['positionAmt'])
 				self.avg_entry_price = float(open_position['entryPrice'])
 				self.telegram_bot.send_message(f"Market {direction} order of size {round(size, self.quantity_precision)} "
 								               f"{self.ticker} filled at ${fill_price}. Market price at that time: ${mark_price}. "
 								   			   f"Current {direction} position size: {position_size} {self.ticker}.")
+		
 
 	def cancel_order(self, order_id):
 		order = self.get_order_info(order_id)   # futures
@@ -216,28 +285,49 @@ class ReverseDCA:
 					self.binance_client.futures_cancel_order(symbol=self.ticker, orderId=order_id)
 					# self.telegram_bot.send_message("Order canceled!")
 					break
-				except Exception as e:
-					self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
-
-					time.sleep(10)
+				except BinanceAPIException as e:
+					if e.code == -4003:
+						return
+					elif e.code == -1121:
+						return
+					elif e.code == -4045:
+						return
+					elif e.code == -2011:
+						return
+				# except Exception as e:
+				# 	self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
+				# 	pass
+					# time.sleep(10)
+				
 					
 	def place_stop_market_order(self, stop_price):
 		open_position = self.check_opened_position()
+		size = float(0)
 		if open_position != -1:
 			size = float(open_position['positionAmt'])
 
 		stop_price = round(stop_price, self.price_precision)
+		print("stopmarket1:----", stop_price)
+		# order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, 
+		# 											 type=FUTURE_ORDER_TYPE_STOP_MARKET, stopPrice=stop_price, 
+		# 											 quantity=abs(size), positionSide = self.stop_market_side)  
 		while True:
 			try:
 				order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, 
 													 type=FUTURE_ORDER_TYPE_STOP_MARKET, stopPrice=stop_price, 
 													 quantity=abs(size), positionSide = self.stop_market_side)   # futures 
 				break
+			except BinanceAPIException as e:
+				if e.code == -4045:
+					return
+				if e.code == -4006:
+					return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 
 				time.sleep(10)
-
+			
+		print("stopmarket2:----")
 		self.stop_order_id = order['orderId']
 		self.telegram_bot.send_message(f"Stop Loss Market {self.stop_market_direction} order of size "
 								       f"{round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
@@ -245,21 +335,34 @@ class ReverseDCA:
 
 	def place_take_profit_market_order(self, stop_price):
 		open_position = self.check_opened_position()
+		size = float(0)
 		if open_position != -1:
+			
 			size = float(open_position['positionAmt'])
-
+		else: 
+			pass
+		print("ok11")
 		stop_price = round(stop_price, self.price_precision)
+		# order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, 
+		# 											 type=FUTURE_ORDER_TYPE_TAKE_PROFIT_MARKET, stopPrice=stop_price, 
+		# 											 quantity=abs(size), positionSide = self.stop_market_side)
 		while True:
 			try:
 				order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, 
 													 type=FUTURE_ORDER_TYPE_TAKE_PROFIT_MARKET, stopPrice=stop_price, 
 													 quantity=abs(size), positionSide = self.stop_market_side)   # futures 
 				break
+			except BinanceAPIException as e:
+				if e.code == -4045:
+					return
+				if e.code == -4006:
+					self.telegram_bot.send_message(f"Exception! Stop price less than Zero!")	
+					return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				
 				time.sleep(10)
-
+		print("ok22")
 		self.stop_order_id = order['orderId']
 		self.telegram_bot.send_message(f"Take Profit Market {self.stop_market_direction} order of size "
 								 	   f"{round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
@@ -268,17 +371,23 @@ class ReverseDCA:
 	def place_initial_tpsl_orders(self):
 		if self.initial_direction.lower() == "buy":
 			self.take_profit_price = self.first_entry_price * (1 + self.take_profit_pct)
+			print(self.take_profit_price)
 			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
+			print('buy!!')
 		else:
 			self.take_profit_price = self.first_entry_price * (1 - self.take_profit_pct)
+			print(self.take_profit_price)
 			stop_loss_price = self.first_entry_price * (1 + self.stop_loss_pct)
-
+			print('sell!!')
 		self.telegram_bot.send_message(f"Placing initial Take profit order.")
-		# print(f"Placing initial Take profit order.")
+		print(f"Placing initial Take profit order.----------")
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
-		self.telegram_bot.send_message(f"Placing initial Stop loss order.")
-		# print(f"Placing initial Stop Loss order.")
+		print("stop_take_profit_id:-----",self.take_profit_order_id)
+		self.telegram_bot.send_message(f"Placing initial Stop loss order.") 
+		print(f"Placing initial Stop Loss order.------------") 
 		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price) 
+		print("stop_loss_order_id:-----",self.stop_loss_order_id) 
+		
 		
 	def reset(self):
 		self.first_entry_price = 0
@@ -410,7 +519,8 @@ class ReverseDCA:
 
 			diff_wma = 2 * wma_half - wma_full
 			hma = self.calculate_wma(diff_wma, sqrt_length)
-			
+			if hma.empty:
+				return None				
 			return hma.iloc[-1]
 	
 	def get_historical_klines(self, interval, start_str):
@@ -418,13 +528,142 @@ class ReverseDCA:
 			try:
 				klines = self.binance_client.futures_historical_klines(symbol=self.ticker, interval=interval, start_str=start_str)
 				return klines
+			except BinanceAPIException as e:
+				if e.code == -4003:
+					return
+				elif e.code == -1121:
+					return
+				elif e.code == -4045:
+					return
+				elif e.code == -2011:
+					return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Getting Historical Klines. Retrying... {e}")
 				time.sleep(10)
+				return
+			
 	
+	def get_order_check(self):
+		# getting historical candle data
+		sma_klines = self.get_historical_klines(self.get_tf_val(self.sma_tf), self.get_start_str(self.sma_tf, self.sma_period))	
+
+		if sma_klines is None:
+			return []			
+		
+
+		# getting historical candle data
+		hma1_klines = self.get_historical_klines(self.get_tf_val(self.hma1_tf), self.get_start_str(self.hma1_tf, self.hma1_period*3))
+		hma2_klines = self.get_historical_klines(self.get_tf_val(self.hma2_tf), self.get_start_str(self.hma2_tf, self.hma2_period*3))
+		hma3_klines = self.get_historical_klines(self.get_tf_val(self.hma3_tf), self.get_start_str(self.hma3_tf, self.hma3_period*3))
+		# Parse the closing prices
+		# hma1_prices = [float(kline[4]) for kline in hma1_klines][:-1]
+		# hma2_prices = [float(kline[4]) for kline in hma2_klines][:-1]
+		# hma3_prices = [float(kline[4]) for kline in hma3_klines][:-1]
+
+		if hma1_klines is None:  
+			hma1_prices = []  
+		else:  
+			hma1_prices = [float(kline[4]) for kline in hma1_klines][:-1]
+
+		if hma2_klines is None:  
+			hma2_prices = []  
+		else:  
+			hma2_prices = [float(kline[4]) for kline in hma2_klines][:-1]
+
+		if hma3_klines is None:  
+			hma3_prices = []  
+		else:  
+			hma3_prices = [float(kline[4]) for kline in hma3_klines][:-1]  
+		# Parse the closing prices
+		sma_prices = [float(kline[4]) for kline in sma_klines][:-1]
+		# Calculate current SMA and HMA values
+		current_sma = self.calculate_sma(sma_prices, self.sma_period, self.sma_tf)
+		current_hma1 = self.calculate_hma(hma1_prices, self.hma1_period, self.hma1_tf)
+		current_hma2 = self.calculate_hma(hma2_prices, self.hma2_period, self.hma2_tf)
+		current_hma3 = self.calculate_hma(hma3_prices, self.hma3_period, self.hma3_tf)
+		sma_last_closed_candle = 0 if self.sma_tf == "0" or self.sma_period == 0 else sma_prices[-1]
+		if not hma1_prices:
+			hma1_last_closed_candle = 0
+		else:
+			hma1_last_closed_candle = hma1_prices[-1]
+		if not hma2_prices:
+			hma2_last_closed_candle = 0
+		else:
+			hma2_last_closed_candle = hma2_prices[-1]
+		if not hma3_prices:
+			hma3_last_closed_candle = 0
+		else:
+			hma3_last_closed_candle = hma3_prices[-1]
+
+		if current_hma1 is None:
+			current_hma1 = 0
+		if current_hma2 is None:
+			current_hma2 = 0
+		if current_hma3 is None:
+			current_hma3 = 0
+		# hma1_last_closed_candle = 0 if self.hma1_tf == "0" or self.hma1_period == 0 else hma1_prices[-1]
+		# hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
+		# hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
+		
+		if self.avg_entry_price == 0:    # not in position
+			mark_price = self.get_mark_price()
+			if self.initial_direction.lower() == "buy":
+				if (sma_last_closed_candle > current_sma or current_sma == 0) and \
+					(hma1_last_closed_candle > current_hma1 or current_hma1 == 0) and \
+					(hma2_last_closed_candle > current_hma2 or current_hma2 == 0) and \
+					(hma3_last_closed_candle > current_hma3 or current_hma3 == 0):
+					
+					self.order_check = True
+				elif (sma_last_closed_candle < current_sma or hma1_last_closed_candle < current_hma1 or 
+						hma2_last_closed_candle < current_hma2 or hma3_last_closed_candle < current_hma3) and not self.filter_met:
+					
+					self.order_check = False
+			elif self.initial_direction.lower() == "sell":
+				if (sma_last_closed_candle < current_sma or current_sma == 0) and \
+				(hma1_last_closed_candle < current_hma1 or current_hma1 == 0) and \
+				(hma2_last_closed_candle < current_hma2 or current_hma2 == 0) and \
+				(hma3_last_closed_candle < current_hma3 or current_hma3 == 0) :
+					
+					self.order_check = True
+				elif (sma_last_closed_candle > current_sma or hma1_last_closed_candle > current_hma1 or 
+					hma2_last_closed_candle > current_hma2 or hma3_last_closed_candle > current_hma3) and not self.filter_met:
+					
+					self.order_check = False
+			else:
+				self.order_check = False
+				self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+				exit()
+		else:    # already in position
+			current_price = self.get_mark_price()
+			if self.initial_direction.lower() == "buy":
+				if (sma_last_closed_candle > current_sma or current_sma == 0) and \
+				(hma1_last_closed_candle > current_hma1 or current_hma1 == 0) and \
+				(hma2_last_closed_candle > current_hma2 or current_hma2 == 0) and \
+				(hma3_last_closed_candle > current_hma3 or current_hma3 == 0):
+					
+					self.order_check = True
+				else:
+					self.order_check = False
+			elif self.initial_direction.lower() == "sell":
+				if (sma_last_closed_candle < current_sma or current_sma == 0) and \
+				(hma1_last_closed_candle < current_hma1 or current_hma1 == 0) and \
+				(hma2_last_closed_candle < current_hma2 or current_hma2 == 0) and \
+				(hma3_last_closed_candle < current_hma3 or current_hma3 == 0) :
+					
+					self.order_check = True
+				else:
+					self.order_check = False
+			else:
+				self.order_check = False
+				self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
+				exit()
+	
+		return self.order_check
+
+
 	def run(self):
 		self.telegram_bot.send_message("--------------------------------------------------------\nRunning Reverse DCA Stategy...")
-		self.telegram_bot.send_message(self.setting_message)
+		
 
 		while True:
 			time.sleep(1)
@@ -448,32 +687,60 @@ class ReverseDCA:
 			current_hma1 = self.calculate_hma(hma1_prices, self.hma1_period, self.hma1_tf)
 			current_hma2 = self.calculate_hma(hma2_prices, self.hma2_period, self.hma2_tf)
 			current_hma3 = self.calculate_hma(hma3_prices, self.hma3_period, self.hma3_tf)
+
 			sma_last_closed_candle = 0 if self.sma_tf == "0" or self.sma_period == 0 else sma_prices[-1]
-			hma1_last_closed_candle = 0 if self.hma1_tf == "0" or self.hma1_period == 0 else hma1_prices[-1]
-			hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
-			hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
+			if not hma1_prices:
+				hma1_last_closed_candle = 0
+			else:
+				hma1_last_closed_candle = hma1_prices[-1]
+			if not hma2_prices:
+				hma2_last_closed_candle = 0
+			else:
+				hma2_last_closed_candle = hma2_prices[-1]
+			if not hma3_prices:
+				hma3_last_closed_candle = 0
+			else:
+				hma3_last_closed_candle = hma3_prices[-1]
+
+			if current_hma1 is None:
+				current_hma1 = 0
+			if current_hma2 is None:
+				current_hma2 = 0
+			if current_hma3 is None:
+				current_hma3 = 0
+			# hma1_last_closed_candle = 0 if self.hma1_tf == "0" or self.hma1_period == 0 else hma1_prices[-1]
+			# hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
+			# hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
 			
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()
-
+				if mark_price is None:
+					return
+				print(mark_price)
 				if self.initial_direction.lower() == "buy":
 					if (sma_last_closed_candle > current_sma or current_sma == 0) and \
 					   (hma1_last_closed_candle > current_hma1 or current_hma1 == 0) and \
 					   (hma2_last_closed_candle > current_hma2 or current_hma2 == 0) and \
 					   (hma3_last_closed_candle > current_hma3 or current_hma3 == 0):
 						
-						self.telegram_bot.send_message(f"Conditions have been met, so Starting the bot!!! \n"
+						self.telegram_bot.send_message(f"{self.ticker}-----> Conditions have been met, so Starting the bot!!! \n"
 									 				   f"SMA Last Candle's Price is {sma_last_closed_candle} and SMA_{self.sma_period} is {round(current_sma, 4)}. \n" 
 													   f"HMA 1 Last Candle's Price is {hma1_last_closed_candle} and HMA_{self.hma1_period} is {round(current_hma1, 4)}. \n"
 													   f"HMA 2 Last Candle's Price is {hma2_last_closed_candle} and HMA_{self.hma2_period} is {round(current_hma2, 4)}. \n"
 													   f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
+						
 						order_size = round(self.current_volume / mark_price, self.quantity_precision)
-						self.telegram_bot.send_message(f"****************************************************\n "
-									 				   f"First entry. Opening new position with base volume {order_size} {self.ticker}")
+						print(order_size)
+						# if order_size >= 0 and order_size <= 1:
+						# 	return
+						self.telegram_bot.send_message(f"{self.ticker}****************************************************\n "
+									 				   f"First entry. Opening new position with base volume {order_size} ")
 						self.place_market_order(order_size, self.initial_direction, mark_price)			
 						self.first_entry_price = self.filled_price
 						# Place initial take profit and stop loss orders.
 						self.place_initial_tpsl_orders()		
+						print("ok!!!!!!!")
+						return
 					elif (sma_last_closed_candle < current_sma or hma1_last_closed_candle < current_hma1 or 
 		   				 hma2_last_closed_candle < current_hma2 or hma3_last_closed_candle < current_hma3) and not self.filter_met:
 						
@@ -483,24 +750,31 @@ class ReverseDCA:
 													   f"HMA 2 Last Candle's Price is {hma2_last_closed_candle} and HMA_{self.hma2_period} is {round(current_hma2, 4)}. \n"
 													   f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
 						self.filter_met = True
+						return
 				elif self.initial_direction.lower() == "sell":
 					if (sma_last_closed_candle < current_sma or current_sma == 0) and \
 					   (hma1_last_closed_candle < current_hma1 or current_hma1 == 0) and \
 					   (hma2_last_closed_candle < current_hma2 or current_hma2 == 0) and \
 					   (hma3_last_closed_candle < current_hma3 or current_hma3 == 0) :
 						
-						self.telegram_bot.send_message(f"Conditions have been met, so Starting the bot!!! \n"
+						self.telegram_bot.send_message(f"{self.ticker}----->Conditions have been met, so Starting the bot!!! \n"
 									 				   f"SMA Last Candle's Price is {sma_last_closed_candle} and SMA_{self.sma_period} is {round(current_sma, 4)}. \n" 
 													   f"HMA 1 Last Candle's Price is {hma1_last_closed_candle} and HMA_{self.hma1_period} is {round(current_hma1, 4)}. \n"
 													   f"HMA 2 Last Candle's Price is {hma2_last_closed_candle} and HMA_{self.hma2_period} is {round(current_hma2, 4)}. \n"
 													   f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
+						
 						order_size = round(self.current_volume / mark_price, self.quantity_precision)
-						self.telegram_bot.send_message(f"****************************************************\n First entry."
-									 				   f"Opening new position with base volume {order_size} {self.ticker}")
+						print(order_size)
+						# if order_size >= 0 and order_size <= 2:
+						# 	return
+						self.telegram_bot.send_message(f"{self.ticker}****************************************************\n First entry."
+									 				   f"Opening new position with base volume {order_size}")
 						self.place_market_order(order_size, self.initial_direction, mark_price)			
 						self.first_entry_price = self.filled_price
 						# Place initial take profit and stop loss orders.
 						self.place_initial_tpsl_orders()
+						print("good!!!!!!!")
+						return
 					elif (sma_last_closed_candle > current_sma or hma1_last_closed_candle > current_hma1 or 
 		   				 hma2_last_closed_candle > current_hma2 or hma3_last_closed_candle > current_hma3) and not self.filter_met:
 						
@@ -510,6 +784,7 @@ class ReverseDCA:
 													   f"HMA 2 Last Candle's Price is {hma2_last_closed_candle} and HMA_{self.hma2_period} is {round(current_hma2, 4)}. \n"
 													   f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
 						self.filter_met = True
+						return
 				else:
 					self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
 					exit()
@@ -520,8 +795,9 @@ class ReverseDCA:
 					   (hma1_last_closed_candle > current_hma1 or current_hma1 == 0) and \
 					   (hma2_last_closed_candle > current_hma2 or current_hma2 == 0) and \
 					   (hma3_last_closed_candle > current_hma3 or current_hma3 == 0):
-						
+						self.telegram_bot.send_message(f"{self.ticker}----->tp_sl_increment!")
 						self.buy_check_tp_sl_increment(current_price)
+						break
 					else:
 						self.telegram_bot.send_message(f"Signals reversed. Closing positions!!! \n"
 									 				   f"SMA Last Candle's Price is {sma_last_closed_candle} and SMA_{self.sma_period} is {round(current_sma, 4)}. \n" 
@@ -530,13 +806,15 @@ class ReverseDCA:
 													   f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
 						self.close_position()
 						self.reset()
+						return
 				elif self.initial_direction.lower() == "sell":
 					if (sma_last_closed_candle < current_sma or current_sma == 0) and \
 					   (hma1_last_closed_candle < current_hma1 or current_hma1 == 0) and \
 					   (hma2_last_closed_candle < current_hma2 or current_hma2 == 0) and \
 					   (hma3_last_closed_candle < current_hma3 or current_hma3 == 0) :
-						
+						self.telegram_bot.send_message(f"{self.ticker}----->tp_sl_increment!")
 						self.sell_check_tp_sl_increment(current_price)
+						break
 					else:
 						self.telegram_bot.send_message(f"Signals reversed. Closing positions!!! \n"
 									 				   f"SMA Last Candle's Price is {sma_last_closed_candle} and SMA_{self.sma_period} is {round(current_sma, 4)}. \n" 
@@ -545,6 +823,7 @@ class ReverseDCA:
 													   f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
 						self.close_position()
 						self.reset()
+						return
 				else:
 					self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
 					exit()
