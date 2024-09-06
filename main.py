@@ -110,47 +110,51 @@ def get_my_pairs():
                                  stop_loss_pct, increment_pct, take_profit_pct, 
                                  setting_message, sma_period, sma_tf, hma1_period, 
                                  hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
-    pairs_num = 0
-    i = 0
-    top_strategy_volume_pairs.clear()
-    while (i <= 790):
-        ticker = top_volume_pairs[i][0]
-        setting_message  =  (
-                        f"Ticker = {ticker}\n"
-                        f"Initial Direction = {initial_direction}\n"
-                        f"Base Order Size = {base_order_size}\n"
-                        f"Volume Scale = {volume_scale}\n"
-                        f"Breakeven Percent = {breakeven_threshold_pct}\n"
-                        f"Stop Loss Percent = {stop_loss_pct}\n"
-                        f"Increment Percent = {increment_pct}\n"
-                        f"Take Profit Percent = {take_profit_pct}\n"
-                        f"SMA = {sma_period}, {sma_tf}\n"
-                        f"HMA 1 = {hma1_period}, {hma1_tf}\n"
-                        f"HMA 2 = {hma2_period}, {hma2_tf}\n"
-                        f"HMA 3 = {hma3_period}, {hma3_tf}"                            
-                    )
-        obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, 
-                            initial_direction, base_order_size, 
-                            volume_scale, breakeven_threshold_pct, 
-                            stop_loss_pct, increment_pct, take_profit_pct, 
-                            setting_message, sma_period, sma_tf, hma1_period, 
-                            hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
-        # obj_reverse_dca_next = ReverseDCA(binance_client, telegram_bot, top_volume_pairs[i+1][0], 
-        #                     initial_direction, base_order_size, 
-        #                     volume_scale, breakeven_threshold_pct, 
-        #                     stop_loss_pct, increment_pct, take_profit_pct, 
-        #                     setting_message, sma_period, sma_tf, hma1_period, 
-        #                     hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
-        print(obj_reverse_dca.get_order_check())
-        print(ticker)
-        if obj_reverse_dca.get_order_check()==True:
-            top_strategy_volume_pairs.append(ticker)
-            pairs_num = pairs_num + 1
-        if pairs_num > int(max_position) - 1 or i == 790:
-            return
-    
-        i = i + 1
-        print(pairs_num)
+    if int(max_position) < 1:
+        obj_reverse_dca.telegram_bot.send_message("Max-positions must be equal or bigger than 1.")
+        return
+    else:
+        pairs_num = 0
+        i = 0
+        top_strategy_volume_pairs.clear()
+        while (i <= 790):
+            ticker = top_volume_pairs[i][0]
+            setting_message  =  (
+                            f"Ticker = {ticker}\n"
+                            f"Initial Direction = {initial_direction}\n"
+                            f"Base Order Size = {base_order_size}\n"
+                            f"Volume Scale = {volume_scale}\n"
+                            f"Breakeven Percent = {breakeven_threshold_pct}\n"
+                            f"Stop Loss Percent = {stop_loss_pct}\n"
+                            f"Increment Percent = {increment_pct}\n"
+                            f"Take Profit Percent = {take_profit_pct}\n"
+                            f"SMA = {sma_period}, {sma_tf}\n"
+                            f"HMA 1 = {hma1_period}, {hma1_tf}\n"
+                            f"HMA 2 = {hma2_period}, {hma2_tf}\n"
+                            f"HMA 3 = {hma3_period}, {hma3_tf}"                            
+                        )
+            obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, 
+                                initial_direction, base_order_size, 
+                                volume_scale, breakeven_threshold_pct, 
+                                stop_loss_pct, increment_pct, take_profit_pct, 
+                                setting_message, sma_period, sma_tf, hma1_period, 
+                                hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
+            # obj_reverse_dca_next = ReverseDCA(binance_client, telegram_bot, top_volume_pairs[i+1][0], 
+            #                     initial_direction, base_order_size, 
+            #                     volume_scale, breakeven_threshold_pct, 
+            #                     stop_loss_pct, increment_pct, take_profit_pct, 
+            #                     setting_message, sma_period, sma_tf, hma1_period, 
+            #                     hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf)
+            print(obj_reverse_dca.get_order_check())
+            print(ticker)
+            if obj_reverse_dca.get_order_check()==True:
+                top_strategy_volume_pairs.append(ticker)
+                pairs_num = pairs_num + 1
+            if pairs_num > int(max_position) - 1 or i == 790:
+                return
+        
+            i = i + 1
+            print(pairs_num)
     
     
 
