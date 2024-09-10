@@ -248,6 +248,9 @@ class ReverseDCA:
 				elif e.code == -2011:
 					print('ggg2011')
 					return
+				elif e.code == -4061:
+					print('ggg4061')
+					return
 				elif e.code == -4164:
 					print('ggg4164')
 					# order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
@@ -548,7 +551,7 @@ class ReverseDCA:
 					return
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Getting Historical Klines. Retrying... {e}")
-				time.sleep(10)
+				# time.sleep(10)
 				return
 			
 	
@@ -605,11 +608,11 @@ class ReverseDCA:
 			hma3_last_closed_candle = hma3_prices[-1]
 
 		if current_hma1 is None:
-			current_hma1 = -1
+			current_hma1 = 0
 		if current_hma2 is None:
-			current_hma2 = -1
+			current_hma2 = 0
 		if current_hma3 is None:
-			current_hma3 = -1
+			current_hma3 = 0
 		# hma1_last_closed_candle = 0 if self.hma1_tf == "0" or self.hma1_period == 0 else hma1_prices[-1]
 		# hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
 		# hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
@@ -737,11 +740,11 @@ class ReverseDCA:
 				hma3_last_closed_candle = hma3_prices[-1]
 			print('hi7')
 			if current_hma1 is None:
-				current_hma1 = -1
+				current_hma1 = 0
 			if current_hma2 is None:
-				current_hma2 = -1
+				current_hma2 = 0
 			if current_hma3 is None:
-				current_hma3 = -1
+				current_hma3 = 0
 			print('hi8')
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()
@@ -938,11 +941,11 @@ class ReverseDCA:
 				hma3_last_closed_candle = hma3_prices[-1]
 			print('hi7')
 			if current_hma1 is None:
-				current_hma1 = -1
+				current_hma1 = 0
 			if current_hma2 is None:
-				current_hma2 = -1
+				current_hma2 = 0
 			if current_hma3 is None:
-				current_hma3 = -1
+				current_hma3 = 0
 			print('hi8')
 			if self.avg_entry_price == 0:    # not in position
 				mark_price = self.get_mark_price()

@@ -93,13 +93,13 @@ def get_my_pairs():
     telegram_channel_chat_id_2 = config['telegram']['channel_chat_id_2']
     telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_1, telegram_channel_chat_id_2)    
 
-    # binance_api_key = config['binance']['test_api_key']
-    # binance_api_secret = config['binance']['test_api_secret']
-    # binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
+    binance_api_key = config['binance']['test_api_key']
+    binance_api_secret = config['binance']['test_api_secret']
+    binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
 
-    binance_api_key = config['binance']['api_key']
-    binance_api_secret = config['binance']['api_secret']
-    binance_client = Client(binance_api_key, binance_api_secret)
+    # binance_api_key = config['binance']['api_key']
+    # binance_api_secret = config['binance']['api_secret']
+    # binance_client = Client(binance_api_key, binance_api_secret)
 
     # info = binance_client.get_account_api_permissions()
 
@@ -205,13 +205,13 @@ def main():
     telegram_channel_chat_id_2 = config['telegram']['channel_chat_id_2']
     telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_1, telegram_channel_chat_id_2)    
 
-    # binance_api_key = config['binance']['test_api_key']
-    # binance_api_secret = config['binance']['test_api_secret']
-    # binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
+    binance_api_key = config['binance']['test_api_key']
+    binance_api_secret = config['binance']['test_api_secret']
+    binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
 
-    binance_api_key = config['binance']['api_key']
-    binance_api_secret = config['binance']['api_secret']
-    binance_client = Client(binance_api_key, binance_api_secret)
+    # binance_api_key = config['binance']['api_key']
+    # binance_api_secret = config['binance']['api_secret']
+    # binance_client = Client(binance_api_key, binance_api_secret)
 
     # info = binance_client.get_account_api_permissions()
 
@@ -233,6 +233,7 @@ def main():
     if ticker == "auto":
 
         while True:
+            print('Hi!!!')
             # time.sleep(1)
             obj_reverse_dca.telegram_bot.send_message(f"---------------Start!------------------\n" f"Checking coins for Reverse DCA Strategy...")
             get_my_pairs()
