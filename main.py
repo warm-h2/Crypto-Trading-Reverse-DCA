@@ -95,8 +95,9 @@ def get_my_pairs():
 
     binance_api_key = config['binance']['test_api_key']
     binance_api_secret = config['binance']['test_api_secret']
-    binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
-
+    binance_client = Client(binance_api_key, binance_api_secret)
+    # print(binance_client.API_URL)
+    
     # binance_api_key = config['binance']['api_key']
     # binance_api_secret = config['binance']['api_secret']
     # binance_client = Client(binance_api_key, binance_api_secret)
@@ -159,7 +160,7 @@ def get_my_pairs():
     
 
 
-def main():
+def main(): 
 
     # Parsing settigns config file
     config = configparser.ConfigParser(inline_comment_prefixes=";")
@@ -205,15 +206,15 @@ def main():
     telegram_channel_chat_id_2 = config['telegram']['channel_chat_id_2']
     telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_1, telegram_channel_chat_id_2)    
 
-    binance_api_key = config['binance']['test_api_key']
-    binance_api_secret = config['binance']['test_api_secret']
-    binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
-
-    # binance_api_key = config['binance']['api_key']
-    # binance_api_secret = config['binance']['api_secret']
-    # binance_client = Client(binance_api_key, binance_api_secret)
-
-    # info = binance_client.get_account_api_permissions()
+    # binance_api_key = config['binance']['test_api_key']
+    # binance_api_secret = config['binance']['test_api_secret']
+    # binance_client = Client(binance_api_key, binance_api_secret, testnet=True)
+    # binance_client.API_URL = 'https://testnet.binance.vision/api/'
+    binance_api_key = config['binance']['api_key']
+    binance_api_secret = config['binance']['api_secret']
+    binance_client = Client(binance_api_key, binance_api_secret)
+    print(binance_client.API_URL)
+    info = binance_client.get_account_api_permissions()
 
     # initializing and running the strategy
     obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, 
@@ -245,7 +246,7 @@ def main():
             else:
                 obj_reverse_dca.telegram_bot.send_message("suitable coins found")
                 for ticker in top_strategy_volume_pairs:
-
+ 
                     setting_message  =  (
                                         f"Ticker = {ticker}\n"
                                         f"Initial Direction = {initial_direction}\n"

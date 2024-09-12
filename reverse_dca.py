@@ -38,8 +38,9 @@ class ReverseDCA:
 		self.hma3_tf = hma3_tf
 		self.filter_met = False
 		self.increment_num = 0
-		self.quantity_precision = 0
+		self.quantity_precision = 2
 		self.order_check = False
+		self.price_precision = 2
 		if self.initial_direction.lower() == "buy":
 			self.stop_market_direction = SIDE_SELL
 			self.stop_market_side = 'LONG'
@@ -58,7 +59,8 @@ class ReverseDCA:
 			# indicates the number of decimal places allowed for the quantity of a particular trading pair. 
 			self.quantity_precision = int(symbol_info['quantityPrecision']) 
 			# indicates the number of decimal places allowed for the price of a particular trading pair on Binance's futures market.
-			self.price_precision = int(symbol_info['pricePrecision']) 
+			# self.price_precision = int(symbol_info['pricePrecision'])
+			self.price_precision = 2 
 		# except BinanceAPIException as e:
 		# 	if e.code == -4003:
 		# 		return
@@ -118,8 +120,13 @@ class ReverseDCA:
 	def get_mark_price(self):
 		while True:
 			try:
-				
-				return float(self.binance_client.futures_symbol_ticker(symbol=self.ticker).get('price'))    # futures price
+				response = self.binance_client.futures_symbol_ticker(symbol=self.ticker)  
+				price = response.get('price')  
+				if price is None:  
+					response = self.binance_client.get_symbol_ticker(symbol=self.ticker)
+					return float(response.get('price'))
+				else:
+					return float(price)
 			except Exception as e:
 				# self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
 				time.sleep(10)
@@ -207,7 +214,12 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing Close position market order. Retrying... {e}")
 				time.sleep(10)
-			
+	
+	def get_open_positions(self, client):
+		account_info = client.futures_account()
+		positions = account_info['positions']
+		open_positions = [pos for pos in positions if float(pos['positionAmt'])]
+		return open_positions
 	
 	def place_market_order(self, size, direction, mark_price):
 		if direction.lower() == "buy":
@@ -220,12 +232,19 @@ class ReverseDCA:
 			self.telegram_bot.send_message(f"Invalid direction {direction}!")
 			# print(f"Invalid direction {direction}!")
 			return
-		# server_time =  self.binance_client.get_server_time()['serverTime']
-		# timestamp = int(time.time() * 1000) - 1000 
-		# print("server time:", server_time)
-		# order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
-		# 											 type=ORDER_TYPE_MARKET, quantity=float(abs(size)), positionSide=position_side, 
-		# 											 timestamp=server_time)
+		# open_positions = self.get_open_positions(self.binance_client)
+		# position_side = None
+		# if open_positions:
+		# 	position_side == 'LONG' if any(float(pos['positionAmt']) > 0 for pos in open_positions) else "SHORT"		
+			
+		# if direction == 'BUY':
+		# 	if position_side == "LONG":
+		# 		print('You already have long position. Cannot buy again.')
+		# 		return
+		# elif direction == 'SELL':
+		# 	if position_side == "SHORT":
+		# 		print('You already have short position. Cannot sell again.')
+		# 		return
 		# order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
 		# 											 type=ORDER_TYPE_MARKET, quantity=float(abs(size)), positionSide=position_side)
 		while True:
@@ -669,7 +688,29 @@ class ReverseDCA:
 				self.order_check = False
 				self.telegram_bot.send_message("Invalid initial direction provided in the config. Exiting!")
 				exit()
-	
+		# order = self.binance_client.futures_create_order(symbol=self.ticker, side=SIDE_SELL, 
+		# 											type=ORDER_TYPE_MARKET, quantity=float(20), positionSide='LONG')   # futures
+		# if direction.lower() == "buy":
+		# 	direction = SIDE_BUY
+		# 	position_side = 'LONG'
+		# elif direction.lower() == "sell":
+		# 	direction = SIDE_SELL
+		# 	position_side = 'SHORT'
+		# else:
+		# 	self.telegram_bot.send_message(f"Invalid direction {direction}!")
+		# 	# print(f"Invalid direction {direction}!")
+		# 	return
+		
+		
+		try:
+			order = self.binance_client.futures_create_order(symbol=self.ticker, side=SIDE_SELL, 
+													type=ORDER_TYPE_MARKET, quantity=float(20), positionSide='LONG')   # futures 
+			print("order:", order)
+		except BinanceAPIException as e:
+			if e.code == -1121:
+				self.order_check = False
+			# elif e.code == -2015:
+			# 	self.order_check = False
 		return self.order_check
 
 
@@ -974,7 +1015,7 @@ class ReverseDCA:
 									 				   f"First entry. Opening new position with base volume {order_size} ")
 						self.place_market_order(order_size, self.initial_direction, mark_price)			
 						self.first_entry_price = self.filled_price
-						# Place initial take profit and stop loss orders.
+						# Place initial take profit and stop loss order s.
 						self.place_initial_tpsl_orders()		
 						print("ok!!!!!!!")
 						
