@@ -34,7 +34,7 @@ def get_top_volume_pairs(api_key, limit=800):
         top_pairs = []
 
         for currency in data['data']:
-            if (currency['symbol'] != 'USDT') and (currency['symbol'] != 'FDUSD') and (currency['symbol'] != 'vBNB') and (currency['symbol'] != 'WETH') and (currency['symbol'] != 'PEPE') and (currency['symbol'] != 'WBTC'):
+            if (currency['symbol'] != 'USDT') and (currency['symbol'] != 'FDUSD') and (currency['symbol'] != 'vBNB') and (currency['symbol'] != 'LUNA') and (currency['symbol'] != 'WETH') and (currency['symbol'] != 'PEPE') and (currency['symbol'] != 'WBTC'):
                 pair_name = currency['symbol'] + 'USDT'
                 volume = currency['quote']['USD']['volume_24h']
                 top_pairs.append((pair_name, volume))
@@ -246,7 +246,7 @@ def main():
             else:
                 obj_reverse_dca.telegram_bot.send_message("suitable coins found")
                 for ticker in top_strategy_volume_pairs:
- 
+
                     setting_message  =  (
                                         f"Ticker = {ticker}\n"
                                         f"Initial Direction = {initial_direction}\n"
@@ -274,6 +274,7 @@ def main():
                     # obj_reverse_dca.run()
                 for process in processes:
                     process.join()
+            time.sleep(3600)
 
     else:        
         obj_reverse_dca.telegram_bot.send_message(f"---------------Start!------------------\n" f"Applying RDCA for {ticker} strategy...")
