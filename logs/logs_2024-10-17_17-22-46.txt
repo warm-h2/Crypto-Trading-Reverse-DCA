@@ -1,0 +1,82 @@
+2024-10-17 17:24:44,320 || Ticker = ADAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 17:24:47,517 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.3457 and HMA_40 is 0.3472. 
+HMA 2 Last Candle's Price is 0.3432 and HMA_60 is 0.3584. 
+HMA 3 Last Candle's Price is 0.3521 and HMA_80 is 0.3613. 
+
+2024-10-17 17:24:47,752 || ****************************************************
+ First entry.Opening new position with base volume 58.0 ADAUSDT
+2024-10-17 17:24:50,006 || Market SELL order of size 58.0 ADAUSDT filled at $0.3457. Market price at that time: $0.3459. Current SELL position size: -58.0 ADAUSDT.
+2024-10-17 17:24:50,240 || Placing initial Take profit order.
+2024-10-17 17:24:51,128 || Take Profit Market BUY order of size 58.0 ADAUSDT placed at 0.34224
+2024-10-17 17:24:51,375 || Placing initial Stop loss order.
+2024-10-17 17:24:52,269 || Stop Loss Market BUY order of size 58.0 ADAUSDT placed at 0.34656
+2024-10-17 17:24:52,537 || Ticker = NEARUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 17:24:56,900 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.744 and HMA_40 is 4.8452. 
+HMA 2 Last Candle's Price is 4.713 and HMA_60 is 4.9861. 
+HMA 3 Last Candle's Price is 4.943 and HMA_80 is 5.0527. 
+
+2024-10-17 17:24:57,282 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-17 17:24:59,929 || Market SELL order of size 4.0 NEARUSDT filled at $4.739. Market price at that time: $4.74. Current SELL position size: -4.0 NEARUSDT.
+2024-10-17 17:25:00,169 || Placing initial Take profit order.
+2024-10-17 17:25:01,619 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.6916
+2024-10-17 17:25:01,857 || Placing initial Stop loss order.
+2024-10-17 17:25:03,074 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.7508
+2024-10-17 17:25:03,313 || Ticker = AVAXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 17:25:06,593 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 27.547 and HMA_40 is 27.7052. 
+HMA 2 Last Candle's Price is 27.247 and HMA_60 is 28.7317. 
+HMA 3 Last Candle's Price is 28.007 and HMA_80 is 28.1675. 
+
+2024-10-17 17:25:06,848 || ****************************************************
+ First entry.Opening new position with base volume 1.0 AVAXUSDT
+2024-10-17 17:25:09,147 || Market SELL order of size 1.0 AVAXUSDT filled at $27.469. Market price at that time: $27.477. Current SELL position size: -1.0 AVAXUSDT.
+2024-10-17 17:25:09,612 || Placing initial Take profit order.
+2024-10-17 17:25:10,606 || Take Profit Market BUY order of size 1.0 AVAXUSDT placed at 27.1943
+2024-10-17 17:25:10,850 || Placing initial Stop loss order.
+2024-10-17 17:25:11,746 || Stop Loss Market BUY order of size 1.0 AVAXUSDT placed at 27.5377
+2024-10-17 17:27:56,068 || Unhandled exception
+Traceback (most recent call last):
+  File "C:\Mark\RDCA_new\main.py", line 195, in <module>
+    main()
+  File "C:\Mark\RDCA_new\main.py", line 103, in main
+    cur_bot.cancel_all_open_orders()
+AttributeError: 'ReverseDCA' object has no attribute 'cancel_all_open_orders'

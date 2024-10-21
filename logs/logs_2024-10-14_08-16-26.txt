@@ -1,0 +1,23 @@
+2024-10-14 08:16:38,026 || Ticker = TRBUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-14 08:16:41,222 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 60.58 and HMA_40 is 66.4839. 
+HMA 2 Last Candle's Price is 60.58 and HMA_60 is 61.3854. 
+HMA 3 Last Candle's Price is 60.58 and HMA_80 is 63.4501. 
+
+2024-10-14 08:16:41,292 || ****************************************************
+ First entry.Opening new position with base volume 0.3 TRBUSDT
+2024-10-14 08:16:42,053 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-10-14 08:16:52,364 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-10-14 08:16:57,100 || Keyboard interrupt detected, stopping the application.

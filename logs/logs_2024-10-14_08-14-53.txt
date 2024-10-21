@@ -1,0 +1,7 @@
+2024-10-14 08:15:08,171 || Unhandled exception
+Traceback (most recent call last):
+  File "D:\Mark\RDCA_new\main.py", line 183, in <module>
+    main()
+  File "D:\Mark\RDCA_new\main.py", line 143, in main
+    bot.telegram_bot.send_message(pair.setting_message)
+AttributeError: 'tuple' object has no attribute 'setting_message'

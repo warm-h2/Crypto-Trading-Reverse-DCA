@@ -1,0 +1,8 @@
+2024-10-14 13:05:46,770 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 13:05:57,921 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 13:06:08,991 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 13:06:20,068 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 13:06:31,065 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 13:06:42,105 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 13:06:52,635 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 13:06:56,103 || Keyboard interrupt detected, stopping the application.

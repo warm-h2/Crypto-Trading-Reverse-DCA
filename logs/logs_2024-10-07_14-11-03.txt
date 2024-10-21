@@ -1,0 +1,14 @@
+2024-10-07 14:12:26,041 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:12:37,581 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:12:48,649 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:12:59,822 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:13:10,957 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:13:22,077 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:13:33,146 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:13:44,240 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:13:54,848 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:14:05,941 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:14:17,030 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:14:28,134 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:14:39,203 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 14:14:50,284 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.

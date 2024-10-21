@@ -1,0 +1,80 @@
+2024-10-17 17:04:34,722 || Ticker = ADAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 17:04:37,940 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.3457 and HMA_40 is 0.3472. 
+HMA 2 Last Candle's Price is 0.3432 and HMA_60 is 0.3584. 
+HMA 3 Last Candle's Price is 0.3521 and HMA_80 is 0.3613. 
+
+2024-10-17 17:04:38,197 || ****************************************************
+ First entry.Opening new position with base volume 58.0 ADAUSDT
+2024-10-17 17:04:40,408 || Market SELL order of size 58.0 ADAUSDT filled at $0.3452. Market price at that time: $0.3453. Current SELL position size: -58.0 ADAUSDT.
+2024-10-17 17:04:40,641 || Placing initial Take profit order.
+2024-10-17 17:04:41,535 || Take Profit Market BUY order of size 58.0 ADAUSDT placed at 0.34175
+2024-10-17 17:04:41,810 || Placing initial Stop loss order.
+2024-10-17 17:04:42,669 || Stop Loss Market BUY order of size 58.0 ADAUSDT placed at 0.34606
+2024-10-17 17:04:42,910 || Ticker = NEARUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 17:04:46,383 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.744 and HMA_40 is 4.8452. 
+HMA 2 Last Candle's Price is 4.713 and HMA_60 is 4.9861. 
+HMA 3 Last Candle's Price is 4.943 and HMA_80 is 5.0527. 
+
+2024-10-17 17:04:46,624 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-17 17:04:48,798 || Market SELL order of size 4.0 NEARUSDT filled at $4.742. Market price at that time: $4.74. Current SELL position size: -4.0 NEARUSDT.
+2024-10-17 17:04:49,038 || Placing initial Take profit order.
+2024-10-17 17:04:49,909 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.6946
+2024-10-17 17:04:50,154 || Placing initial Stop loss order.
+2024-10-17 17:04:51,025 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.7539
+2024-10-17 17:04:51,273 || Ticker = AVAXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 17:04:54,430 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 27.547 and HMA_40 is 27.7052. 
+HMA 2 Last Candle's Price is 27.247 and HMA_60 is 28.7317. 
+HMA 3 Last Candle's Price is 28.007 and HMA_80 is 28.1675. 
+
+2024-10-17 17:04:54,682 || ****************************************************
+ First entry.Opening new position with base volume 1.0 AVAXUSDT
+2024-10-17 17:04:56,924 || Market SELL order of size 1.0 AVAXUSDT filled at $27.463. Market price at that time: $27.502. Current SELL position size: -1.0 AVAXUSDT.
+2024-10-17 17:04:57,286 || Placing initial Take profit order.
+2024-10-17 17:04:58,360 || Take Profit Market BUY order of size 1.0 AVAXUSDT placed at 27.1884
+2024-10-17 17:04:58,589 || Placing initial Stop loss order.
+2024-10-17 17:04:59,520 || Stop Loss Market BUY order of size 1.0 AVAXUSDT placed at 27.5317
+2024-10-17 17:12:57,000 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-17 17:13:07,319 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-17 17:13:17,565 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-17 17:13:27,804 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-17 17:13:29,380 || Keyboard interrupt detected, stopping the application.

@@ -1,0 +1,333 @@
+2024-10-21 00:09:55,527 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:09:57,776 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:09:57,915 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:09:58,261 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:09:58,315 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:10:00,566 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:10:00,638 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:10:00,953 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:01,019 || Ticker = SAGAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:10:03,229 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:10:03,305 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:10:03,640 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:06,879 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:10:06,991 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:10:07,404 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:09,654 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:10:09,725 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:10:10,029 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:12,239 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:10:12,305 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:10:12,602 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:15,908 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:10:16,041 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:10:16,359 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:18,586 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:10:18,688 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:10:19,033 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:21,276 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:10:21,341 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:10:21,807 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:25,019 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:10:25,119 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:10:25,436 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:27,649 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:10:27,715 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:10:28,009 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:30,241 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:10:30,394 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:10:30,726 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:34,030 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:10:34,098 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:10:34,412 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:36,679 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:10:36,739 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:10:37,083 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:39,280 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:10:39,366 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:10:39,672 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:42,899 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:10:42,965 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:10:43,273 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:45,508 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:10:45,573 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:10:45,877 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:48,081 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:10:48,175 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:10:48,482 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:51,737 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:10:51,813 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:10:52,122 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:54,364 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:10:54,446 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:10:54,754 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:10:56,969 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:10:57,081 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:10:57,416 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:00,846 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:11:00,911 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:11:01,243 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:03,446 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:11:03,522 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:11:03,829 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:06,079 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:11:06,212 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:11:06,555 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:09,905 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:11:09,975 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:11:10,291 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:12,533 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:11:12,724 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:11:13,082 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:15,294 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:11:15,348 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:11:15,723 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:18,918 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:11:18,984 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:11:19,292 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:21,499 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:11:21,573 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:11:21,877 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:24,077 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:11:24,146 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:11:24,498 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:27,702 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:11:27,756 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:11:28,072 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:30,285 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:11:30,349 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:11:30,672 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-10-21 00:11:32,885 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:11:32,950 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:11:33,021 || Keyboard interrupt detected, stopping the application.

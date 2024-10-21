@@ -1,0 +1,99 @@
+2024-10-19 12:43:47,592 || Ticker = XRPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 12:43:51,306 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5465 and HMA_40 is 0.5466. 
+HMA 2 Last Candle's Price is 0.5461 and HMA_60 is 0.5501. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 12:43:51,553 || ****************************************************
+ First entry.Opening new position with base volume 36.6 XRPUSDT
+2024-10-19 12:43:52,089 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 85.250.9.96
+2024-10-19 12:43:52,355 || Ticker = SUIUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 12:43:55,816 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.0764 and HMA_40 is 2.0999. 
+HMA 2 Last Candle's Price is 2.0602 and HMA_60 is 2.0614. 
+HMA 3 Last Candle's Price is 2.1242 and HMA_80 is 2.1261. 
+
+2024-10-19 12:43:56,102 || ****************************************************
+ First entry.Opening new position with base volume 9.7 SUIUSDT
+2024-10-19 12:43:57,241 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 85.250.9.96
+2024-10-19 12:43:57,512 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 12:44:02,286 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15807 and HMA_40 is 0.1582. 
+HMA 2 Last Candle's Price is 0.15794 and HMA_60 is 0.1586. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 12:44:02,565 || ****************************************************
+ First entry.Opening new position with base volume 127.0 TRXUSDT
+2024-10-19 12:44:03,125 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 85.250.9.96
+2024-10-19 12:44:08,112 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5465 and HMA_40 is 0.5466. 
+HMA 2 Last Candle's Price is 0.5461 and HMA_60 is 0.5501. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 12:44:08,420 || ****************************************************
+ First entry.Opening new position with base volume 36.6 XRPUSDT
+2024-10-19 12:44:08,988 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 85.250.9.96
+2024-10-19 12:44:12,068 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.0764 and HMA_40 is 2.0999. 
+HMA 2 Last Candle's Price is 2.0602 and HMA_60 is 2.0614. 
+HMA 3 Last Candle's Price is 2.1242 and HMA_80 is 2.1261. 
+
+2024-10-19 12:44:12,384 || ****************************************************
+ First entry.Opening new position with base volume 9.7 SUIUSDT
+2024-10-19 12:44:12,971 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 85.250.9.96
+2024-10-19 12:44:16,289 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15807 and HMA_40 is 0.1582. 
+HMA 2 Last Candle's Price is 0.15794 and HMA_60 is 0.1586. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 12:44:16,580 || ****************************************************
+ First entry.Opening new position with base volume 127.0 TRXUSDT
+2024-10-19 12:44:17,181 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 85.250.9.96
+2024-10-19 12:44:22,237 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5465 and HMA_40 is 0.5466. 
+HMA 2 Last Candle's Price is 0.5461 and HMA_60 is 0.5501. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 12:44:22,498 || ****************************************************
+ First entry.Opening new position with base volume 36.6 XRPUSDT
+2024-10-19 12:44:23,025 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 85.250.9.96

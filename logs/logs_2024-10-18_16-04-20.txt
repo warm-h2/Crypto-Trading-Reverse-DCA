@@ -1,0 +1,86 @@
+2024-10-18 16:06:50,421 || Ticker = XRPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 16:06:54,608 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5439 and HMA_40 is 0.5447. 
+HMA 2 Last Candle's Price is 0.5463 and HMA_60 is 0.5497. 
+HMA 3 Last Candle's Price is 0.5439 and HMA_80 is 0.5543. 
+
+2024-10-18 16:06:54,875 || ****************************************************
+ First entry.Opening new position with base volume 36.8 XRPUSDT
+2024-10-18 16:06:57,501 || Market SELL order of size 36.8 XRPUSDT filled at $0.5441. Market price at that time: $0.5441. Current SELL position size: -36.8 XRPUSDT.
+2024-10-18 16:06:57,728 || Placing initial Take profit order.
+2024-10-18 16:06:58,973 || Take Profit Market BUY order of size 36.8 XRPUSDT placed at 0.5387
+2024-10-18 16:06:59,216 || Placing initial Stop loss order.
+2024-10-18 16:07:00,819 || Stop Loss Market BUY order of size 36.8 XRPUSDT placed at 0.5455
+2024-10-18 16:07:01,087 || Ticker = ADAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 16:07:05,388 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.344 and HMA_40 is 0.3458. 
+HMA 2 Last Candle's Price is 0.3461 and HMA_60 is 0.3531. 
+HMA 3 Last Candle's Price is 0.3431 and HMA_80 is 0.3612. 
+
+2024-10-18 16:07:05,662 || ****************************************************
+ First entry.Opening new position with base volume 58.0 ADAUSDT
+2024-10-18 16:07:07,874 || Market SELL order of size 58.0 ADAUSDT filled at $0.3451. Market price at that time: $0.3451. Current SELL position size: -58.0 ADAUSDT.
+2024-10-18 16:07:08,114 || Placing initial Take profit order.
+2024-10-18 16:07:09,030 || Take Profit Market BUY order of size 58.0 ADAUSDT placed at 0.34165
+2024-10-18 16:07:09,284 || Placing initial Stop loss order.
+2024-10-18 16:07:10,183 || Stop Loss Market BUY order of size 58.0 ADAUSDT placed at 0.34596
+2024-10-18 16:07:10,423 || Ticker = NEARUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 16:07:22,539 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.74 and HMA_40 is 4.7797. 
+HMA 2 Last Candle's Price is 4.776 and HMA_60 is 4.9385. 
+HMA 3 Last Candle's Price is 4.768 and HMA_80 is 5.0704. 
+
+2024-10-18 16:07:22,834 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-18 16:07:26,484 || Market SELL order of size 4.0 NEARUSDT filled at $4.766. Market price at that time: $4.768. Current SELL position size: -4.0 NEARUSDT.
+2024-10-18 16:07:26,717 || Placing initial Take profit order.
+2024-10-18 16:07:27,680 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.7183
+2024-10-18 16:07:27,950 || Placing initial Stop loss order.
+2024-10-18 16:07:28,831 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.7779
+2024-10-18 16:07:59,179 || Unhandled exception
+Traceback (most recent call last):
+  File "C:\Mark\RDCA_new\main.py", line 195, in <module>
+    main()
+  File "C:\Mark\RDCA_new\main.py", line 152, in main
+    ticker.run()
+  File "C:\Mark\RDCA_new\reverse_dca.py", line 603, in run
+    self.sell_check_tp_sl_increment(current_price)
+  File "C:\Mark\RDCA_new\reverse_dca.py", line 352, in sell_check_tp_sl_increment
+    tp_order_status = take_profit_order['status'].lower()
+TypeError: string indices must be integers

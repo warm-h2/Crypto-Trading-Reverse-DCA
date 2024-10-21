@@ -1,0 +1,133 @@
+2024-10-17 14:57:32,785 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:57:35,921 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5922 and HMA_40 is 0.5984. 
+HMA 2 Last Candle's Price is 0.5979 and HMA_60 is 0.6284. 
+HMA 3 Last Candle's Price is 0.6118 and HMA_80 is 0.6346. 
+
+2024-10-17 14:57:36,164 || ****************************************************
+ First entry.Opening new position with base volume 34.0 ZETAUSDT
+2024-10-17 14:57:38,391 || Market SELL order of size 34.0 ZETAUSDT filled at $0.5863. Market price at that time: $0.5866. Current SELL position size: -34.0 ZETAUSDT.
+2024-10-17 14:57:38,643 || Placing initial Take profit order.
+2024-10-17 14:57:39,566 || Take Profit Market BUY order of size 34.0 ZETAUSDT placed at 0.539396
+2024-10-17 14:57:39,833 || Placing initial Stop loss order.
+2024-10-17 14:57:40,714 || Stop Loss Market BUY order of size 34.0 ZETAUSDT placed at 0.598026
+2024-10-17 14:57:41,971 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:57:46,696 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:57:51,473 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:57:56,203 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:58:00,908 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:58:05,663 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:58:10,422 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:58:15,218 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 14:58:19,996 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D

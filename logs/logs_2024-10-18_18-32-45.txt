@@ -1,0 +1,670 @@
+2024-10-18 18:36:19,550 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:36:22,883 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 570.98 and HMA_40 is 576.8143. 
+HMA 2 Last Candle's Price is 572.09 and HMA_60 is 587.3003. 
+HMA 3 Last Candle's Price is 578.1 and HMA_80 is 629.7921. 
+
+2024-10-18 18:36:23,149 || ****************************************************
+ First entry.Opening new position with base volume 0.035 TAOUSDT
+2024-10-18 18:36:25,449 || Market SELL order of size 0.035 TAOUSDT filled at $575.05. Market price at that time: $575.03. Current SELL position size: -0.035 TAOUSDT.
+2024-10-18 18:36:25,701 || Placing initial Take profit order.
+2024-10-18 18:36:26,627 || Take Profit Market BUY order of size 0.035 TAOUSDT placed at 569.3
+2024-10-18 18:36:26,886 || Placing initial Stop loss order.
+2024-10-18 18:36:27,811 || Stop Loss Market BUY order of size 0.035 TAOUSDT placed at 576.49
+2024-10-18 18:36:28,096 || Ticker = UNIUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:36:31,334 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 7.409 and HMA_40 is 7.4332. 
+HMA 2 Last Candle's Price is 7.397 and HMA_60 is 7.5848. 
+HMA 3 Last Candle's Price is 7.345 and HMA_80 is 7.5462. 
+
+2024-10-18 18:36:31,617 || ****************************************************
+ First entry.Opening new position with base volume 3.0 UNIUSDT
+2024-10-18 18:36:33,860 || Market SELL order of size 3.0 UNIUSDT filled at $7.473. Market price at that time: $7.476. Current SELL position size: -3.0 UNIUSDT.
+2024-10-18 18:36:34,183 || Placing initial Take profit order.
+2024-10-18 18:36:35,123 || Take Profit Market BUY order of size 3.0 UNIUSDT placed at 7.3983
+2024-10-18 18:36:35,427 || Placing initial Stop loss order.
+2024-10-18 18:36:36,349 || Stop Loss Market BUY order of size 3.0 UNIUSDT placed at 7.4917
+2024-10-18 18:36:36,612 || Ticker = SAGAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:36:40,115 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.8773 and HMA_40 is 2.8914. 
+HMA 2 Last Candle's Price is 2.8508 and HMA_60 is 3.0253. 
+HMA 3 Last Candle's Price is 2.8351 and HMA_80 is 2.8394. 
+
+2024-10-18 18:36:40,392 || ****************************************************
+ First entry.Opening new position with base volume 6.8 SAGAUSDT
+2024-10-18 18:36:42,608 || Market SELL order of size 6.8 SAGAUSDT filled at $2.9393. Market price at that time: $2.9369. Current SELL position size: -6.8 SAGAUSDT.
+2024-10-18 18:36:42,871 || Placing initial Take profit order.
+2024-10-18 18:36:43,741 || Take Profit Market BUY order of size 6.8 SAGAUSDT placed at 2.909907
+2024-10-18 18:36:44,062 || Placing initial Stop loss order.
+2024-10-18 18:36:44,968 || Stop Loss Market BUY order of size 6.8 SAGAUSDT placed at 2.9466482
+2024-10-18 18:41:08,065 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:41:11,427 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 570.98 and HMA_40 is 576.8143. 
+HMA 2 Last Candle's Price is 572.09 and HMA_60 is 587.3003. 
+HMA 3 Last Candle's Price is 578.1 and HMA_80 is 629.7921. 
+
+2024-10-18 18:41:11,752 || ****************************************************
+ First entry.Opening new position with base volume 0.035 TAOUSDT
+2024-10-18 18:41:14,361 || Market SELL order of size 0.035 TAOUSDT filled at $575.91. Market price at that time: $576.05. Current SELL position size: -0.035 TAOUSDT.
+2024-10-18 18:41:14,604 || Placing initial Take profit order.
+2024-10-18 18:41:15,966 || Take Profit Market BUY order of size 0.035 TAOUSDT placed at 570.15
+2024-10-18 18:41:16,236 || Placing initial Stop loss order.
+2024-10-18 18:41:17,071 || Stop Loss Market BUY order of size 0.035 TAOUSDT placed at 577.35
+2024-10-18 18:41:17,328 || Ticker = UNIUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:41:20,683 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 7.409 and HMA_40 is 7.4332. 
+HMA 2 Last Candle's Price is 7.397 and HMA_60 is 7.5848. 
+HMA 3 Last Candle's Price is 7.345 and HMA_80 is 7.5462. 
+
+2024-10-18 18:41:20,915 || ****************************************************
+ First entry.Opening new position with base volume 3.0 UNIUSDT
+2024-10-18 18:41:23,530 || Market SELL order of size 3.0 UNIUSDT filled at $7.489. Market price at that time: $7.487. Current SELL position size: -3.0 UNIUSDT.
+2024-10-18 18:41:23,781 || Placing initial Take profit order.
+2024-10-18 18:41:25,173 || Take Profit Market BUY order of size 3.0 UNIUSDT placed at 7.4141
+2024-10-18 18:41:25,430 || Placing initial Stop loss order.
+2024-10-18 18:41:26,786 || Stop Loss Market BUY order of size 3.0 UNIUSDT placed at 7.5077
+2024-10-18 18:41:27,080 || Ticker = SAGAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:41:30,441 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.8773 and HMA_40 is 2.8914. 
+HMA 2 Last Candle's Price is 2.8508 and HMA_60 is 3.0253. 
+HMA 3 Last Candle's Price is 2.8351 and HMA_80 is 2.8394. 
+
+2024-10-18 18:41:30,769 || ****************************************************
+ First entry.Opening new position with base volume 6.8 SAGAUSDT
+2024-10-18 18:41:33,492 || Market SELL order of size 6.8 SAGAUSDT filled at $2.94826176. Market price at that time: $2.9503. Current SELL position size: -6.8 SAGAUSDT.
+2024-10-18 18:41:33,744 || Placing initial Take profit order.
+2024-10-18 18:41:34,555 || Take Profit Market BUY order of size 6.8 SAGAUSDT placed at 2.9187791
+2024-10-18 18:41:34,844 || Placing initial Stop loss order.
+2024-10-18 18:41:35,672 || Stop Loss Market BUY order of size 6.8 SAGAUSDT placed at 2.9556324
+2024-10-18 18:46:26,019 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:46:29,407 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 570.98 and HMA_40 is 576.8143. 
+HMA 2 Last Candle's Price is 572.09 and HMA_60 is 587.3003. 
+HMA 3 Last Candle's Price is 578.1 and HMA_80 is 629.7921. 
+
+2024-10-18 18:46:29,634 || ****************************************************
+ First entry.Opening new position with base volume 0.034 TAOUSDT
+2024-10-18 18:46:32,301 || Market SELL order of size 0.034 TAOUSDT filled at $580.49. Market price at that time: $580.56. Current SELL position size: -0.034 TAOUSDT.
+2024-10-18 18:46:32,546 || Placing initial Take profit order.
+2024-10-18 18:46:33,371 || Take Profit Market BUY order of size 0.034 TAOUSDT placed at 574.69
+2024-10-18 18:46:33,645 || Placing initial Stop loss order.
+2024-10-18 18:46:34,999 || Stop Loss Market BUY order of size 0.034 TAOUSDT placed at 581.94
+2024-10-18 18:46:35,246 || Ticker = UNIUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:46:38,578 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 7.409 and HMA_40 is 7.4332. 
+HMA 2 Last Candle's Price is 7.397 and HMA_60 is 7.5848. 
+HMA 3 Last Candle's Price is 7.345 and HMA_80 is 7.5462. 
+
+2024-10-18 18:46:38,838 || ****************************************************
+ First entry.Opening new position with base volume 3.0 UNIUSDT
+2024-10-18 18:46:41,477 || Market SELL order of size 3.0 UNIUSDT filled at $7.493. Market price at that time: $7.495. Current SELL position size: -3.0 UNIUSDT.
+2024-10-18 18:46:41,716 || Placing initial Take profit order.
+2024-10-18 18:46:43,620 || Take Profit Market BUY order of size 3.0 UNIUSDT placed at 7.4181
+2024-10-18 18:46:43,893 || Placing initial Stop loss order.
+2024-10-18 18:46:44,695 || Stop Loss Market BUY order of size 3.0 UNIUSDT placed at 7.5117
+2024-10-18 18:46:44,976 || Ticker = SAGAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-18 18:46:48,123 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.8773 and HMA_40 is 2.8914. 
+HMA 2 Last Candle's Price is 2.8508 and HMA_60 is 3.0253. 
+HMA 3 Last Candle's Price is 2.8351 and HMA_80 is 2.8394. 
+
+2024-10-18 18:46:48,407 || ****************************************************
+ First entry.Opening new position with base volume 6.8 SAGAUSDT
+2024-10-18 18:46:50,629 || Market SELL order of size 6.8 SAGAUSDT filled at $2.9367. Market price at that time: $2.9393. Current SELL position size: -6.8 SAGAUSDT.
+2024-10-18 18:46:50,886 || Placing initial Take profit order.
+2024-10-18 18:46:51,946 || Take Profit Market BUY order of size 6.8 SAGAUSDT placed at 2.907333
+2024-10-18 18:46:52,219 || Placing initial Stop loss order.
+2024-10-18 18:46:53,164 || Stop Loss Market BUY order of size 6.8 SAGAUSDT placed at 2.9440417
+2024-10-18 18:47:52,092 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-18 18:48:07,566 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:09,859 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:12,188 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:14,456 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:16,709 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:19,018 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:21,331 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:23,687 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:25,932 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:28,226 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:30,530 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:32,886 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:35,141 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:37,390 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:39,657 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:41,921 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:44,233 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:46,512 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:48,779 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:51,051 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:53,364 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:55,633 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:48:57,894 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:00,195 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:02,565 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:04,805 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:07,074 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:09,335 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:11,598 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:13,917 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:16,175 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:18,513 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:20,763 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:23,016 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:25,288 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:27,543 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:29,808 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:32,072 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:34,317 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:36,558 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:38,805 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:41,077 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:43,370 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:45,636 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:47,913 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:50,189 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:52,428 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:54,678 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:56,952 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:49:59,264 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:01,540 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:03,901 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:06,319 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:08,578 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:10,838 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:13,102 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:15,354 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:17,622 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:19,951 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:22,219 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:24,503 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:26,790 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:29,110 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:31,410 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:33,649 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:35,893 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:38,226 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:40,550 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:42,802 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:45,050 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:47,291 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:49,538 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:51,837 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:54,231 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:56,519 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:50:58,822 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:01,147 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:03,453 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:05,721 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:08,022 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:10,320 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:12,619 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:14,964 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:17,230 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:19,511 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:21,761 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:24,022 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:26,282 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:28,544 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:30,905 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:33,173 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:35,481 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:37,721 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:39,986 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:42,266 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:44,547 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:46,836 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:49,081 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:51,344 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:53,677 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:55,954 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:51:58,208 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:00,450 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:02,691 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:04,939 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:07,191 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:09,522 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:11,819 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:14,104 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:16,373 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:18,624 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:20,891 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:23,246 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:25,511 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:27,842 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:30,306 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:32,563 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:34,843 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:37,124 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:39,430 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:41,681 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:43,941 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:46,253 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:48,506 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:50,766 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:53,102 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:55,337 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:57,634 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:52:59,899 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:02,233 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:04,579 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:06,828 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:09,295 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:11,570 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:13,852 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:16,117 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:18,387 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:20,664 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:22,919 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:25,155 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:27,447 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:29,696 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:31,998 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:34,256 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:36,529 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:38,788 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:41,060 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:43,321 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:45,574 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:47,836 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:50,120 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:52,494 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:54,783 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:57,128 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:53:59,420 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:01,688 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:04,014 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:06,273 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:08,570 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:10,876 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:13,199 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:15,519 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:17,809 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:20,073 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:22,349 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:24,583 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:26,824 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:29,093 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:31,344 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:33,689 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:36,037 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:38,293 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:40,643 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:42,912 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:45,205 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:47,558 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:49,831 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:52,096 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:54,362 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:56,634 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:54:58,923 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:01,251 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:03,522 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:05,786 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:08,069 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:10,354 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:12,627 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:14,876 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:17,187 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:19,485 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:21,803 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:24,142 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:26,377 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:28,641 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:30,910 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:33,156 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:35,488 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:37,754 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:40,009 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:42,268 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:44,686 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:46,927 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:49,175 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:51,482 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:53,753 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:56,019 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:55:58,312 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:00,550 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:02,806 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:05,088 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:07,347 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:09,698 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:11,992 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:14,251 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:16,506 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:18,773 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:21,143 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:23,472 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:25,728 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:27,998 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:30,270 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:32,516 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:34,885 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:37,197 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:39,445 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:41,700 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:43,980 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:46,257 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:48,496 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:50,785 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:53,029 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:55,354 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:56:57,808 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:00,086 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:02,473 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:04,751 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:07,011 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:09,312 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:11,576 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:13,827 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:16,130 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:18,415 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:20,675 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:22,933 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:25,188 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:27,431 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:29,723 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:32,009 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:34,262 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:36,526 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:38,836 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:41,226 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:43,481 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:45,809 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:48,088 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:50,352 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:52,598 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:54,839 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:57,254 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:57:59,578 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:01,837 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:04,122 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:06,419 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:08,688 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:10,944 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:13,306 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:15,570 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:17,821 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:20,095 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:22,474 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:24,731 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:26,995 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:29,236 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:31,504 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:33,759 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:36,079 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:38,329 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:40,579 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:42,827 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:45,088 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:47,391 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:49,651 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:51,995 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:54,359 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:56,720 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:58:58,974 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:01,304 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:03,612 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:05,863 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:08,129 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:10,426 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:12,709 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:14,991 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:17,258 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:19,589 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:21,834 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:24,140 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:26,426 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:28,687 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:30,937 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:33,227 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:35,459 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:37,796 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:40,089 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:42,392 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:44,651 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:46,915 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:49,195 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:51,445 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:53,703 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:55,996 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 18:59:58,260 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:00,544 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:02,844 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:05,114 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:07,374 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:09,682 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:11,959 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:14,275 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:16,585 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:18,848 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:21,143 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:23,453 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:25,707 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:27,962 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:30,308 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:32,564 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:34,826 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:37,164 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:39,415 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:41,669 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:43,910 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:46,261 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:48,519 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:50,895 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:53,138 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:55,411 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:57,656 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:00:59,990 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:02,285 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:04,584 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:06,848 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:09,099 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:11,671 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:13,948 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:16,187 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:18,465 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:20,715 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:23,002 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:25,265 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:27,537 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:29,838 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:32,114 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:34,391 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:36,817 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:39,082 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:41,379 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:43,646 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:45,884 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:48,118 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:50,373 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:52,624 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:54,912 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:57,162 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:01:59,420 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:01,730 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:04,069 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:06,393 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:08,740 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:10,992 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:13,252 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:15,527 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:17,834 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:20,291 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:22,553 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:24,856 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:27,116 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:29,369 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:31,642 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:33,924 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:36,228 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:38,518 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:40,766 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:43,068 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:45,390 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:47,746 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:49,987 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:52,384 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:54,675 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:56,931 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:02:59,177 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:01,440 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:03,718 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:06,048 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:08,368 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:10,644 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:12,884 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:15,266 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:17,537 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:19,792 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:22,055 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:24,361 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:26,622 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:28,939 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:31,188 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:33,453 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:35,719 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:38,025 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:40,386 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:43,454 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:45,745 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:48,022 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:50,266 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:52,530 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:54,774 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:57,045 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:03:59,298 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:01,538 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:03,827 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:06,125 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:08,390 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:10,661 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:13,066 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:15,327 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:17,681 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:19,967 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:22,255 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:24,588 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:26,942 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:29,209 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:31,468 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:33,808 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:36,084 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:38,342 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:40,603 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:42,906 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:45,147 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:47,396 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:49,643 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:51,870 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:54,158 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:56,388 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:58,674 || Exception! Placing Close position market order. Retrying... local variable 'side' referenced before assignment
+2024-10-18 19:04:59,102 || Keyboard interrupt detected, stopping the application.

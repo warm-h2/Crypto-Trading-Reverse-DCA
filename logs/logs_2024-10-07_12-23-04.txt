@@ -1,0 +1,2 @@
+2024-10-07 12:24:27,332 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-07 12:24:38,422 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.

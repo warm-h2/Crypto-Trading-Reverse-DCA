@@ -1,0 +1,90 @@
+2024-10-19 12:50:04,912 || Ticker = USDCUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 12:50:07,427 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.999401 and HMA_40 is 0.9994. 
+HMA 2 Last Candle's Price is 0.99945 and HMA_60 is 0.9996. 
+HMA 3 Last Candle's Price is 0.999456 and HMA_80 is 0.9998. 
+
+2024-10-19 12:50:07,598 || ****************************************************
+ First entry.Opening new position with base volume 20.0 USDCUSDT
+2024-10-19 12:50:09,633 || Market SELL order of size 20.0 USDCUSDT filled at $0.999342. Market price at that time: $0.999343. Current SELL position size: -20.0 USDCUSDT.
+2024-10-19 12:50:09,721 || Placing initial Take profit order.
+2024-10-19 12:50:10,386 || Take Profit Market BUY order of size 20.0 USDCUSDT placed at 0.9943453
+2024-10-19 12:50:10,467 || Placing initial Stop loss order.
+2024-10-19 12:50:11,101 || Stop Loss Market BUY order of size 20.0 USDCUSDT placed at 1.0005912
+2024-10-19 12:50:11,244 || Ticker = XRPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 12:50:13,809 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5407 and HMA_40 is 0.5449. 
+HMA 2 Last Candle's Price is 0.5443 and HMA_60 is 0.5498. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 12:50:13,903 || ****************************************************
+ First entry.Opening new position with base volume 37.0 XRPUSDT
+2024-10-19 12:50:15,811 || Market SELL order of size 37.0 XRPUSDT filled at $0.541. Market price at that time: $0.541. Current SELL position size: -37.0 XRPUSDT.
+2024-10-19 12:50:15,903 || Placing initial Take profit order.
+2024-10-19 12:50:16,584 || Take Profit Market BUY order of size 37.0 XRPUSDT placed at 0.5383
+2024-10-19 12:50:16,658 || Placing initial Stop loss order.
+2024-10-19 12:50:17,263 || Stop Loss Market BUY order of size 37.0 XRPUSDT placed at 0.5417
+2024-10-19 12:50:17,408 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 12:50:19,978 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15714 and HMA_40 is 0.1575. 
+HMA 2 Last Candle's Price is 0.15778 and HMA_60 is 0.1584. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 12:50:20,051 || ****************************************************
+ First entry.Opening new position with base volume 127.0 TRXUSDT
+2024-10-19 12:50:21,946 || Market SELL order of size 127.0 TRXUSDT filled at $0.1574. Market price at that time: $0.15741. Current SELL position size: -127.0 TRXUSDT.
+2024-10-19 12:50:22,068 || Placing initial Take profit order.
+2024-10-19 12:50:22,680 || Take Profit Market BUY order of size 127.0 TRXUSDT placed at 0.15661
+2024-10-19 12:50:22,745 || Placing initial Stop loss order.
+2024-10-19 12:50:23,363 || Stop Loss Market BUY order of size 127.0 TRXUSDT placed at 0.1576
+2024-10-19 13:16:36,561 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 13:16:48,923 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5411 and HMA_40 is 0.5444. 
+HMA 2 Last Candle's Price is 0.5443 and HMA_60 is 0.5498. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 13:16:49,033 || ****************************************************
+ First entry.Opening new position with base volume 36.9 XRPUSDT
+2024-10-19 13:16:50,971 || Market SELL order of size 36.9 XRPUSDT filled at $0.5417. Market price at that time: $0.5417. Current SELL position size: -36.9 XRPUSDT.
+2024-10-19 13:16:51,076 || Placing initial Take profit order.
+2024-10-19 13:16:51,720 || Take Profit Market BUY order of size 36.9 XRPUSDT placed at 0.539
+2024-10-19 13:16:51,811 || Placing initial Stop loss order.
+2024-10-19 13:16:52,420 || Stop Loss Market BUY order of size 36.9 XRPUSDT placed at 0.5424
+2024-10-19 13:21:40,785 || Keyboard interrupt detected, stopping the application.

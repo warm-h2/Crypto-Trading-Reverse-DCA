@@ -1,0 +1,76 @@
+2024-10-17 15:12:03,347 || Ticker = TRBUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 15:12:06,467 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 61.737 and HMA_40 is 62.5103. 
+HMA 2 Last Candle's Price is 61.737 and HMA_60 is 65.6922. 
+HMA 3 Last Candle's Price is 63.371 and HMA_80 is 65.9465. 
+
+2024-10-17 15:12:06,762 || ****************************************************
+ First entry.Opening new position with base volume 0.3 TRBUSDT
+2024-10-17 15:12:08,982 || Market SELL order of size 0.3 TRBUSDT filled at $61.941. Market price at that time: $61.934. Current SELL position size: -0.3 TRBUSDT.
+2024-10-17 15:12:09,345 || Placing initial Take profit order.
+2024-10-17 15:12:10,254 || Take Profit Market BUY order of size 0.3 TRBUSDT placed at 56.986
+2024-10-17 15:12:10,584 || Placing initial Stop loss order.
+2024-10-17 15:12:11,539 || Stop Loss Market BUY order of size 0.3 TRBUSDT placed at 63.18
+2024-10-17 15:12:11,814 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 15:12:15,028 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5857 and HMA_40 is 0.5966. 
+HMA 2 Last Candle's Price is 0.5857 and HMA_60 is 0.6277. 
+HMA 3 Last Candle's Price is 0.6118 and HMA_80 is 0.6346. 
+
+2024-10-17 15:12:15,358 || ****************************************************
+ First entry.Opening new position with base volume 34.0 ZETAUSDT
+2024-10-17 15:12:17,618 || Market SELL order of size 34.0 ZETAUSDT filled at $0.58915. Market price at that time: $0.589. Current SELL position size: -34.0 ZETAUSDT.
+2024-10-17 15:12:17,994 || Placing initial Take profit order.
+2024-10-17 15:12:18,987 || Take Profit Market BUY order of size 34.0 ZETAUSDT placed at 0.542018
+2024-10-17 15:12:19,265 || Placing initial Stop loss order.
+2024-10-17 15:12:20,259 || Stop Loss Market BUY order of size 34.0 ZETAUSDT placed at 0.600933
+2024-10-17 15:12:20,694 || Ticker = MANTAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 15:12:23,967 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.7407 and HMA_40 is 0.769. 
+HMA 2 Last Candle's Price is 0.7407 and HMA_60 is 0.8247. 
+HMA 3 Last Candle's Price is 0.7861 and HMA_80 is 0.7983. 
+
+2024-10-17 15:12:24,260 || ****************************************************
+ First entry.Opening new position with base volume 26.9 MANTAUSDT
+2024-10-17 15:12:26,518 || Market SELL order of size 26.9 MANTAUSDT filled at $0.7435. Market price at that time: $0.7433. Current SELL position size: -26.9 MANTAUSDT.
+2024-10-17 15:12:26,814 || Placing initial Take profit order.
+2024-10-17 15:12:27,761 || Take Profit Market BUY order of size 26.9 MANTAUSDT placed at 0.68402
+2024-10-17 15:12:28,065 || Placing initial Stop loss order.
+2024-10-17 15:12:29,010 || Stop Loss Market BUY order of size 26.9 MANTAUSDT placed at 0.75837
+2024-10-17 15:32:58,497 || Keyboard interrupt detected, stopping the application.

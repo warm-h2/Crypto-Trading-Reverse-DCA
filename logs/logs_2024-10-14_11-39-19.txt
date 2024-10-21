@@ -1,0 +1,2 @@
+2024-10-14 11:40:18,635 || Exception! Getting Historical Klines. Retrying... APIError(code=-1121): Invalid symbol.
+2024-10-14 11:40:27,582 || Keyboard interrupt detected, stopping the application.

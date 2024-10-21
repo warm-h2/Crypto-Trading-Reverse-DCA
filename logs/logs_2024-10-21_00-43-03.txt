@@ -1,0 +1,226 @@
+2024-10-21 00:48:21,295 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:48:23,741 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:48:23,814 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:48:25,633 || Market SELL order of size 128.0 TRXUSDT filled at $0.1558. Market price at that time: $0.15581. Current SELL position size: -128.0 TRXUSDT.
+2024-10-21 00:48:25,731 || Placing initial Take profit order.
+2024-10-21 00:48:26,267 || Take Profit Market BUY order of size 128.0 TRXUSDT placed at 0.14334
+2024-10-21 00:48:26,322 || Placing initial Stop loss order.
+2024-10-21 00:48:26,869 || Stop Loss Market BUY order of size 128.0 TRXUSDT placed at 0.15892
+2024-10-21 00:48:26,931 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:48:30,270 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:48:30,330 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:48:32,219 || Market SELL order of size 0.1 AAVEUSDT filled at $156.13. Market price at that time: $156.11. Current SELL position size: -0.1 AAVEUSDT.
+2024-10-21 00:48:32,319 || Placing initial Take profit order.
+2024-10-21 00:48:32,929 || Take Profit Market BUY order of size 0.1 AAVEUSDT placed at 143.64
+2024-10-21 00:48:33,000 || Placing initial Stop loss order.
+2024-10-21 00:48:33,602 || Stop Loss Market BUY order of size 0.1 AAVEUSDT placed at 159.253
+2024-10-21 00:48:33,659 || Ticker = SAGAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:48:36,169 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:48:36,296 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:48:38,194 || Market SELL order of size 7.3 SAGAUSDT filled at $2.7413. Market price at that time: $2.7403. Current SELL position size: -7.3 SAGAUSDT.
+2024-10-21 00:48:38,260 || Placing initial Take profit order.
+2024-10-21 00:48:38,869 || Take Profit Market BUY order of size 7.3 SAGAUSDT placed at 2.521996
+2024-10-21 00:48:39,041 || Placing initial Stop loss order.
+2024-10-21 00:48:39,680 || Stop Loss Market BUY order of size 7.3 SAGAUSDT placed at 2.796126
+2024-10-21 00:58:34,758 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:58:38,150 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15586 and HMA_40 is 0.1563. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 00:58:38,228 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 00:58:40,170 || Market SELL order of size 128.0 TRXUSDT filled at $0.15577. Market price at that time: $0.15578. Current SELL position size: -128.0 TRXUSDT.
+2024-10-21 00:58:40,234 || Placing initial Take profit order.
+2024-10-21 00:58:40,872 || Take Profit Market BUY order of size 128.0 TRXUSDT placed at 0.14331
+2024-10-21 00:58:40,934 || Placing initial Stop loss order.
+2024-10-21 00:58:41,546 || Stop Loss Market BUY order of size 128.0 TRXUSDT placed at 0.15889
+2024-10-21 00:58:41,632 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:58:44,985 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.66 and HMA_40 is 158.1872. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 00:58:45,163 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 00:58:47,130 || Market SELL order of size 0.1 AAVEUSDT filled at $156.09. Market price at that time: $156.09. Current SELL position size: -0.1 AAVEUSDT.
+2024-10-21 00:58:47,211 || Placing initial Take profit order.
+2024-10-21 00:58:47,827 || Take Profit Market BUY order of size 0.1 AAVEUSDT placed at 143.603
+2024-10-21 00:58:47,987 || Placing initial Stop loss order.
+2024-10-21 00:58:48,662 || Stop Loss Market BUY order of size 0.1 AAVEUSDT placed at 159.212
+2024-10-21 00:58:48,732 || Ticker = SAGAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 00:58:51,249 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7327 and HMA_40 is 2.7956. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 00:58:51,356 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 00:58:53,243 || Market SELL order of size 7.3 SAGAUSDT filled at $2.7398. Market price at that time: $2.7399. Current SELL position size: -7.3 SAGAUSDT.
+2024-10-21 00:58:53,305 || Placing initial Take profit order.
+2024-10-21 00:58:53,918 || Take Profit Market BUY order of size 7.3 SAGAUSDT placed at 2.520616
+2024-10-21 00:58:53,982 || Placing initial Stop loss order.
+2024-10-21 00:58:54,653 || Stop Loss Market BUY order of size 7.3 SAGAUSDT placed at 2.794596
+2024-10-21 01:08:12,836 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 01:08:15,067 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15578 and HMA_40 is 0.1562. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 01:08:15,133 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 01:08:17,008 || Market SELL order of size 128.0 TRXUSDT filled at $0.1558. Market price at that time: $0.15581. Current SELL position size: -128.0 TRXUSDT.
+2024-10-21 01:08:17,076 || Placing initial Take profit order.
+2024-10-21 01:08:17,611 || Take Profit Market BUY order of size 128.0 TRXUSDT placed at 0.14334
+2024-10-21 01:08:17,679 || Placing initial Stop loss order.
+2024-10-21 01:08:18,225 || Stop Loss Market BUY order of size 128.0 TRXUSDT placed at 0.15892
+2024-10-21 01:08:18,321 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 01:08:20,609 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 156.02 and HMA_40 is 157.9911. 
+HMA 2 Last Candle's Price is 157.2 and HMA_60 is 157.2685. 
+HMA 3 Last Candle's Price is 158.87 and HMA_80 is 160.4094. 
+
+2024-10-21 01:08:20,685 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-10-21 01:08:22,527 || Market SELL order of size 0.1 AAVEUSDT filled at $155.99. Market price at that time: $156.0. Current SELL position size: -0.1 AAVEUSDT.
+2024-10-21 01:08:22,584 || Placing initial Take profit order.
+2024-10-21 01:08:23,144 || Take Profit Market BUY order of size 0.1 AAVEUSDT placed at 143.511
+2024-10-21 01:08:23,220 || Placing initial Stop loss order.
+2024-10-21 01:08:23,791 || Stop Loss Market BUY order of size 0.1 AAVEUSDT placed at 159.11
+2024-10-21 01:08:23,901 || Ticker = SAGAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 01:08:26,130 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.7366 and HMA_40 is 2.7904. 
+HMA 2 Last Candle's Price is 2.7348 and HMA_60 is 2.8069. 
+HMA 3 Last Candle's Price is 2.8309 and HMA_80 is 2.9538. 
+
+2024-10-21 01:08:26,221 || ****************************************************
+ First entry.Opening new position with base volume 7.3 SAGAUSDT
+2024-10-21 01:08:28,018 || Market SELL order of size 7.3 SAGAUSDT filled at $2.7487. Market price at that time: $2.7485. Current SELL position size: -7.3 SAGAUSDT.
+2024-10-21 01:08:28,101 || Placing initial Take profit order.
+2024-10-21 01:08:28,642 || Take Profit Market BUY order of size 7.3 SAGAUSDT placed at 2.528804
+2024-10-21 01:08:28,749 || Placing initial Stop loss order.
+2024-10-21 01:08:29,295 || Stop Loss Market BUY order of size 7.3 SAGAUSDT placed at 2.803674
+2024-10-21 01:13:46,479 || Keyboard interrupt detected, stopping the application.

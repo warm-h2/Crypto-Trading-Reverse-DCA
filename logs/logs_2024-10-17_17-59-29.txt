@@ -1,0 +1,184 @@
+2024-10-17 18:02:07,010 || Ticker = NEARUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 18:02:10,202 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.734 and HMA_40 is 4.8236. 
+HMA 2 Last Candle's Price is 4.713 and HMA_60 is 4.9861. 
+HMA 3 Last Candle's Price is 4.943 and HMA_80 is 5.0527. 
+
+2024-10-17 18:02:10,471 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-17 18:02:12,750 || Market SELL order of size 4.0 NEARUSDT filled at $4.73. Market price at that time: $4.727. Current SELL position size: -4.0 NEARUSDT.
+2024-10-17 18:02:13,038 || Placing initial Take profit order.
+2024-10-17 18:02:13,918 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.6827
+2024-10-17 18:02:14,234 || Placing initial Stop loss order.
+2024-10-17 18:02:15,136 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.7418
+2024-10-17 18:02:15,432 || Ticker = AVAXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 18:02:19,607 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 27.582 and HMA_40 is 27.6699. 
+HMA 2 Last Candle's Price is 27.247 and HMA_60 is 28.7317. 
+HMA 3 Last Candle's Price is 28.007 and HMA_80 is 28.1675. 
+
+2024-10-17 18:02:19,875 || ****************************************************
+ First entry.Opening new position with base volume 1.0 AVAXUSDT
+2024-10-17 18:02:22,433 || Market SELL order of size 1.0 AVAXUSDT filled at $27.539. Market price at that time: $27.563. Current SELL position size: -1.0 AVAXUSDT.
+2024-10-17 18:02:22,673 || Placing initial Take profit order.
+2024-10-17 18:02:23,699 || Take Profit Market BUY order of size 1.0 AVAXUSDT placed at 27.2636
+2024-10-17 18:02:23,958 || Placing initial Stop loss order.
+2024-10-17 18:02:25,005 || Stop Loss Market BUY order of size 1.0 AVAXUSDT placed at 27.6078
+2024-10-17 18:02:25,260 || Ticker = LINKUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 18:02:30,054 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 11.024 and HMA_40 is 11.0876. 
+HMA 2 Last Candle's Price is 10.941 and HMA_60 is 11.3433. 
+HMA 3 Last Candle's Price is 11.242 and HMA_80 is 11.3915. 
+
+2024-10-17 18:02:30,292 || ****************************************************
+ First entry.Opening new position with base volume 1.82 LINKUSDT
+2024-10-17 18:02:33,103 || Market SELL order of size 1.82 LINKUSDT filled at $11.005. Market price at that time: $11.009. Current SELL position size: -1.82 LINKUSDT.
+2024-10-17 18:02:33,356 || Placing initial Take profit order.
+2024-10-17 18:02:34,591 || Take Profit Market BUY order of size 1.82 LINKUSDT placed at 10.895
+2024-10-17 18:02:34,852 || Placing initial Stop loss order.
+2024-10-17 18:02:36,116 || Stop Loss Market BUY order of size 1.82 LINKUSDT placed at 11.033
+2024-10-17 18:04:09,095 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-17 18:04:35,689 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 11.024 and HMA_40 is 11.0876. 
+HMA 2 Last Candle's Price is 10.941 and HMA_60 is 11.3433. 
+HMA 3 Last Candle's Price is 11.242 and HMA_80 is 11.3915. 
+
+2024-10-17 18:04:35,930 || ****************************************************
+ First entry.Opening new position with base volume 1.81 LINKUSDT
+2024-10-17 18:04:36,835 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:04:39,715 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:04:42,686 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:04:45,619 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:04:48,470 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:04:51,376 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:04:55,003 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:04:57,897 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:01,586 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:04,498 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:07,385 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:10,308 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:13,281 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:16,152 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:19,092 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:21,948 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:24,858 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:28,437 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:31,319 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:34,348 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:37,280 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:40,832 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:43,728 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:46,620 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:50,185 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:53,064 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:55,994 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:05:58,869 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:01,734 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:05,298 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:08,151 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:11,735 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:14,628 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:17,554 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:21,202 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:24,089 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:26,941 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:29,812 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:32,677 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:35,536 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:38,421 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:41,351 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:44,374 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:47,236 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:51,464 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:56,876 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:06:59,766 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:02,618 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:05,495 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:08,281 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:11,810 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:14,653 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:17,649 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:21,181 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:23,986 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:26,838 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:29,756 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:32,663 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:35,646 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:38,432 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:41,266 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:44,064 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:46,936 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:49,775 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:52,671 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:55,591 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:07:58,460 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:01,284 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:04,119 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:07,061 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:09,970 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:12,857 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:15,727 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:18,570 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:21,419 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:24,274 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:27,137 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:30,004 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:32,929 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:35,733 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:38,561 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:41,404 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:44,290 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:47,184 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:50,039 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:52,861 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:55,654 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:08:58,493 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:01,373 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:04,178 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:07,018 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:09,937 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:12,859 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:15,754 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:19,190 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:22,014 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:24,858 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:27,687 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:30,600 || Exception! Placing market order. Retrying... APIError(code=-4164): Order's notional must be no smaller than 20 (unless you choose reduce only).
+2024-10-17 18:09:32,189 || Keyboard interrupt detected, stopping the application.

@@ -1,0 +1,7 @@
+2024-10-17 02:54:34,406 || Unhandled exception
+Traceback (most recent call last):
+  File "D:\Mark\Serhan\RDCA_new\main.py", line 206, in <module>
+    main()
+  File "D:\Mark\Serhan\RDCA_new\main.py", line 187, in main
+    obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker,
+UnboundLocalError: local variable 'binance_client' referenced before assignment

@@ -1,0 +1,3 @@
+2024-10-07 11:42:47,454 || --------------------------------------------------------
+Running Reverse DCA Stategy...
+2024-10-07 11:44:04,186 || Exception! Getting futures exchange info. . Exiting!

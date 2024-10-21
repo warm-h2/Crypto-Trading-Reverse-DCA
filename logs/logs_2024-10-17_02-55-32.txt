@@ -1,0 +1,93 @@
+2024-10-17 02:55:33,269 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 02:55:37,680 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.6442 and HMA_40 is 0.6442. 
+HMA 2 Last Candle's Price is 0.6442 and HMA_60 is 0.6442. 
+HMA 3 Last Candle's Price is 0.6442 and HMA_80 is 0.6781. 
+
+2024-10-17 02:55:37,767 || ****************************************************
+ First entry.Opening new position with base volume 31.0 ZETAUSDT
+2024-10-17 02:55:38,757 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2024-10-17 02:55:48,437 || Keyboard interrupt detected, stopping the bot.
+2024-10-17 02:55:49,452 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 02:55:53,978 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.6442 and HMA_40 is 0.6442. 
+HMA 2 Last Candle's Price is 0.6442 and HMA_60 is 0.6442. 
+HMA 3 Last Candle's Price is 0.6442 and HMA_80 is 0.6781. 
+
+2024-10-17 02:55:54,085 || ****************************************************
+ First entry.Opening new position with base volume 31.0 ZETAUSDT
+2024-10-17 02:55:54,426 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2024-10-17 02:55:55,932 || Keyboard interrupt detected, stopping the bot.
+2024-10-17 02:55:56,939 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 02:55:57,036 || Keyboard interrupt detected, stopping the bot.
+2024-10-17 02:55:58,046 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 02:55:58,892 || Keyboard interrupt detected, stopping the bot.
+2024-10-17 02:55:59,907 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 02:56:04,188 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.6442 and HMA_40 is 0.6442. 
+HMA 2 Last Candle's Price is 0.6442 and HMA_60 is 0.6442. 
+HMA 3 Last Candle's Price is 0.6442 and HMA_80 is 0.6781. 
+
+2024-10-17 02:56:04,273 || ****************************************************
+ First entry.Opening new position with base volume 31.0 ZETAUSDT
+2024-10-17 02:56:05,023 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2024-10-17 02:56:07,396 || Keyboard interrupt detected, stopping the bot.
+2024-10-17 02:56:07,589 || Keyboard interrupt detected, stopping the application.

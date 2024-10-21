@@ -1,0 +1,487 @@
+2024-10-19 09:43:52,255 || Ticker = XRPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 09:43:55,097 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.544 and HMA_40 is 0.5457. 
+HMA 2 Last Candle's Price is 0.5431 and HMA_60 is 0.55. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 09:43:55,178 || ****************************************************
+ First entry.Opening new position with base volume 36.7 XRPUSDT
+2024-10-19 09:43:57,172 || Market SELL order of size 36.7 XRPUSDT filled at $0.5448. Market price at that time: $0.5448. Current SELL position size: -36.7 XRPUSDT.
+2024-10-19 09:43:57,241 || Placing initial Take profit order.
+2024-10-19 09:43:57,897 || Take Profit Market BUY order of size 36.7 XRPUSDT placed at 0.5421
+2024-10-19 09:43:57,981 || Placing initial Stop loss order.
+2024-10-19 09:43:58,659 || Stop Loss Market BUY order of size 36.7 XRPUSDT placed at 0.5455
+2024-10-19 09:43:58,769 || Ticker = SUIUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 09:44:01,281 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.0547 and HMA_40 is 2.0736. 
+HMA 2 Last Candle's Price is 2.0467 and HMA_60 is 2.0567. 
+HMA 3 Last Candle's Price is 2.1242 and HMA_80 is 2.1261. 
+
+2024-10-19 09:44:01,356 || ****************************************************
+ First entry.Opening new position with base volume 9.7 SUIUSDT
+2024-10-19 09:44:03,234 || Market SELL order of size 9.7 SUIUSDT filled at $2.0615. Market price at that time: $2.0621. Current SELL position size: -9.7 SUIUSDT.
+2024-10-19 09:44:03,308 || Placing initial Take profit order.
+2024-10-19 09:44:03,935 || Take Profit Market BUY order of size 9.7 SUIUSDT placed at 2.051192
+2024-10-19 09:44:04,043 || Placing initial Stop loss order.
+2024-10-19 09:44:04,658 || Stop Loss Market BUY order of size 9.7 SUIUSDT placed at 2.064077
+2024-10-19 09:44:04,751 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 09:44:06,971 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15737 and HMA_40 is 0.1578. 
+HMA 2 Last Candle's Price is 0.15759 and HMA_60 is 0.1585. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 09:44:07,057 || ****************************************************
+ First entry.Opening new position with base volume 127.0 TRXUSDT
+2024-10-19 09:44:08,906 || Market SELL order of size 127.0 TRXUSDT filled at $0.15735. Market price at that time: $0.15736. Current SELL position size: -127.0 TRXUSDT.
+2024-10-19 09:44:09,041 || Placing initial Take profit order.
+2024-10-19 09:44:09,669 || Take Profit Market BUY order of size 127.0 TRXUSDT placed at 0.15656
+2024-10-19 09:44:09,739 || Placing initial Stop loss order.
+2024-10-19 09:44:10,297 || Stop Loss Market BUY order of size 127.0 TRXUSDT placed at 0.15755
+2024-10-19 09:47:57,454 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 09:48:09,581 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.0547 and HMA_40 is 2.0736. 
+HMA 2 Last Candle's Price is 2.0467 and HMA_60 is 2.0567. 
+HMA 3 Last Candle's Price is 2.1242 and HMA_80 is 2.1261. 
+
+2024-10-19 09:48:09,679 || ****************************************************
+ First entry.Opening new position with base volume 9.7 SUIUSDT
+2024-10-19 09:48:11,603 || Market SELL order of size 9.7 SUIUSDT filled at $2.0638. Market price at that time: $2.0635. Current SELL position size: -9.7 SUIUSDT.
+2024-10-19 09:48:11,669 || Placing initial Take profit order.
+2024-10-19 09:48:12,277 || Take Profit Market BUY order of size 9.7 SUIUSDT placed at 2.053481
+2024-10-19 09:48:12,386 || Placing initial Stop loss order.
+2024-10-19 09:48:12,982 || Stop Loss Market BUY order of size 9.7 SUIUSDT placed at 2.06638
+2024-10-19 09:55:26,289 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 09:55:38,333 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.0547 and HMA_40 is 2.0736. 
+HMA 2 Last Candle's Price is 2.0467 and HMA_60 is 2.0567. 
+HMA 3 Last Candle's Price is 2.1242 and HMA_80 is 2.1261. 
+
+2024-10-19 09:55:38,404 || ****************************************************
+ First entry.Opening new position with base volume 9.7 SUIUSDT
+2024-10-19 09:55:40,297 || Market SELL order of size 9.7 SUIUSDT filled at $2.0702. Market price at that time: $2.0695. Current SELL position size: -9.7 SUIUSDT.
+2024-10-19 09:55:40,390 || Placing initial Take profit order.
+2024-10-19 09:55:41,013 || Take Profit Market BUY order of size 9.7 SUIUSDT placed at 2.059849
+2024-10-19 09:55:41,130 || Placing initial Stop loss order.
+2024-10-19 09:55:41,768 || Stop Loss Market BUY order of size 9.7 SUIUSDT placed at 2.072788
+2024-10-19 10:00:12,383 || Signals reversed. Closing positions!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.0706 and HMA_40 is 2.0689. 
+HMA 2 Last Candle's Price is 2.0467 and HMA_60 is 2.0567. 
+HMA 3 Last Candle's Price is 2.1242 and HMA_80 is 2.1261. 
+
+2024-10-19 10:00:23,219 || Pauses the bot until the condition is met!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 2.0706 and HMA_40 is 2.0689. 
+HMA 2 Last Candle's Price is 2.0467 and HMA_60 is 2.0567. 
+HMA 3 Last Candle's Price is 2.1242 and HMA_80 is 2.1261. 
+
+2024-10-19 10:02:46,087 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 10:02:57,393 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15748 and HMA_40 is 0.1577. 
+HMA 2 Last Candle's Price is 0.15759 and HMA_60 is 0.1585. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 10:02:57,461 || ****************************************************
+ First entry.Opening new position with base volume 127.0 TRXUSDT
+2024-10-19 10:02:59,253 || Market SELL order of size 127.0 TRXUSDT filled at $0.15771. Market price at that time: $0.15772. Current SELL position size: -127.0 TRXUSDT.
+2024-10-19 10:02:59,318 || Placing initial Take profit order.
+2024-10-19 10:02:59,853 || Take Profit Market BUY order of size 127.0 TRXUSDT placed at 0.15692
+2024-10-19 10:02:59,911 || Placing initial Stop loss order.
+2024-10-19 10:03:00,452 || Stop Loss Market BUY order of size 127.0 TRXUSDT placed at 0.15791
+2024-10-19 10:44:10,399 || Ticker = XRPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 10:44:12,889 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5451 and HMA_40 is 0.5455. 
+HMA 2 Last Candle's Price is 0.5431 and HMA_60 is 0.55. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 10:44:12,969 || ****************************************************
+ First entry.Opening new position with base volume 36.7 XRPUSDT
+2024-10-19 10:44:14,881 || Market SELL order of size 36.7 XRPUSDT filled at $0.5444. Market price at that time: $0.5444. Current SELL position size: -36.7 XRPUSDT.
+2024-10-19 10:44:15,120 || Placing initial Take profit order.
+2024-10-19 10:44:15,793 || Take Profit Market BUY order of size 36.7 XRPUSDT placed at 0.5417
+2024-10-19 10:44:15,856 || Placing initial Stop loss order.
+2024-10-19 10:44:16,469 || Stop Loss Market BUY order of size 36.7 XRPUSDT placed at 0.5451
+2024-10-19 10:44:16,543 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 10:44:18,936 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15748 and HMA_40 is 0.1577. 
+HMA 2 Last Candle's Price is 0.15759 and HMA_60 is 0.1585. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 10:44:19,038 || ****************************************************
+ First entry.Opening new position with base volume 127.0 TRXUSDT
+2024-10-19 10:44:20,914 || Market SELL order of size 127.0 TRXUSDT filled at $0.15777. Market price at that time: $0.15777. Current SELL position size: -127.0 TRXUSDT.
+2024-10-19 10:44:21,003 || Placing initial Take profit order.
+2024-10-19 10:44:21,629 || Take Profit Market BUY order of size 127.0 TRXUSDT placed at 0.15698
+2024-10-19 10:44:21,709 || Placing initial Stop loss order.
+2024-10-19 10:44:22,290 || Stop Loss Market BUY order of size 127.0 TRXUSDT placed at 0.15797
+2024-10-19 10:44:22,377 || Ticker = NEARUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 10:44:24,803 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.854 and HMA_40 is 4.8818. 
+HMA 2 Last Candle's Price is 4.813 and HMA_60 is 4.8981. 
+HMA 3 Last Candle's Price is 4.892 and HMA_80 is 5.0864. 
+
+2024-10-19 10:44:24,866 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-19 10:44:26,731 || Market SELL order of size 4.0 NEARUSDT filled at $4.832. Market price at that time: $4.832. Current SELL position size: -4.0 NEARUSDT.
+2024-10-19 10:44:26,793 || Placing initial Take profit order.
+2024-10-19 10:44:27,368 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.8078
+2024-10-19 10:44:27,456 || Placing initial Stop loss order.
+2024-10-19 10:44:28,049 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.838
+2024-10-19 10:46:24,765 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 10:46:37,080 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.854 and HMA_40 is 4.8818. 
+HMA 2 Last Candle's Price is 4.813 and HMA_60 is 4.8981. 
+HMA 3 Last Candle's Price is 4.892 and HMA_80 is 5.0864. 
+
+2024-10-19 10:46:37,196 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-19 10:46:39,055 || Market SELL order of size 4.0 NEARUSDT filled at $4.839. Market price at that time: $4.838. Current SELL position size: -4.0 NEARUSDT.
+2024-10-19 10:46:39,192 || Placing initial Take profit order.
+2024-10-19 10:46:39,804 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.8148
+2024-10-19 10:46:39,949 || Placing initial Stop loss order.
+2024-10-19 10:46:40,749 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.845
+2024-10-19 11:00:14,139 || Signals reversed. Closing positions!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15778 and HMA_40 is 0.1576. 
+HMA 2 Last Candle's Price is 0.15778 and HMA_60 is 0.1584. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 11:00:24,913 || Pauses the bot until the condition is met!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15778 and HMA_40 is 0.1576. 
+HMA 2 Last Candle's Price is 0.15778 and HMA_60 is 0.1584. 
+HMA 3 Last Candle's Price is 0.15831 and HMA_80 is 0.1589. 
+
+2024-10-19 11:05:31,576 || $$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.
+2024-10-19 11:05:43,189 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.835 and HMA_40 is 4.8743. 
+HMA 2 Last Candle's Price is 4.835 and HMA_60 is 4.8909. 
+HMA 3 Last Candle's Price is 4.892 and HMA_80 is 5.0864. 
+
+2024-10-19 11:05:43,275 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-19 11:05:45,150 || Market SELL order of size 4.0 NEARUSDT filled at $4.817. Market price at that time: $4.818. Current SELL position size: -4.0 NEARUSDT.
+2024-10-19 11:05:45,219 || Placing initial Take profit order.
+2024-10-19 11:05:45,807 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.7929
+2024-10-19 11:05:45,964 || Placing initial Stop loss order.
+2024-10-19 11:05:46,599 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.823
+2024-10-19 11:20:39,283 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 11:20:50,816 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.835 and HMA_40 is 4.8743. 
+HMA 2 Last Candle's Price is 4.835 and HMA_60 is 4.8909. 
+HMA 3 Last Candle's Price is 4.892 and HMA_80 is 5.0864. 
+
+2024-10-19 11:20:50,875 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-19 11:20:52,729 || Market SELL order of size 4.0 NEARUSDT filled at $4.819. Market price at that time: $4.819. Current SELL position size: -4.0 NEARUSDT.
+2024-10-19 11:20:52,802 || Placing initial Take profit order.
+2024-10-19 11:20:53,400 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.7949
+2024-10-19 11:20:53,471 || Placing initial Stop loss order.
+2024-10-19 11:20:54,068 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.825
+2024-10-19 11:44:59,018 || Ticker = XRPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 11:45:02,368 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5443 and HMA_40 is 0.5452. 
+HMA 2 Last Candle's Price is 0.5443 and HMA_60 is 0.5498. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 11:45:02,467 || ****************************************************
+ First entry.Opening new position with base volume 36.8 XRPUSDT
+2024-10-19 11:45:04,381 || Market SELL order of size 36.8 XRPUSDT filled at $0.5437. Market price at that time: $0.5437. Current SELL position size: -36.8 XRPUSDT.
+2024-10-19 11:45:04,541 || Placing initial Take profit order.
+2024-10-19 11:45:05,234 || Take Profit Market BUY order of size 36.8 XRPUSDT placed at 0.541
+2024-10-19 11:45:05,365 || Placing initial Stop loss order.
+2024-10-19 11:45:06,032 || Stop Loss Market BUY order of size 36.8 XRPUSDT placed at 0.5444
+2024-10-19 11:45:06,164 || Ticker = NEARUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 11:45:08,644 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.835 and HMA_40 is 4.8743. 
+HMA 2 Last Candle's Price is 4.835 and HMA_60 is 4.8909. 
+HMA 3 Last Candle's Price is 4.892 and HMA_80 is 5.0864. 
+
+2024-10-19 11:45:08,716 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-19 11:45:10,591 || Market SELL order of size 4.0 NEARUSDT filled at $4.803. Market price at that time: $4.803. Current SELL position size: -4.0 NEARUSDT.
+2024-10-19 11:45:10,721 || Placing initial Take profit order.
+2024-10-19 11:45:11,366 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.779
+2024-10-19 11:45:11,542 || Placing initial Stop loss order.
+2024-10-19 11:45:12,225 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.809
+2024-10-19 11:45:12,326 || Ticker = RUNEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.125
+Increment Percent = 1.5
+Take Profit Percent = 0.5
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-19 11:45:14,760 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.985 and HMA_40 is 5.0627. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 11:45:14,841 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 11:45:16,699 || Market SELL order of size 4.0 RUNEUSDT filled at $4.963. Market price at that time: $4.961. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 11:45:16,824 || Placing initial Take profit order.
+2024-10-19 11:45:17,421 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.9382
+2024-10-19 11:45:17,575 || Placing initial Stop loss order.
+2024-10-19 11:45:18,246 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9692
+2024-10-19 11:48:25,891 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 11:48:38,028 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.985 and HMA_40 is 5.0627. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 11:48:38,090 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 11:48:39,923 || Market SELL order of size 4.0 RUNEUSDT filled at $4.966. Market price at that time: $4.966. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 11:48:39,986 || Placing initial Take profit order.
+2024-10-19 11:48:40,622 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.9412
+2024-10-19 11:48:40,688 || Placing initial Stop loss order.
+2024-10-19 11:48:41,273 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9722
+2024-10-19 11:51:38,746 || $$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.
+2024-10-19 11:51:50,879 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.985 and HMA_40 is 5.0627. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 11:51:50,949 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 11:51:52,818 || Market SELL order of size 4.0 RUNEUSDT filled at $4.943. Market price at that time: $4.941. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 11:51:52,897 || Placing initial Take profit order.
+2024-10-19 11:51:53,554 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.9183
+2024-10-19 11:51:53,634 || Placing initial Stop loss order.
+2024-10-19 11:51:54,229 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9492
+2024-10-19 11:52:33,730 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 11:52:46,021 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.985 and HMA_40 is 5.0627. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 11:52:46,145 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 11:52:48,017 || Market SELL order of size 4.0 RUNEUSDT filled at $4.95. Market price at that time: $4.95. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 11:52:48,105 || Placing initial Take profit order.
+2024-10-19 11:52:48,697 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.9253
+2024-10-19 11:52:48,757 || Placing initial Stop loss order.
+2024-10-19 11:52:49,357 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9562
+2024-10-19 11:54:54,597 || $$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.
+2024-10-19 11:55:06,953 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.835 and HMA_40 is 4.8743. 
+HMA 2 Last Candle's Price is 4.835 and HMA_60 is 4.8909. 
+HMA 3 Last Candle's Price is 4.892 and HMA_80 is 5.0864. 
+
+2024-10-19 11:55:07,146 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-19 11:55:09,093 || Market SELL order of size 4.0 NEARUSDT filled at $4.782. Market price at that time: $4.781. Current SELL position size: -4.0 NEARUSDT.
+2024-10-19 11:55:09,168 || Placing initial Take profit order.
+2024-10-19 11:55:09,767 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.7581
+2024-10-19 11:55:09,852 || Placing initial Stop loss order.
+2024-10-19 11:55:10,447 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.788
+2024-10-19 11:58:23,737 || $$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.
+2024-10-19 11:58:35,880 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5443 and HMA_40 is 0.5452. 
+HMA 2 Last Candle's Price is 0.5443 and HMA_60 is 0.5498. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 11:58:35,947 || ****************************************************
+ First entry.Opening new position with base volume 37.0 XRPUSDT
+2024-10-19 11:58:37,855 || Market SELL order of size 37.0 XRPUSDT filled at $0.5409. Market price at that time: $0.541. Current SELL position size: -37.0 XRPUSDT.
+2024-10-19 11:58:37,961 || Placing initial Take profit order.
+2024-10-19 11:58:38,612 || Take Profit Market BUY order of size 37.0 XRPUSDT placed at 0.5382
+2024-10-19 11:58:38,734 || Placing initial Stop loss order.
+2024-10-19 11:58:39,382 || Stop Loss Market BUY order of size 37.0 XRPUSDT placed at 0.5416
+2024-10-19 12:00:13,601 || $$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.
+2024-10-19 12:00:25,761 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.928 and HMA_40 is 5.0479. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 12:00:25,847 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 12:00:27,715 || Market SELL order of size 4.0 RUNEUSDT filled at $4.922. Market price at that time: $4.922. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 12:00:27,815 || Placing initial Take profit order.
+2024-10-19 12:00:28,466 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.8974
+2024-10-19 12:00:28,532 || Placing initial Stop loss order.
+2024-10-19 12:00:29,131 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9282
+2024-10-19 12:03:06,338 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 12:03:13,238 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 12:03:21,651 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.928 and HMA_40 is 5.0479. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 12:03:21,745 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 12:03:23,648 || Market SELL order of size 4.0 RUNEUSDT filled at $4.932. Market price at that time: $4.93. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 12:03:23,750 || Placing initial Take profit order.
+2024-10-19 12:03:24,392 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.9073
+2024-10-19 12:03:24,494 || Placing initial Stop loss order.
+2024-10-19 12:03:25,122 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9382
+2024-10-19 12:03:28,680 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.5407 and HMA_40 is 0.5449. 
+HMA 2 Last Candle's Price is 0.5443 and HMA_60 is 0.5498. 
+HMA 3 Last Candle's Price is 0.5465 and HMA_80 is 0.553. 
+
+2024-10-19 12:03:28,818 || ****************************************************
+ First entry.Opening new position with base volume 36.9 XRPUSDT
+2024-10-19 12:03:30,734 || Market SELL order of size 36.9 XRPUSDT filled at $0.5416. Market price at that time: $0.5417. Current SELL position size: -36.9 XRPUSDT.
+2024-10-19 12:03:30,788 || Placing initial Take profit order.
+2024-10-19 12:03:31,408 || Take Profit Market BUY order of size 36.9 XRPUSDT placed at 0.5389
+2024-10-19 12:03:31,544 || Placing initial Stop loss order.
+2024-10-19 12:03:32,202 || Stop Loss Market BUY order of size 36.9 XRPUSDT placed at 0.5423
+2024-10-19 12:03:35,478 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 12:03:47,613 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.774 and HMA_40 is 4.865. 
+HMA 2 Last Candle's Price is 4.835 and HMA_60 is 4.8909. 
+HMA 3 Last Candle's Price is 4.892 and HMA_80 is 5.0864. 
+
+2024-10-19 12:03:47,725 || ****************************************************
+ First entry.Opening new position with base volume 4.0 NEARUSDT
+2024-10-19 12:03:49,596 || Market SELL order of size 4.0 NEARUSDT filled at $4.789. Market price at that time: $4.789. Current SELL position size: -4.0 NEARUSDT.
+2024-10-19 12:03:49,672 || Placing initial Take profit order.
+2024-10-19 12:03:50,259 || Take Profit Market BUY order of size 4.0 NEARUSDT placed at 4.7651
+2024-10-19 12:03:50,335 || Placing initial Stop loss order.
+2024-10-19 12:03:50,936 || Stop Loss Market BUY order of size 4.0 NEARUSDT placed at 4.795
+2024-10-19 12:06:40,305 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 12:06:52,425 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.928 and HMA_40 is 5.0479. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 12:06:52,559 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 12:06:54,514 || Market SELL order of size 4.0 RUNEUSDT filled at $4.938. Market price at that time: $4.939. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 12:06:54,572 || Placing initial Take profit order.
+2024-10-19 12:06:55,173 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.9133
+2024-10-19 12:06:55,239 || Placing initial Stop loss order.
+2024-10-19 12:06:55,826 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9442
+2024-10-19 12:17:05,186 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-10-19 12:17:17,383 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 4.928 and HMA_40 is 5.0479. 
+HMA 2 Last Candle's Price is 4.985 and HMA_60 is 5.0263. 
+HMA 3 Last Candle's Price is 5.05 and HMA_80 is 5.1627. 
+
+2024-10-19 12:17:17,470 || ****************************************************
+ First entry.Opening new position with base volume 4.0 RUNEUSDT
+2024-10-19 12:17:19,327 || Market SELL order of size 4.0 RUNEUSDT filled at $4.943. Market price at that time: $4.944. Current SELL position size: -4.0 RUNEUSDT.
+2024-10-19 12:17:19,402 || Placing initial Take profit order.
+2024-10-19 12:17:19,992 || Take Profit Market BUY order of size 4.0 RUNEUSDT placed at 4.9183
+2024-10-19 12:17:20,127 || Placing initial Stop loss order.
+2024-10-19 12:17:20,718 || Stop Loss Market BUY order of size 4.0 RUNEUSDT placed at 4.9492

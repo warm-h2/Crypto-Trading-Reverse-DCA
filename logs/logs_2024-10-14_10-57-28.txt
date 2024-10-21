@@ -1,0 +1,23 @@
+2024-10-14 10:57:40,694 || Ticker = TRBUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-14 10:57:43,883 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 60.58 and HMA_40 is 65.6129. 
+HMA 2 Last Candle's Price is 60.58 and HMA_60 is 61.3854. 
+HMA 3 Last Candle's Price is 60.58 and HMA_80 is 63.4501. 
+
+2024-10-14 10:57:44,069 || ****************************************************
+ First entry.Opening new position with base volume 0.3 TRBUSDT
+2024-10-14 10:57:44,954 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2024-10-14 10:57:55,732 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2024-10-14 10:57:58,316 || Keyboard interrupt detected, stopping the application.

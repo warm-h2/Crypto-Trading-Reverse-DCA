@@ -1,0 +1,2 @@
+2024-10-14 06:58:09,978 || Exception! Get open positions. Retrying... list index out of range
+2024-10-14 06:58:18,004 || Keyboard interrupt detected, stopping the application.

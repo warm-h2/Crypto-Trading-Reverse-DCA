@@ -1,0 +1,42 @@
+2024-10-21 01:42:16,553 || Ticker = TRXUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-21 01:42:18,812 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.15578 and HMA_40 is 0.1562. 
+HMA 2 Last Candle's Price is 0.15574 and HMA_60 is 0.1569. 
+HMA 3 Last Candle's Price is 0.15664 and HMA_80 is 0.1592. 
+
+2024-10-21 01:42:18,879 || ****************************************************
+ First entry.Opening new position with base volume 128.0 TRXUSDT
+2024-10-21 01:42:20,672 || Market SELL order of size 128.0 TRXUSDT filled at $0.15584. Market price at that time: $0.15585. Current SELL position size: -128.0 TRXUSDT.
+2024-10-21 01:42:20,738 || Placing initial Take profit order.
+2024-10-21 01:42:21,277 || Take Profit Market BUY order of size 128.0 TRXUSDT placed at 0.14337
+2024-10-21 01:42:21,459 || Placing initial Stop loss order.
+2024-10-21 01:42:22,045 || Stop Loss Market BUY order of size 128.0 TRXUSDT placed at 0.15896
+2024-10-21 01:42:22,342 || Unhandled exception
+Traceback (most recent call last):
+  File "D:\Mark\Serhan\RDCA_new\main.py", line 207, in <module>
+    main()
+  File "D:\Mark\Serhan\RDCA_new\main.py", line 164, in main
+    print(f'ticker=> {ticker}\n opened_orders => {binance_client.get_open_orders(symbol=ticker)} \n opened_positions=>{binance_client.futures_position_information(symbol=ticker)}')
+  File "C:\Program Files\Python310\lib\site-packages\binance\client.py", line 1979, in get_open_orders
+    return self._get('openOrders', True, data=params)
+  File "C:\Program Files\Python310\lib\site-packages\binance\client.py", line 415, in _get
+    return self._request_api('get', path, signed, version, **kwargs)
+  File "C:\Program Files\Python310\lib\site-packages\binance\client.py", line 378, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+  File "C:\Program Files\Python310\lib\site-packages\binance\client.py", line 359, in _request
+    return self._handle_response(self.response)
+  File "C:\Program Files\Python310\lib\site-packages\binance\client.py", line 368, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-1100): Illegal characters found in parameter 'symbol'; legal range is '^[A-Z0-9-_.]{1,20}$'.

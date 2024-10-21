@@ -1,0 +1,23 @@
+2024-10-17 02:58:19,074 || Ticker = ZETAUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 2.0
+Increment Percent = 1.5
+Take Profit Percent = 8.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-10-17 02:58:24,678 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.6442 and HMA_40 is 0.6442. 
+HMA 2 Last Candle's Price is 0.6442 and HMA_60 is 0.6442. 
+HMA 3 Last Candle's Price is 0.6442 and HMA_80 is 0.6781. 
+
+2024-10-17 02:58:24,741 || ****************************************************
+ First entry.Opening new position with base volume 31.0 ZETAUSDT
+2024-10-17 02:58:25,046 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action
+2024-10-17 02:58:27,582 || Keyboard interrupt detected, stopping the bot.
+2024-10-17 02:58:27,758 || Keyboard interrupt detected, stopping the application.
