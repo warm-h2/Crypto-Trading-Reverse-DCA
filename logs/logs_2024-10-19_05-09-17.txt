@@ -1,7 +1,0 @@
-2024-10-19 05:09:17,729 || Unhandled exception
-Traceback (most recent call last):
-  File "D:\Mark\Serhan\RDCA_new\main.py", line 199, in <module>
-    main()
-  File "D:\Mark\Serhan\RDCA_new\main.py", line 86, in main
-    print(f'base_endpoint=> {binance_client.base_endpoint}')
-AttributeError: 'Client' object has no attribute 'base_endpoint'

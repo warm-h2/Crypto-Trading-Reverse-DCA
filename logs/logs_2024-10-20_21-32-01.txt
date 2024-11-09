@@ -1,1 +1,0 @@
-2024-10-20 21:34:04,118 || Keyboard interrupt detected, stopping the application.

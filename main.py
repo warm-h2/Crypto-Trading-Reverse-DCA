@@ -73,31 +73,20 @@ def main():
     telegram_channel_chat_id_2 = config['telegram']['channel_chat_id_2']
     telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_1, telegram_channel_chat_id_2)    
 
-    binance_api_key = config['binance']['api_key']
-    binance_api_secret = config['binance']['api_secret']
+    # binance_api_key = config['binance']['api_key']
+    # binance_api_secret = config['binance']['api_secret']
     # binance_client = Client(binance_api_key, binance_api_secret)
 
-    # binance_api_key = config['binance']['test_api_key']
-    # binance_api_secret = config['binance']['test_api_secret']
-    # print(f"api => {binance_api_key}  secret=> {binance_api_secret}")
+    binance_api_key = config['binance']['test_api_key']
+    binance_api_secret = config['binance']['test_api_secret']
+    print(f"api => {binance_api_key}  secret=> {binance_api_secret}")
     # telegram_bot.send_message("--------------------------------------------------------\nRunning Reverse DCA Stategy...")
     # self.telegram_bot.send_message(self.setting_message)
-    # binance_client = Client(binance_api_key, binance_api_secret)
-    # tickers = binance_client.get_all_tickers()
-    # print(f"orders = > {binance_client.get_all_orders(symbol= 'USDCUSDT')}")
-    # print(f"tickers => {tickers}")
-    # for ticker  in tickers: 
-    #     orders = binance_client.get_all_orders(symbol=ticker["symbol"])
-    #     # if orders == [] : continue
-    #     print(f'ticker=> {ticker["symbol"]} -> {orders}\n')
-
-    # print(f'positions => {binance_client.futures_position_information(symbol="USDCUSDT")}')
-    # return
     if(ticker == "auto"):
         pairs = []
         nowcount  = 0
         past_time = datetime.now()
-        delta_criteria= 3600
+        delta_criteria= 300
         while True:
             delta = datetime.now()-past_time
             print(f'nowcount => {nowcount}  delta=> {delta.total_seconds()}' )
@@ -157,11 +146,10 @@ def main():
                         telegram_bot.logger.warning("Keyboard interrupt detected, stopping the bot.")
                         print("\nProgram interrupted by user.")
                 print(f'after pairs => {pairs}')
-            for pair in pairs:
+            for ticker in pairs:
                 if nowcount % 3600 == 0:
-                    telegram_bot.send_message(pair.setting_message)
-                pair.run()
-                print(f'ticker=> {pair.ticker}\n opened_orders => {binance_client.get_open_orders(symbol=pair.ticker)} \n opened_positions=>{binance_client.futures_position_information(symbol=pair.ticker)}')
+                    telegram_bot.send_message(ticker.setting_message)
+                ticker.run()
             nowcount = nowcount + 1
             time.sleep(1)
     else : 

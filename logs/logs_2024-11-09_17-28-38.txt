@@ -1,0 +1,96 @@
+2024-11-09 17:31:38,743 || Ticker = USDCUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-09 17:31:42,116 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.999109 and HMA_40 is 0.9992. 
+HMA 2 Last Candle's Price is 0.999109 and HMA_60 is 0.9992. 
+HMA 3 Last Candle's Price is 0.999236 and HMA_80 is 1.0001. 
+
+2024-11-09 17:31:42,185 || ****************************************************
+ First entry.Opening new position with base volume 20.0 USDCUSDT
+2024-11-09 17:31:42,518 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:31:44,922 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:31:47,252 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:31:49,589 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:31:51,943 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:31:54,331 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:31:56,676 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:31:59,036 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:01,487 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:03,844 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:06,196 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:08,530 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:10,877 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:13,209 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:15,549 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:17,900 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:20,243 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:22,587 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:24,948 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:27,323 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:29,663 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:32,024 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:34,371 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:36,758 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:39,101 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:41,452 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:43,803 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:46,153 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:48,490 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:50,885 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:53,244 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:55,634 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:32:58,002 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:00,364 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:02,736 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:05,086 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:07,434 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:09,765 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:12,103 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:14,442 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:16,785 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:19,138 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:21,485 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:23,834 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:26,365 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:28,708 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:31,097 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:33,441 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:35,788 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:38,169 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:40,507 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:42,984 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:45,330 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:47,714 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:50,049 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:52,478 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:54,834 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:57,192 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:33:59,575 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:01,944 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:04,325 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:06,683 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:09,029 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:11,388 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:13,714 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:16,059 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:18,391 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:20,733 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:23,064 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:25,403 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:27,752 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:30,095 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:32,517 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:34,906 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:37,256 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-09 17:34:37,535 || Keyboard interrupt detected, stopping the application.
