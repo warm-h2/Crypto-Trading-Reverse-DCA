@@ -1,0 +1,27 @@
+2024-11-15 17:18:45,270 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-15 17:18:47,705 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 154.43 and HMA_40 is 154.7931. 
+HMA 2 Last Candle's Price is 154.43 and HMA_60 is 168.6221. 
+HMA 3 Last Candle's Price is 158.3 and HMA_80 is 160.5553. 
+
+2024-11-15 17:18:47,926 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-11-15 17:18:49,798 || Exception! Get open positions. Retrying... list index out of range
+2024-11-15 17:18:50,040 || Placing initial Take profit order.
+2024-11-15 17:18:50,462 || Exception! Get open positions. Retrying... list index out of range
+2024-11-15 17:18:50,899 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:18:53,156 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:18:55,292 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:18:56,810 || Keyboard interrupt detected, stopping the application.

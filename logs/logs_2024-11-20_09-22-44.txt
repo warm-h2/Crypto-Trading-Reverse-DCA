@@ -1,0 +1,64 @@
+2024-11-20 09:24:41,518 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:24:43,858 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 467.52 and HMA_40 is 467.521. 
+HMA 2 Last Candle's Price is 467.52 and HMA_60 is 486.2093. 
+HMA 3 Last Candle's Price is 482.92 and HMA_80 is 521.8563. 
+
+2024-11-20 09:24:44,002 || ****************************************************
+ First entry.Opening new position with base volume 0.042 TAOUSDT
+2024-11-20 09:24:45,895 || Market SELL order of size 0.042 TAOUSDT filled at $472.06. Market price at that time: $472.55. Current SELL position size: -0.042 TAOUSDT.
+2024-11-20 09:24:45,971 || Placing initial Take profit order.
+2024-11-20 09:24:46,532 || Take Profit Market BUY order of size 0.042 TAOUSDT placed at 467.34
+2024-11-20 09:24:46,624 || Placing initial Stop loss order.
+2024-11-20 09:24:47,192 || Stop Loss Market BUY order of size 0.042 TAOUSDT placed at 473.24
+2024-11-20 09:26:59,674 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-11-20 09:27:05,616 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 467.52 and HMA_40 is 467.521. 
+HMA 2 Last Candle's Price is 467.52 and HMA_60 is 486.2093. 
+HMA 3 Last Candle's Price is 482.92 and HMA_80 is 521.8563. 
+
+2024-11-20 09:27:05,699 || ****************************************************
+ First entry.Opening new position with base volume 0.042 TAOUSDT
+2024-11-20 09:27:07,476 || Market SELL order of size 0.042 TAOUSDT filled at $473.05. Market price at that time: $473.24. Current SELL position size: -0.042 TAOUSDT.
+2024-11-20 09:27:07,550 || Placing initial Take profit order.
+2024-11-20 09:27:08,122 || Take Profit Market BUY order of size 0.042 TAOUSDT placed at 468.32
+2024-11-20 09:27:08,246 || Placing initial Stop loss order.
+2024-11-20 09:27:08,824 || Stop Loss Market BUY order of size 0.042 TAOUSDT placed at 474.23
+2024-11-20 09:30:00,789 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:30:03,100 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 467.52 and HMA_40 is 467.521. 
+HMA 2 Last Candle's Price is 467.52 and HMA_60 is 486.2093. 
+HMA 3 Last Candle's Price is 482.92 and HMA_80 is 521.8563. 
+
+2024-11-20 09:30:03,195 || ****************************************************
+ First entry.Opening new position with base volume 0.042 TAOUSDT
+2024-11-20 09:30:04,993 || Market SELL order of size 0.042 TAOUSDT filled at $472.48. Market price at that time: $472.56. Current SELL position size: -0.042 TAOUSDT.
+2024-11-20 09:30:05,070 || Placing initial Take profit order.
+2024-11-20 09:30:05,627 || Take Profit Market BUY order of size 0.042 TAOUSDT placed at 467.76
+2024-11-20 09:30:05,694 || Placing initial Stop loss order.
+2024-11-20 09:30:06,233 || Stop Loss Market BUY order of size 0.042 TAOUSDT placed at 473.66

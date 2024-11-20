@@ -1,0 +1,22 @@
+2024-11-15 09:26:57,692 || Ticker = UNIUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-15 09:27:00,086 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 8.076 and HMA_40 is 8.1024. 
+HMA 2 Last Candle's Price is 8.076 and HMA_60 is 8.6757. 
+HMA 3 Last Candle's Price is 8.183 and HMA_80 is 8.3937. 
+
+2024-11-15 09:27:00,241 || ****************************************************
+ First entry.Opening new position with base volume 2.0 UNIUSDT
+2024-11-15 09:27:00,615 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-15 09:27:03,903 || Keyboard interrupt detected, stopping the application.

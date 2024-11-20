@@ -1,0 +1,225 @@
+2024-11-20 09:39:53,990 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:39:56,869 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 467.52 and HMA_40 is 467.521. 
+HMA 2 Last Candle's Price is 467.52 and HMA_60 is 486.2093. 
+HMA 3 Last Candle's Price is 482.92 and HMA_80 is 521.8563. 
+
+2024-11-20 09:39:56,952 || ****************************************************
+ First entry.Opening new position with base volume 0.042 TAOUSDT
+2024-11-20 09:39:58,760 || Market SELL order of size 0.042 TAOUSDT filled at $473.58. Market price at that time: $473.58. Current SELL position size: -0.042 TAOUSDT.
+2024-11-20 09:39:58,830 || Placing initial Take profit order.
+2024-11-20 09:39:59,379 || Take Profit Market BUY order of size 0.042 TAOUSDT placed at 468.84
+2024-11-20 09:39:59,449 || Placing initial Stop loss order.
+2024-11-20 09:40:00,000 || Stop Loss Market BUY order of size 0.042 TAOUSDT placed at 474.76
+2024-11-20 09:40:00,080 || Ticker = JUPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:40:02,292 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 1.1141 and HMA_40 is 1.1141. 
+HMA 2 Last Candle's Price is 1.1141 and HMA_60 is 1.1712. 
+HMA 3 Last Candle's Price is 1.1355 and HMA_80 is 1.1357. 
+
+2024-11-20 09:40:02,374 || ****************************************************
+ First entry.Opening new position with base volume 18.0 JUPUSDT
+2024-11-20 09:40:04,149 || Market SELL order of size 18.0 JUPUSDT filled at $1.1219. Market price at that time: $1.1223. Current SELL position size: -18.0 JUPUSDT.
+2024-11-20 09:40:04,204 || Placing initial Take profit order.
+2024-11-20 09:40:04,756 || Take Profit Market BUY order of size 18.0 JUPUSDT placed at 1.110681
+2024-11-20 09:40:04,814 || Placing initial Stop loss order.
+2024-11-20 09:40:05,349 || Stop Loss Market BUY order of size 18.0 JUPUSDT placed at 1.1247047
+2024-11-20 09:40:05,434 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:40:07,666 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0082799 and HMA_40 is 0.0084. 
+HMA 2 Last Candle's Price is 0.0082799 and HMA_60 is 0.0088. 
+HMA 3 Last Candle's Price is 0.00858 and HMA_80 is 0.0099. 
+
+2024-11-20 09:40:07,750 || ****************************************************
+ First entry.Opening new position with base volume 2411.0 TURBOUSDT
+2024-11-20 09:40:09,530 || Market SELL order of size 2411.0 TURBOUSDT filled at $0.0082957. Market price at that time: $0.0082944. Current SELL position size: -2411.0 TURBOUSDT.
+2024-11-20 09:40:09,875 || Placing initial Take profit order.
+2024-11-20 09:40:11,047 || Take Profit Market BUY order of size 2411.0 TURBOUSDT placed at 0.0082127
+2024-11-20 09:40:11,124 || Placing initial Stop loss order.
+2024-11-20 09:40:11,669 || Stop Loss Market BUY order of size 2411.0 TURBOUSDT placed at 0.0083164
+2024-11-20 09:44:38,397 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:44:40,706 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 467.52 and HMA_40 is 467.521. 
+HMA 2 Last Candle's Price is 467.52 and HMA_60 is 486.2093. 
+HMA 3 Last Candle's Price is 482.92 and HMA_80 is 521.8563. 
+
+2024-11-20 09:44:40,782 || ****************************************************
+ First entry.Opening new position with base volume 0.042 TAOUSDT
+2024-11-20 09:44:42,585 || Market SELL order of size 0.042 TAOUSDT filled at $475.28. Market price at that time: $475.27. Current SELL position size: -0.042 TAOUSDT.
+2024-11-20 09:44:43,323 || Placing initial Take profit order.
+2024-11-20 09:44:44,006 || Take Profit Market BUY order of size 0.042 TAOUSDT placed at 470.53
+2024-11-20 09:44:44,080 || Placing initial Stop loss order.
+2024-11-20 09:44:44,619 || Stop Loss Market BUY order of size 0.042 TAOUSDT placed at 476.47
+2024-11-20 09:44:44,693 || Ticker = JUPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:44:47,348 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 1.1141 and HMA_40 is 1.1141. 
+HMA 2 Last Candle's Price is 1.1141 and HMA_60 is 1.1712. 
+HMA 3 Last Candle's Price is 1.1355 and HMA_80 is 1.1357. 
+
+2024-11-20 09:44:47,416 || ****************************************************
+ First entry.Opening new position with base volume 18.0 JUPUSDT
+2024-11-20 09:44:49,190 || Market SELL order of size 18.0 JUPUSDT filled at $1.1232. Market price at that time: $1.1231. Current SELL position size: -18.0 JUPUSDT.
+2024-11-20 09:44:49,264 || Placing initial Take profit order.
+2024-11-20 09:44:49,823 || Take Profit Market BUY order of size 18.0 JUPUSDT placed at 1.111968
+2024-11-20 09:44:49,897 || Placing initial Stop loss order.
+2024-11-20 09:44:50,443 || Stop Loss Market BUY order of size 18.0 JUPUSDT placed at 1.126008
+2024-11-20 09:44:50,514 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:44:52,736 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0082799 and HMA_40 is 0.0084. 
+HMA 2 Last Candle's Price is 0.0082799 and HMA_60 is 0.0088. 
+HMA 3 Last Candle's Price is 0.00858 and HMA_80 is 0.0099. 
+
+2024-11-20 09:44:52,859 || ****************************************************
+ First entry.Opening new position with base volume 2403.0 TURBOUSDT
+2024-11-20 09:44:54,649 || Market SELL order of size 2403.0 TURBOUSDT filled at $0.0083199. Market price at that time: $0.0083219. Current SELL position size: -2403.0 TURBOUSDT.
+2024-11-20 09:44:54,719 || Placing initial Take profit order.
+2024-11-20 09:44:55,252 || Take Profit Market BUY order of size 2403.0 TURBOUSDT placed at 0.0082367
+2024-11-20 09:44:55,323 || Placing initial Stop loss order.
+2024-11-20 09:44:55,879 || Stop Loss Market BUY order of size 2403.0 TURBOUSDT placed at 0.0083407
+2024-11-20 09:49:51,026 || Ticker = TAOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:49:53,339 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 467.52 and HMA_40 is 467.521. 
+HMA 2 Last Candle's Price is 467.52 and HMA_60 is 486.2093. 
+HMA 3 Last Candle's Price is 482.92 and HMA_80 is 521.8563. 
+
+2024-11-20 09:49:53,409 || ****************************************************
+ First entry.Opening new position with base volume 0.042 TAOUSDT
+2024-11-20 09:49:55,197 || Market SELL order of size 0.042 TAOUSDT filled at $474.03. Market price at that time: $474.06. Current SELL position size: -0.042 TAOUSDT.
+2024-11-20 09:49:55,280 || Placing initial Take profit order.
+2024-11-20 09:49:55,835 || Take Profit Market BUY order of size 0.042 TAOUSDT placed at 469.29
+2024-11-20 09:49:55,891 || Placing initial Stop loss order.
+2024-11-20 09:49:56,430 || Stop Loss Market BUY order of size 0.042 TAOUSDT placed at 475.22
+2024-11-20 09:49:56,503 || Ticker = JUPUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:49:58,729 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 1.1141 and HMA_40 is 1.1141. 
+HMA 2 Last Candle's Price is 1.1141 and HMA_60 is 1.1712. 
+HMA 3 Last Candle's Price is 1.1355 and HMA_80 is 1.1357. 
+
+2024-11-20 09:49:58,800 || ****************************************************
+ First entry.Opening new position with base volume 18.0 JUPUSDT
+2024-11-20 09:50:00,574 || Market SELL order of size 18.0 JUPUSDT filled at $1.1215. Market price at that time: $1.1205. Current SELL position size: -18.0 JUPUSDT.
+2024-11-20 09:50:00,642 || Placing initial Take profit order.
+2024-11-20 09:50:01,182 || Take Profit Market BUY order of size 18.0 JUPUSDT placed at 1.110285
+2024-11-20 09:50:01,248 || Placing initial Stop loss order.
+2024-11-20 09:50:01,883 || Stop Loss Market BUY order of size 18.0 JUPUSDT placed at 1.1243037
+2024-11-20 09:50:01,953 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 09:50:04,215 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0082799 and HMA_40 is 0.0084. 
+HMA 2 Last Candle's Price is 0.0082799 and HMA_60 is 0.0088. 
+HMA 3 Last Candle's Price is 0.00858 and HMA_80 is 0.0099. 
+
+2024-11-20 09:50:04,385 || ****************************************************
+ First entry.Opening new position with base volume 2404.0 TURBOUSDT
+2024-11-20 09:50:06,169 || Market SELL order of size 2404.0 TURBOUSDT filled at $0.0083199. Market price at that time: $0.0083183. Current SELL position size: -2404.0 TURBOUSDT.
+2024-11-20 09:50:06,253 || Placing initial Take profit order.
+2024-11-20 09:50:06,815 || Take Profit Market BUY order of size 2404.0 TURBOUSDT placed at 0.0082367
+2024-11-20 09:50:06,881 || Placing initial Stop loss order.
+2024-11-20 09:50:07,464 || Stop Loss Market BUY order of size 2404.0 TURBOUSDT placed at 0.0083407

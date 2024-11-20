@@ -1,0 +1,24 @@
+2024-11-17 03:46:51,120 || Ticker = USDCUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-17 03:46:53,443 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.998959 and HMA_40 is 0.999. 
+HMA 2 Last Candle's Price is 0.99893 and HMA_60 is 0.999. 
+HMA 3 Last Candle's Price is 0.99893 and HMA_80 is 0.9997. 
+
+2024-11-17 03:46:53,579 || ****************************************************
+ First entry.Opening new position with base volume 20.0 USDCUSDT
+2024-11-17 03:46:53,969 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-17 03:47:04,343 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-17 03:47:05,779 || Keyboard interrupt detected, stopping the bot.
+2024-11-17 03:47:05,984 || Keyboard interrupt detected, stopping the application.

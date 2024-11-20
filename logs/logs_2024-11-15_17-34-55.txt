@@ -1,0 +1,58 @@
+2024-11-15 17:36:40,850 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-15 17:36:43,250 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 154.43 and HMA_40 is 154.7931. 
+HMA 2 Last Candle's Price is 154.43 and HMA_60 is 168.6221. 
+HMA 3 Last Candle's Price is 158.3 and HMA_80 is 160.5553. 
+
+2024-11-15 17:36:43,466 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-11-15 17:36:45,362 || Exception! Get open positions. Retrying... list index out of range
+2024-11-15 17:36:45,503 || Placing initial Take profit order.
+2024-11-15 17:36:45,910 || Exception! Get open positions. Retrying... list index out of range
+2024-11-15 17:36:46,063 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:36:48,236 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:36:50,413 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:36:52,685 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:36:54,949 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:36:57,143 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:36:59,331 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:01,517 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:03,732 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:05,880 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:08,044 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:10,190 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:12,378 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:14,522 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:16,690 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:18,889 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:21,084 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:23,285 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:25,466 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:27,637 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:29,923 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:32,287 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:34,433 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:36,578 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:38,900 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:41,156 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:43,410 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:45,575 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:47,721 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:49,962 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:52,154 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:54,317 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:56,459 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:58,619 || Exception! Placing market order. Retrying... cannot access local variable 'size' where it is not associated with a value
+2024-11-15 17:37:59,621 || Keyboard interrupt detected, stopping the application.

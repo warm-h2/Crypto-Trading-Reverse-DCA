@@ -73,12 +73,12 @@ def main():
     telegram_channel_chat_id_2 = config['telegram']['channel_chat_id_2']
     telegram_bot = TelegramBot(telegram_api_token, telegram_channel_chat_id_1, telegram_channel_chat_id_2)    
 
-    # binance_api_key = config['binance']['api_key']
-    # binance_api_secret = config['binance']['api_secret']
-    # binance_client = Client(binance_api_key, binance_api_secret)
-
     binance_api_key = config['binance']['api_key']
     binance_api_secret = config['binance']['api_secret']
+    # binance_client = Client(binance_api_key, binance_api_secret)
+
+    # binance_api_key = config['binance']['test_api_key']
+    # binance_api_secret = config['binance']['test_api_secret']
     print(f"api => {binance_api_key}  secret=> {binance_api_secret}")
     # telegram_bot.send_message("--------------------------------------------------------\nRunning Reverse DCA Stategy...")
     # self.telegram_bot.send_message(self.setting_message)
@@ -86,7 +86,7 @@ def main():
         pairs = []
         nowcount  = 0
         past_time = datetime.now()
-        delta_criteria= 300
+        delta_criteria= 3600
         while True:
             delta = datetime.now()-past_time
             print(f'nowcount => {nowcount}  delta=> {delta.total_seconds()}' )
@@ -106,7 +106,6 @@ def main():
                 pairCount = 0
                 # top_volume_pairs = [("TRBUSDT",10929),("ZETAUSDT",29192),("MANTAUSDT",238838)]
                 for pair in top_volume_pairs:
-                    print(pair)
                     ticker = pair[0]
                     setting_message  =  (
                             f"Ticker = {ticker}\n"
@@ -133,14 +132,17 @@ def main():
                     # continue
                     try:
                         isOk = obj_reverse_dca.isAvailable()
-                        print(f"IsAvailable => {isOk}\n\n")
-                        if isOk== False: continue
+                        print(f"-----------------------------------\n{ticker} => IsAvailable => {isOk}")
+                        if isOk== False: 
+                            print(f"count => {pairCount}")
+                            continue
                     except Exception as e:
                         print(f'Exception => {e}')
                         continue
                     try :
                         pairCount = pairCount + 1
                         pairs.append(obj_reverse_dca)
+                        print(f"count => {pairCount}")
                         if pairCount >= int(max_position) : break
                     except KeyboardInterrupt:  
                         telegram_bot.logger.warning("Keyboard interrupt detected, stopping the bot.")
@@ -181,7 +183,6 @@ def main():
         # obj_reverse_dca.close_position()
         # obj_reverse_dca.cancel_all_open_orders()
         while True:
-            print()
             try:
                 telegram_bot.send_message(obj_reverse_dca.setting_message)
                 obj_reverse_dca.run()

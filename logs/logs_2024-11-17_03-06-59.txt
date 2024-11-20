@@ -1,0 +1,1 @@
+2024-11-17 03:07:27,090 || Keyboard interrupt detected, stopping the application.

@@ -1,0 +1,24 @@
+2024-11-20 14:14:23,600 || Unhandled exception
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\main.py", line 196, in <module>
+    main()
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\main.py", line 125, in main
+    binance_client = Client(binance_api_key, binance_api_secret)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\venv\Lib\site-packages\binance\client.py", line 436, in __init__
+    self.ping()
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\venv\Lib\site-packages\binance\client.py", line 695, in ping
+    return self._get("ping", version=self.PRIVATE_API_VERSION)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\venv\Lib\site-packages\binance\client.py", line 531, in _get
+    return self._request_api("get", path, signed, version, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\venv\Lib\site-packages\binance\client.py", line 475, in _request_api
+    return self._request(method, uri, signed, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\venv\Lib\site-packages\binance\client.py", line 451, in _request
+    return self._handle_response(self.response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Documents\Mark\RDCA_bot\venv\Lib\site-packages\binance\client.py", line 460, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=0): Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.

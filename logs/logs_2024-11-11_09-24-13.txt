@@ -1,0 +1,104 @@
+2024-11-11 09:33:15,573 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-11 09:33:18,861 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0090482 and HMA_40 is 0.0096. 
+HMA 2 Last Candle's Price is 0.0090482 and HMA_60 is 0.0094. 
+HMA 3 Last Candle's Price is 0.0093929 and HMA_80 is 0.0101. 
+
+2024-11-11 09:33:18,936 || ****************************************************
+ First entry.Opening new position with base volume 2222.0 TURBOUSDT
+2024-11-11 09:33:19,297 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:19,641 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:19,981 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:20,346 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:20,695 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:21,033 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:21,379 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:21,717 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:22,051 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:22,429 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:22,783 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:23,114 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:23,454 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:23,776 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:24,125 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:24,480 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:24,809 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:25,170 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:25,635 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:26,035 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:26,372 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:26,712 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:27,034 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:27,388 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:27,730 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:28,063 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:28,388 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:28,720 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:29,067 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:29,404 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:29,738 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:30,121 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:30,450 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:30,795 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:31,133 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:31,469 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:31,827 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:32,172 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:32,530 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:32,883 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:33,210 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:33,587 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:33,928 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:34,259 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:34,628 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:34,979 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:35,423 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:35,900 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:36,315 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:36,647 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:36,977 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:37,323 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:37,652 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:37,994 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:38,325 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:38,671 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:39,003 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:39,351 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:39,695 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:40,074 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:40,445 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:40,773 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:41,155 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:41,498 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:41,836 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:42,164 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:42,500 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:42,848 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:43,184 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:43,523 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:43,866 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:44,207 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:44,555 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:44,939 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:45,301 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:45,685 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:46,061 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:46,461 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:46,852 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:47,196 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:47,548 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:47,912 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:48,234 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-11 09:33:48,588 || Keyboard interrupt detected, stopping the application.

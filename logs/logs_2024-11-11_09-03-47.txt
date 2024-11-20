@@ -1,0 +1,28 @@
+2024-11-11 09:12:17,404 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-11 09:12:20,726 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0090482 and HMA_40 is 0.0096. 
+HMA 2 Last Candle's Price is 0.0090482 and HMA_60 is 0.0094. 
+HMA 3 Last Candle's Price is 0.0093929 and HMA_80 is 0.0101. 
+
+2024-11-11 09:12:20,811 || ****************************************************
+ First entry.Opening new position with base volume 2219.0 TURBOUSDT
+2024-11-11 09:12:21,211 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 78.46.76.71
+2024-11-11 09:12:21,584 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 78.46.76.71
+2024-11-11 09:12:21,951 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 78.46.76.71
+2024-11-11 09:12:22,304 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 78.46.76.71
+2024-11-11 09:12:22,628 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 78.46.76.71
+2024-11-11 09:12:22,960 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 78.46.76.71
+2024-11-11 09:12:23,302 || Exception! Placing market order. Retrying... APIError(code=-2015): Invalid API-key, IP, or permissions for action, request ip: 78.46.76.71
+2024-11-11 09:12:23,638 || Keyboard interrupt detected, stopping the application.

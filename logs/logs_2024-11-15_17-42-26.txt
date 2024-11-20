@@ -1,0 +1,31 @@
+2024-11-15 17:44:14,423 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-15 17:44:16,773 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 154.43 and HMA_40 is 154.7931. 
+HMA 2 Last Candle's Price is 154.43 and HMA_60 is 168.6221. 
+HMA 3 Last Candle's Price is 158.3 and HMA_80 is 160.5553. 
+
+2024-11-15 17:44:16,929 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-11-15 17:44:18,846 || Market SELL order of size 0.1 AAVEUSDT filled at $156.71. Market price at that time: $156.82. Current SELL position size: -0.1 AAVEUSDT.
+2024-11-15 17:44:19,046 || Placing initial Take profit order.
+2024-11-15 17:44:19,660 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:22,086 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:24,610 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:27,119 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:29,622 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:31,991 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:34,387 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:36,766 || Exception! Placing market order. Retrying... APIError(code=-4061): Order's position side does not match user's setting.
+2024-11-15 17:44:37,004 || Keyboard interrupt detected, stopping the application.

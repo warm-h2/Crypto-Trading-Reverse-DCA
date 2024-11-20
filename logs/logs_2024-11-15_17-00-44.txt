@@ -1,0 +1,22 @@
+2024-11-15 17:02:28,439 || Ticker = AAVEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-15 17:02:30,957 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 154.43 and HMA_40 is 154.7931. 
+HMA 2 Last Candle's Price is 154.43 and HMA_60 is 168.6221. 
+HMA 3 Last Candle's Price is 158.3 and HMA_80 is 160.5553. 
+
+2024-11-15 17:02:31,135 || ****************************************************
+ First entry.Opening new position with base volume 0.1 AAVEUSDT
+2024-11-15 17:02:31,505 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.
+2024-11-15 17:02:41,961 || Exception! Placing market order. Retrying... APIError(code=-2019): Margin is insufficient.

@@ -1,0 +1,8 @@
+2024-11-17 03:04:47,277 || Unhandled exception
+Traceback (most recent call last):
+  File "D:\Mark\Serhan\last_RDCA_commit\11-10\RDCA_bot\main.py", line 196, in <module>
+    main()
+  File "D:\Mark\Serhan\last_RDCA_commit\11-10\RDCA_bot\main.py", line 144, in main
+    printf(f"count => {pairCount}")
+    ^^^^^^
+NameError: name 'printf' is not defined. Did you mean: 'print'?

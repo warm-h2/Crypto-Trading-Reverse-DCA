@@ -1,0 +1,267 @@
+2024-11-20 10:32:06,609 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:32:09,109 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0082768 and HMA_40 is 0.0083. 
+HMA 2 Last Candle's Price is 0.0082799 and HMA_60 is 0.0088. 
+HMA 3 Last Candle's Price is 0.00858 and HMA_80 is 0.0099. 
+
+2024-11-20 10:32:09,482 || ****************************************************
+ First entry.Opening new position with base volume 2430.0 TURBOUSDT
+2024-11-20 10:32:11,445 || Market SELL order of size 2430.0 TURBOUSDT filled at $0.0082414. Market price at that time: $0.0082319. Current SELL position size: -2430.0 TURBOUSDT.
+2024-11-20 10:32:11,678 || Placing initial Take profit order.
+2024-11-20 10:32:12,522 || Take Profit Market BUY order of size 2430.0 TURBOUSDT placed at 0.008159
+2024-11-20 10:32:12,841 || Placing initial Stop loss order.
+2024-11-20 10:32:13,543 || Stop Loss Market BUY order of size 2430.0 TURBOUSDT placed at 0.008262
+2024-11-20 10:32:13,842 || Ticker = APEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:32:16,391 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 1.0987 and HMA_40 is 1.1026. 
+HMA 2 Last Candle's Price is 1.0997 and HMA_60 is 1.1276. 
+HMA 3 Last Candle's Price is 1.1344 and HMA_80 is 1.1697. 
+
+2024-11-20 10:32:16,574 || ****************************************************
+ First entry.Opening new position with base volume 18.0 APEUSDT
+2024-11-20 10:32:18,463 || Market SELL order of size 18.0 APEUSDT filled at $1.0956. Market price at that time: $1.0965. Current SELL position size: -18.0 APEUSDT.
+2024-11-20 10:32:18,608 || Placing initial Take profit order.
+2024-11-20 10:32:19,324 || Take Profit Market BUY order of size 18.0 APEUSDT placed at 1.0846
+2024-11-20 10:32:19,562 || Placing initial Stop loss order.
+2024-11-20 10:32:20,228 || Stop Loss Market BUY order of size 18.0 APEUSDT placed at 1.0983
+2024-11-20 10:32:20,403 || Ticker = ZECUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:32:22,725 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 41.72 and HMA_40 is 41.811. 
+HMA 2 Last Candle's Price is 41.43 and HMA_60 is 45.4407. 
+HMA 3 Last Candle's Price is 42.8 and HMA_80 is 43.5312. 
+
+2024-11-20 10:32:22,908 || ****************************************************
+ First entry.Opening new position with base volume 0.481 ZECUSDT
+2024-11-20 10:32:24,782 || Market SELL order of size 0.481 ZECUSDT filled at $41.53. Market price at that time: $41.55. Current SELL position size: -0.481 ZECUSDT.
+2024-11-20 10:32:24,972 || Placing initial Take profit order.
+2024-11-20 10:32:25,602 || Take Profit Market BUY order of size 0.481 ZECUSDT placed at 41.11
+2024-11-20 10:32:25,795 || Placing initial Stop loss order.
+2024-11-20 10:32:26,438 || Stop Loss Market BUY order of size 0.481 ZECUSDT placed at 41.63
+2024-11-20 10:41:55,699 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:41:58,492 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0082768 and HMA_40 is 0.0083. 
+HMA 2 Last Candle's Price is 0.0082799 and HMA_60 is 0.0088. 
+HMA 3 Last Candle's Price is 0.00858 and HMA_80 is 0.0099. 
+
+2024-11-20 10:41:58,653 || ****************************************************
+ First entry.Opening new position with base volume 2431.0 TURBOUSDT
+2024-11-20 10:42:00,498 || Market SELL order of size 2431.0 TURBOUSDT filled at $0.0082255. Market price at that time: $0.0082262. Current SELL position size: -2431.0 TURBOUSDT.
+2024-11-20 10:42:00,628 || Placing initial Take profit order.
+2024-11-20 10:42:01,256 || Take Profit Market BUY order of size 2431.0 TURBOUSDT placed at 0.0081432
+2024-11-20 10:42:01,403 || Placing initial Stop loss order.
+2024-11-20 10:42:02,047 || Stop Loss Market BUY order of size 2431.0 TURBOUSDT placed at 0.0082461
+2024-11-20 10:42:02,189 || Ticker = APEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:42:04,516 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 1.0987 and HMA_40 is 1.1026. 
+HMA 2 Last Candle's Price is 1.0997 and HMA_60 is 1.1276. 
+HMA 3 Last Candle's Price is 1.1344 and HMA_80 is 1.1697. 
+
+2024-11-20 10:42:04,660 || ****************************************************
+ First entry.Opening new position with base volume 18.0 APEUSDT
+2024-11-20 10:42:06,528 || Market SELL order of size 18.0 APEUSDT filled at $1.0953. Market price at that time: $1.0953. Current SELL position size: -18.0 APEUSDT.
+2024-11-20 10:42:06,675 || Placing initial Take profit order.
+2024-11-20 10:42:07,740 || Take Profit Market BUY order of size 18.0 APEUSDT placed at 1.0843
+2024-11-20 10:42:07,881 || Placing initial Stop loss order.
+2024-11-20 10:42:08,966 || Stop Loss Market BUY order of size 18.0 APEUSDT placed at 1.098
+2024-11-20 10:42:09,105 || Ticker = ZECUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:42:11,413 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 41.72 and HMA_40 is 41.811. 
+HMA 2 Last Candle's Price is 41.43 and HMA_60 is 45.4407. 
+HMA 3 Last Candle's Price is 42.8 and HMA_80 is 43.5312. 
+
+2024-11-20 10:42:11,550 || ****************************************************
+ First entry.Opening new position with base volume 0.48 ZECUSDT
+2024-11-20 10:42:13,397 || Market SELL order of size 0.48 ZECUSDT filled at $41.63. Market price at that time: $41.64. Current SELL position size: -0.48 ZECUSDT.
+2024-11-20 10:42:13,529 || Placing initial Take profit order.
+2024-11-20 10:42:14,171 || Take Profit Market BUY order of size 0.48 ZECUSDT placed at 41.21
+2024-11-20 10:42:14,493 || Placing initial Stop loss order.
+2024-11-20 10:42:15,109 || Stop Loss Market BUY order of size 0.48 ZECUSDT placed at 41.73
+2024-11-20 10:44:10,250 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-11-20 10:44:15,733 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-11-20 10:44:24,636 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 1.0987 and HMA_40 is 1.1026. 
+HMA 2 Last Candle's Price is 1.0997 and HMA_60 is 1.1276. 
+HMA 3 Last Candle's Price is 1.1344 and HMA_80 is 1.1697. 
+
+2024-11-20 10:44:24,879 || ****************************************************
+ First entry.Opening new position with base volume 18.0 APEUSDT
+2024-11-20 10:44:26,757 || Market SELL order of size 18.0 APEUSDT filled at $1.0977. Market price at that time: $1.0979. Current SELL position size: -18.0 APEUSDT.
+2024-11-20 10:44:26,933 || Placing initial Take profit order.
+2024-11-20 10:44:27,644 || Take Profit Market BUY order of size 18.0 APEUSDT placed at 1.0867
+2024-11-20 10:44:27,869 || Placing initial Stop loss order.
+2024-11-20 10:44:28,567 || Stop Loss Market BUY order of size 18.0 APEUSDT placed at 1.1004
+2024-11-20 10:44:30,869 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 41.72 and HMA_40 is 41.811. 
+HMA 2 Last Candle's Price is 41.43 and HMA_60 is 45.4407. 
+HMA 3 Last Candle's Price is 42.8 and HMA_80 is 43.5312. 
+
+2024-11-20 10:44:31,040 || ****************************************************
+ First entry.Opening new position with base volume 0.479 ZECUSDT
+2024-11-20 10:44:32,882 || Market SELL order of size 0.479 ZECUSDT filled at $41.74. Market price at that time: $41.72. Current SELL position size: -0.479 ZECUSDT.
+2024-11-20 10:44:33,039 || Placing initial Take profit order.
+2024-11-20 10:44:33,645 || Take Profit Market BUY order of size 0.479 ZECUSDT placed at 41.32
+2024-11-20 10:44:33,795 || Placing initial Stop loss order.
+2024-11-20 10:44:34,496 || Stop Loss Market BUY order of size 0.479 ZECUSDT placed at 41.84
+2024-11-20 10:51:40,342 || Ticker = TURBOUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:51:42,752 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0082768 and HMA_40 is 0.0083. 
+HMA 2 Last Candle's Price is 0.0082799 and HMA_60 is 0.0088. 
+HMA 3 Last Candle's Price is 0.00858 and HMA_80 is 0.0099. 
+
+2024-11-20 10:51:42,952 || ****************************************************
+ First entry.Opening new position with base volume 2427.0 TURBOUSDT
+2024-11-20 10:51:44,825 || Market SELL order of size 2427.0 TURBOUSDT filled at $0.0082404. Market price at that time: $0.0082407. Current SELL position size: -2427.0 TURBOUSDT.
+2024-11-20 10:51:44,953 || Placing initial Take profit order.
+2024-11-20 10:51:45,603 || Take Profit Market BUY order of size 2427.0 TURBOUSDT placed at 0.008158
+2024-11-20 10:51:45,751 || Placing initial Stop loss order.
+2024-11-20 10:51:46,354 || Stop Loss Market BUY order of size 2427.0 TURBOUSDT placed at 0.008261
+2024-11-20 10:51:46,490 || Ticker = APEUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:51:48,808 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 1.0987 and HMA_40 is 1.1026. 
+HMA 2 Last Candle's Price is 1.0997 and HMA_60 is 1.1276. 
+HMA 3 Last Candle's Price is 1.1344 and HMA_80 is 1.1697. 
+
+2024-11-20 10:51:49,045 || ****************************************************
+ First entry.Opening new position with base volume 18.0 APEUSDT
+2024-11-20 10:51:50,992 || Market SELL order of size 18.0 APEUSDT filled at $1.1007. Market price at that time: $1.1007. Current SELL position size: -18.0 APEUSDT.
+2024-11-20 10:51:51,130 || Placing initial Take profit order.
+2024-11-20 10:51:51,784 || Take Profit Market BUY order of size 18.0 APEUSDT placed at 1.0897
+2024-11-20 10:51:51,955 || Placing initial Stop loss order.
+2024-11-20 10:51:52,623 || Stop Loss Market BUY order of size 18.0 APEUSDT placed at 1.1035
+2024-11-20 10:51:52,763 || Ticker = ZECUSDT
+Initial Direction = Sell
+Base Order Size = 20
+Volume Scale = 1.5
+Breakeven Percent = -4.0
+Stop Loss Percent = 0.25
+Increment Percent = 1.5
+Take Profit Percent = 1.0
+SMA = 200, 0
+HMA 1 = 40, 1H
+HMA 2 = 60, 4H
+HMA 3 = 80, 1D
+2024-11-20 10:51:55,454 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 41.72 and HMA_40 is 41.811. 
+HMA 2 Last Candle's Price is 41.43 and HMA_60 is 45.4407. 
+HMA 3 Last Candle's Price is 42.8 and HMA_80 is 43.5312. 
+
+2024-11-20 10:51:55,590 || ****************************************************
+ First entry.Opening new position with base volume 0.478 ZECUSDT
+2024-11-20 10:51:57,552 || Market SELL order of size 0.478 ZECUSDT filled at $41.78588. Market price at that time: $41.8. Current SELL position size: -0.478 ZECUSDT.
+2024-11-20 10:51:57,742 || Placing initial Take profit order.
+2024-11-20 10:51:58,471 || Take Profit Market BUY order of size 0.478 ZECUSDT placed at 41.37
+2024-11-20 10:51:58,811 || Placing initial Stop loss order.
+2024-11-20 10:51:59,553 || Stop Loss Market BUY order of size 0.478 ZECUSDT placed at 41.89
+2024-11-20 10:54:38,341 || !!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds
+2024-11-20 10:54:50,090 || Conditions have been met, so Starting the bot!!! 
+SMA Last Candle's Price is 0 and SMA_200 is 0. 
+HMA 1 Last Candle's Price is 0.0082768 and HMA_40 is 0.0083. 
+HMA 2 Last Candle's Price is 0.0082799 and HMA_60 is 0.0088. 
+HMA 3 Last Candle's Price is 0.00858 and HMA_80 is 0.0099. 
+
+2024-11-20 10:54:50,339 || ****************************************************
+ First entry.Opening new position with base volume 2422.0 TURBOUSDT
+2024-11-20 10:54:52,268 || Market SELL order of size 2422.0 TURBOUSDT filled at $0.0082452. Market price at that time: $0.0082579. Current SELL position size: -2422.0 TURBOUSDT.
+2024-11-20 10:54:52,496 || Placing initial Take profit order.
+2024-11-20 10:54:53,135 || Take Profit Market BUY order of size 2422.0 TURBOUSDT placed at 0.0081627
+2024-11-20 10:54:53,348 || Placing initial Stop loss order.
+2024-11-20 10:54:54,012 || Stop Loss Market BUY order of size 2422.0 TURBOUSDT placed at 0.0082658
