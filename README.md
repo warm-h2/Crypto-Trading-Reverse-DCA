@@ -75,50 +75,50 @@ This project contains the implementation and execution (on Binance) of the rever
 
 #### [settings]
 
-Ticker auto olduğu zaman coinfinder modu çalışır. Normal modu tek coinin adını girerek çalıştırmaktır. DOGEUSDT gibi. 
+#ticker = auto ; Ticker auto olduğu zaman coinfinder modu çalışır. Normal modu tek coinin adını girerek çalıştırmaktır. DOGEUSDT gibi. 
 
 #### ticker = auto
 
-Ticker auto olduğunda devreye girer. Aynı aynda kaç coini open olarak tutacağımız maksimum değeridir. Bu sayı aşağı düştüğünde tarama tekrar başlar.
+#Max_positions = 3 ; Ticker auto olduğunda devreye girer. Aynı aynda kaç coini open olarak tutacağımız maksimum değeridir. Bu sayı aşağı düştüğünde tarama tekrar başlar.
 
 #### Max_positions = 3
 
-botun long mu yoksa short mu çalışacağını belirtir. 
+#initial_direction = Sell; botun long mu yoksa short mu çalışacağını belirtir. 
 
 #### initial_direction = Sell
 
-USD değerinden pozisyon açılış miktarı. 
+#base_order_size = 20 ; USD değerinden pozisyon açılış miktarı. 
 
 #### base_order_size = 20
 
-Her pozisyon arttırımında bir önceki miktarı kaç ile çarpacağımız çarpanın değeri. Örnek. 20 dolarla girersen 20, 30, 45 olarak pozisyonları açar… vb. 
+#volume_scale = 1.5 ; Her pozisyon arttırımında bir önceki miktarı kaç ile çarpacağımız çarpanın değeri. Örnek. 20 dolarla girersen 20, 30, 45 olarak pozisyonları açar… vb. 
 
 #### volume_scale = 1.5
 
-Arttırım yapacağımız yüzdesel değer. Bu örnekte her %2 yükselişte yukardaki volume_scale miktarı kadar parayı üstüne koyarak devam ediyoruz. 
+#increment_pct = 2 ; Arttırım yapacağımız yüzdesel değer. Bu örnekte her %2 yükselişte yukardaki volume_scale miktarı kadar parayı üstüne koyarak devam ediyoruz. 
 
 #### increment_pct = 2
 
-Bu stop loss değeri pozisyon açıldıktan sonra geçerlidir. Eğer hiç alım yapamadan pozisyon geriye düşerse bu değere ulaştığında pozisyonu kapatır. 
+#stop_loss_pct = 2 ; Bu stop loss değeri pozisyon açıldıktan sonra geçerlidir. Eğer hiç alım yapamadan pozisyon geriye düşerse bu değere ulaştığında pozisyonu kapatır. 
 
 #### stop_loss_pct = 2
 
-Bu değer ise açılış sonrası ilk ekleme yaptıktan sonra devreye girer. Paranın "breakeven" noktasından ne kadar geriye düşerse pozisyonu kapatacağını gösterir. Bu değer genelde 0 olarak setleniyor amacı en ufak bir geriye düşüşte kafa kafaya noktasında pozisyondan çıkarak kaybı engellemektır. Yukardaki gibi değer -4 olunca kafa kafaya noktasından %-4'e kadar esnetip o noktada kapat demek oluyor. 
+#breakeven_threshold_pct = -4 ; Bu değer ise açılış sonrası ilk ekleme yaptıktan sonra devreye girer. Paranın "breakeven" noktasından ne kadar geriye düşerse pozisyonu kapatacağını gösterir. Bu değer genelde 0 olarak setleniyor amacı en ufak bir geriye düşüşte kafa kafaya noktasında pozisyondan çıkarak kaybı engellemektır. Yukardaki gibi değer -4 olunca kafa kafaya noktasından %-4'e kadar esnetip o noktada kapat demek oluyor. 
 
 #### breakeven_threshold_pct = -4
 
-Başlangıçtan %9 kazanç oluştuğunda pozisyonu karla kapat. 
+#take_profit_pct = 9 ; Başlangıçtan %9 kazanç oluştuğunda pozisyonu karla kapat. 
 
 #### take_profit_pct = 9
 
-Filtrelemelerin periodları. 0 = disabled
+#Moving Average türü ve periodları. HMA1 pozisyon açılış tetiği, diğerleri baseline filtre. 0 = disabled
 
 #### sma_period = 0
 #### hma1_period = 40
 #### hma2_period = 40
 #### hma3_period = 40
 
-Filtrelemelerin zaman dilimleri - 0 = disabled
+#Moving Average zaman dilimleri. 0 = disabled
 
 #### sma_timeframe = 0
 #### hma1_timeframe = 1H
@@ -126,7 +126,7 @@ Filtrelemelerin zaman dilimleri - 0 = disabled
 #### hma3_timeframe = 1D
 
 
-Telegram ve binance api key ve secret noktaları. 
+#Telegram ve binance api key ve secret noktaları. 
 
 #### [telegram]
 #### api_token = xx
@@ -137,7 +137,7 @@ Telegram ve binance api key ve secret noktaları.
 #### api_key = yy
 #### api_secret = zz
 
-#Yukarıdaki örnekte paraların 4H ve 1D'lik 40 period HMA'nın üzerinde olanların hepsi filtrelenir ve en küçük olan period (1H) fiyatının HMA(40)'ı yukarı cross etmesiyle pozisyon açılır. Bu anlamda en küçük periodlu olan HMA bir trigger, diğer 2 büyük HMA ise baseline filtre olmuş olur. Açılımlar en yüksek hacimli paralar üzerinden max_positions parametresi dolana kadar devam ederler. Pozisyon her %2 kazançta bir önceki pozisyonu 1.5x ile çarparak satın alım yapar ve sırasıyla 20,30,45,67.5 dolarlık ekleme yaparak 162.5 dolarlık bir balance'a ulaşır. 
+Strateji örneği: Yukarıdaki örnekte paraların 4H ve 1D'lik 40 period HMA'nın üzerinde olanların hepsi filtrelenir ve en küçük olan period (1H) fiyatının HMA(40)'ı yukarı cross etmesiyle pozisyon açılır. Bu anlamda en küçük periodlu olan HMA bir trigger, diğer 2 büyük HMA ise baseline filtre olmuş olur. Açılımlar en yüksek hacimli paralar üzerinden max_positions parametresi dolana kadar devam ederler. Pozisyon her %2 kazançta bir önceki pozisyonu 1.5x ile çarparak satın alım yapar ve sırasıyla 20,30,45,67.5 dolarlık ekleme yaparak 162.5 dolarlık bir balance'a ulaşır. 
 
 Pozisyon 3 şekilde sonuçlanabilir. 
 1) %9 noktasına geldiğinde karla kapanması.
