@@ -1,6 +1,67 @@
-# Serhan's Reveres DCA Strategy
+#### Why?
+This is basically a reverse DCA strategy where DCA adds to a losing trade until the stop loss is reached. So regular DCA mostly wins smaller profits and lose a large bet which will eventually wipe out all the profits taken beforehand. Inversely we add to a winning trade until a take profit is reached so that smaller losses are a general flow of this strategy but when take profit is reached we cover the losses and take a larger profit. That's it. 
 
-This project contains the implementation and execution (on Binance) of the reverse DCA strategy, the details of which are provided by Serhan.
+#### Logic:
+All cryptocurrencies above the 4H and 1D 40-period HMA are filtered and a position is opened when the price of the smallest period (1H) crosses the HMA (40) upwards for long. In this sense, the HMA with the smallest period is a trigger, and the other 2 large HMAs are baseline filters. Positions are added by multiplying the previous position by 1.5x at every 2% gain and adds $20,30,45,67.5 respectively, reaching a balance of $162.5.
+
+The position can end in 3 ways.
+
+1) Closing with a profit when it reaches the 9% point.
+2) If there is a 4% fall from the head-to-head point before profit realization, with stop loss.
+3) If any of the 1H, 4H or 1D HMA values ​​are broken, the position is closed immediately and scanning is restarted until max_positions are filled.
+
+Below is the setting file with explanations commented. 
+
+### [settings]
+
+#ticker = auto ; When the ticker is auto, the coinfinder mode is on. The normal mode is to run it by entering the name of a single coin. Like DOGEUSDT.
+### ticker = auto
+
+#Max_positions = 3 ; It is activated when the ticker is auto. It is the maximum number of coins we will keep open at the same time. When this number drops, the scan starts again.
+### Max_positions = 3
+
+#initial_direction = Sell; It indicates whether the bot will work long or short. It's short in this case.
+
+### initial_direction = Sell
+
+#base_order_size = 20 ; The amount of the position opening in USD. ($20 in this case)
+### base_order_size = 20
+
+#volume_scale = 1.5 ; The value of the multiplier by which we will multiply the previous amount in each position increase. For example. If you enter with 20 dollars, it will open positions as 20, 30, 45 ... etc.
+### volume_scale = 1.5
+
+#increment_pct = 2 ; The step percent value which we'll increase the position. In this example, a new position is added every 2% gain until the take profit is reached. 
+### increment_pct = 2
+
+#stop_loss_pct = 2 ; This stop loss value is valid after the position is opened for the first entry price only. If the position reverts without making any buy-ins then it closes the position when it reaches this value.
+### stop_loss_pct = 2
+
+#breakeven_threshold_pct = -4 ; This value activates after the first buy-in order is made. It's generally set as 0, its purpose is to prevent loss by exiting the position at the breakeven point with the slightest fall. If the loss reaches to -4%, it stop losses at -4% loss from the averege entry price, not first entry price. 
+### breakeven_threshold_pct = -4
+
+#take_profit_pct = 9 ; The take profit target percent. Valid from the first entered price.
+### take_profit_pct = 9
+
+#Moving Average type and periods. HMA1 position opening trigger, others baseline filter. 0 = disabled
+### sma_period = 0
+### hma1_period = 40
+### hma2_period = 40
+### hma3_period = 40
+
+#Moving Average time frames. 0 = disabled
+### sma_timeframe = 0
+### hma1_timeframe = 1H
+### hma2_timeframe = 4H
+### hma3_timeframe = 1D
+
+#Telegram and binance api key and secret points.
+### [telegram]
+api_token = xx
+channel_chat_id_1 = yy
+channel_chat_id_2 = zz
+### [binance]
+api_key = yy
+api_secret = zz
 
 ## How to Run (via miniconda/anaconda)
 * It is preferrable to use miniconda and create a new python 3.10 environment in it with the name of rdca
@@ -72,76 +133,3 @@ This project contains the implementation and execution (on Binance) of the rever
 ## Notes
 * The logs will be sent to the Telegram channel while the execution is running.
 * If the execution stops for any reason, close the running terminal and positions manually and restart the terminal.
-
-#### [settings]
-
-#ticker = auto ; Ticker auto olduğu zaman coinfinder modu çalışır. Normal modu tek coinin adını girerek çalıştırmaktır. DOGEUSDT gibi. 
-
-#### ticker = auto
-
-#Max_positions = 3 ; Ticker auto olduğunda devreye girer. Aynı aynda kaç coini open olarak tutacağımız maksimum değeridir. Bu sayı aşağı düştüğünde tarama tekrar başlar.
-
-#### Max_positions = 3
-
-#initial_direction = Sell; botun long mu yoksa short mu çalışacağını belirtir. 
-
-#### initial_direction = Sell
-
-#base_order_size = 20 ; USD değerinden pozisyon açılış miktarı. 
-
-#### base_order_size = 20
-
-#volume_scale = 1.5 ; Her pozisyon arttırımında bir önceki miktarı kaç ile çarpacağımız çarpanın değeri. Örnek. 20 dolarla girersen 20, 30, 45 olarak pozisyonları açar… vb. 
-
-#### volume_scale = 1.5
-
-#increment_pct = 2 ; Arttırım yapacağımız yüzdesel değer. Bu örnekte her %2 yükselişte yukardaki volume_scale miktarı kadar parayı üstüne koyarak devam ediyoruz. 
-
-#### increment_pct = 2
-
-#stop_loss_pct = 2 ; Bu stop loss değeri pozisyon açıldıktan sonra geçerlidir. Eğer hiç alım yapamadan pozisyon geriye düşerse bu değere ulaştığında pozisyonu kapatır. 
-
-#### stop_loss_pct = 2
-
-#breakeven_threshold_pct = -4 ; Bu değer ise açılış sonrası ilk ekleme yaptıktan sonra devreye girer. Paranın "breakeven" noktasından ne kadar geriye düşerse pozisyonu kapatacağını gösterir. Bu değer genelde 0 olarak setleniyor amacı en ufak bir geriye düşüşte kafa kafaya noktasında pozisyondan çıkarak kaybı engellemektır. Yukardaki gibi değer -4 olunca kafa kafaya noktasından %-4'e kadar esnetip o noktada kapat demek oluyor. 
-
-#### breakeven_threshold_pct = -4
-
-#take_profit_pct = 9 ; Başlangıçtan %9 kazanç oluştuğunda pozisyonu karla kapat. 
-
-#### take_profit_pct = 9
-
-#Moving Average türü ve periodları. HMA1 pozisyon açılış tetiği, diğerleri baseline filtre. 0 = disabled
-
-#### sma_period = 0
-#### hma1_period = 40
-#### hma2_period = 40
-#### hma3_period = 40
-
-#Moving Average zaman dilimleri. 0 = disabled
-
-#### sma_timeframe = 0
-#### hma1_timeframe = 1H
-#### hma2_timeframe = 4H
-#### hma3_timeframe = 1D
-
-
-#Telegram ve binance api key ve secret noktaları. 
-
-#### [telegram]
-#### api_token = xx
-#### channel_chat_id_1 = yy
-#### channel_chat_id_2 = zz
-
-#### [binance]
-#### api_key = yy
-#### api_secret = zz
-
-Strateji örneği: Yukarıdaki örnekte paraların 4H ve 1D'lik 40 period HMA'nın üzerinde olanların hepsi filtrelenir ve en küçük olan period (1H) fiyatının HMA(40)'ı yukarı cross etmesiyle pozisyon açılır. Bu anlamda en küçük periodlu olan HMA bir trigger, diğer 2 büyük HMA ise baseline filtre olmuş olur. Açılımlar en yüksek hacimli paralar üzerinden max_positions parametresi dolana kadar devam ederler. Pozisyon her %2 kazançta bir önceki pozisyonu 1.5x ile çarparak satın alım yapar ve sırasıyla 20,30,45,67.5 dolarlık ekleme yaparak 162.5 dolarlık bir balance'a ulaşır. 
-
-Pozisyon 3 şekilde sonuçlanabilir. 
-1) %9 noktasına geldiğinde karla kapanması.
-2) Kar realizasyonu gerçekleşmeden kafakafaya noktasından %4 geriye düşme yaşarsa stop loss ile.
-3) 1H, 4H veya 1D'lik HMA değerlerinden herhangi birtanesi kırılım yaşarsa pozisyon anında kapatılır ve max_positions dolana kadar tarama tekrar başlatılır. 
-
-
