@@ -1,14 +1,33 @@
-#### Why?
+### Why?
 This is basically a reverse DCA strategy where DCA adds to a losing trade until the stop loss is reached. So regular DCA mostly wins smaller profits and lose a large bet which will eventually wipe out all the profits taken beforehand. Inversely we add to a winning trade until a take profit is reached so that smaller losses are a general flow of this strategy but when take profit is reached we cover the losses and take a larger profit. That's it. 
 
-#### Logic:
-All cryptocurrencies above the 4H and 1D 40-period HMA are filtered and a position is opened when the price of the smallest period (1H) crosses the HMA (40) upwards for long. In this sense, the HMA with the smallest period is a trigger, and the other 2 large HMAs are baseline filters. Positions are added by multiplying the previous position by 1.5x at every 2% gain and adds $20,30,45,67.5 respectively, reaching a balance of $162.5.
+### Logic:
 
-The position can end in 3 ways.
+#### Coinfinder 
+A coinfinder function goes over all listed coins on binance and filters them first before opening a position. 
 
-1) Closing with a profit when it reaches the 9% point.
-2) If there is a 4% fall from the head-to-head point before profit realization, with stop loss.
-3) If any of the 1H, 4H or 1D HMA values ​​are broken, the position is closed immediately and scanning is restarted until max_positions are filled.
+#### Baseline: 
+Price needs to be above for both 4H and 1D HMA (Hull Moving Average) for coinfinder to consider opening positions. 
+
+#### Entry:
+If baseline returns true and if price crosses up Hull Moving average 1H timeframe for LONG, crossing down for SHORT --> the position is opened. 
+Positions are opened until Max_positions variable (see below under settings) fills its max limit. This limit prevents opening positions indefinitely. If a position exits for a stop loss or take profit then coinfinder will look for new opportunities. Keep in mind only the top volume coins are filtered. 
+
+#### Add positions:
+Positions are added by multiplying the previous position by volume_scale variable (see below) which is set at to 1.5x at every 2% gain and adds $20,30,45,67.5 respectively, reaching a balance of $162.5.
+
+#### Stop Loss:
+Stop loss works in 2 modes. 
+
+1) If the first position loses its value to stop_loss_pct variable then the position is stopped with a definite loss of that value.
+2) If the first position + at least "one" increment position is opened, then breakeven_threshold_pct variable holds true. This value controls the distance from the average entry price. The reason why we're not using a simple stop loss for both conditions is because to prevent extra loss if for some reason let's say the position goes up to the 4th incremental  order without take profit and crashes back down to the stop loss value, this value will keep the losses lower. 
+
+#### Premature Position Exit: 
+If any of the 1H, 4H or 1D HMA values ​​are broken, the position is closed immediately and scanning is restarted until max_positions are filled.
+
+#### Take Profit :
+Closing with a profit when it reaches the 9% point. (see take profit variable under settings - set to %9) 
+
 
 Below is the setting file with explanations commented. 
 
@@ -36,8 +55,8 @@ Below is the setting file with explanations commented.
 #stop_loss_pct = 2 ; This stop loss value is valid after the position is opened for the first entry price only. If the position reverts without making any buy-ins then it closes the position when it reaches this value.
 ### stop_loss_pct = 2
 
-#breakeven_threshold_pct = -4 ; This value activates after the first buy-in order is made. It's generally set as 0, its purpose is to prevent loss by exiting the position at the breakeven point with the slightest fall. If the loss reaches to -4%, it stop losses at -4% loss from the averege entry price, not first entry price. 
-### breakeven_threshold_pct = -4
+#breakeven_threshold_pct = 0 ; This value activates after the first buy-in order is made. It's generally set as 0, its purpose is to prevent loss by exiting the position at the breakeven point with the slightest fall. If the loss reaches to 0%, it stop losses at 0% loss from the average entry price, not first entry price. 
+### breakeven_threshold_pct = 0
 
 #take_profit_pct = 9 ; The take profit target percent. Valid from the first entered price.
 ### take_profit_pct = 9
