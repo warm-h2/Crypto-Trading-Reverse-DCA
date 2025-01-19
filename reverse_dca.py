@@ -505,7 +505,8 @@ class ReverseDCA:
 		hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
 		hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
 		print(f"avg_entry_price => {self.avg_entry_price}")
-		if self.avg_entry_price == 0:    # not in position
+		open_position = self.check_opened_position()
+		if open_position == -1:    # not in position
 			mark_price = self.get_mark_price()
 
 			if self.initial_direction.lower() == "buy":
