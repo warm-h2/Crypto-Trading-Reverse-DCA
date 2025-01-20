@@ -131,7 +131,17 @@ class ReverseDCA:
 				return 'None'
 				self.telegram_bot.send_message(f"Exception! Getting Order information. Retrying...{e}")
 				time.sleep(2)
-	
+
+	def check_signal_reversal(self, current_signals_invalid):
+		if current_signals_invalid:
+			# Require confirmation over multiple periods
+			self.reversal_counter += 1
+			if self.reversal_counter >= self.reversal_confirmation_periods:
+				self.close_position()
+				self.reset()
+		else:
+			self.reversal_counter = 0
+
 	def check_opened_position(self):
 		while True:
 			try:
@@ -143,7 +153,7 @@ class ReverseDCA:
 					return open_positions[0]
 
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
 				return -1
 				# time.sleep(2)
 	
@@ -191,7 +201,7 @@ class ReverseDCA:
 													 type=ORDER_TYPE_MARKET, quantity=abs(size))   # futures 
 				break
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				# return
 				time.sleep(10)
 
@@ -237,7 +247,7 @@ class ReverseDCA:
 													 quantity=abs(size))   # futures 
 				break
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 
 				time.sleep(10)
 
@@ -259,7 +269,7 @@ class ReverseDCA:
 													 quantity=abs(size))   # futures 
 				break
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				
 				time.sleep(2)
 
@@ -388,7 +398,15 @@ class ReverseDCA:
 		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price)
 		self.cancel_order(self.take_profit_order_id)
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
-  
+	
+	def update_sl_tp_order(self):
+		if self.increment_num > 0:
+			# Use breakeven threshold after first increment
+			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
+		else:
+			# Use initial stop loss before first increment
+			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
+
 	def calculate_sma(self, prices, period, sma_tf):
 		if period == 0 or sma_tf == '0':
 			return 0
@@ -428,6 +446,15 @@ class ReverseDCA:
 				return 'None'
 				time.sleep(2)
 
+	def update_sl_tp_order(self):
+		if self.increment_num > 0:
+			# Use breakeven threshold after first increment
+			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
+		else:
+			# Use initial stop loss before first increment
+			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
+
+
 	def isAvailable(self) :		
 		# getting historical candle data
 
@@ -440,6 +467,7 @@ class ReverseDCA:
 		hma3_klines = self.get_historical_klines(self.get_tf_val(self.hma3_tf), self.get_start_str(self.hma3_tf, self.hma3_period*3))
 		
 		if sma_klines =='None' or hma1_klines=='None' or hma2_klines=='None' or  hma3_klines=='None' :
+			print("Error getting historical klines----1-->")
 			return False
 
 		sma_prices = [float(kline[4]) for kline in sma_klines][:-1]
@@ -466,16 +494,16 @@ class ReverseDCA:
 							
 		if self.avg_entry_price == 0:
 			if self.initial_direction.lower() == "buy":
-				if (sma_last_closed_candle > current_sma or current_sma == 0) and \
-					   (hma1_last_closed_candle > current_hma1 or current_hma1 == 0) and \
-					   (hma2_last_closed_candle > current_hma2 or current_hma2 == 0) and \
-					   (hma3_last_closed_candle > current_hma3 or current_hma3 == 0):
+				if (sma_last_closed_candle > current_sma != 0 or current_sma == 0) and \
+					   (hma1_last_closed_candle > current_hma1 != 0 or current_hma1 == 0) and \
+					   (hma2_last_closed_candle > current_hma2 != 0 or current_hma2 == 0) and \
+					   (hma3_last_closed_candle > current_hma3 != 0 or current_hma3 == 0):
 					return True
 			elif self.initial_direction.lower() == "sell":
-				if (sma_last_closed_candle < current_sma or current_sma == 0) and \
-					(hma1_last_closed_candle < current_hma1 or current_hma1 == 0) and \
-					(hma2_last_closed_candle < current_hma2 or current_hma2 == 0) and \
-					(hma3_last_closed_candle < current_hma3 or current_hma3 == 0) :
+				if (sma_last_closed_candle < current_sma != 0 or current_sma == 0) and \
+					(hma1_last_closed_candle < current_hma1 != 0 or current_hma1 == 0) and \
+					(hma2_last_closed_candle < current_hma2 != 0 or current_hma2 == 0) and \
+					(hma3_last_closed_candle < current_hma3 != 0 or current_hma3 == 0) :
 					return True
 		return False
  
@@ -505,7 +533,8 @@ class ReverseDCA:
 		hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
 		hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
 		print(f"avg_entry_price => {self.avg_entry_price}")
-		if self.avg_entry_price == 0:    # not in position
+		open_position = self.check_opened_position()
+		if open_position == -1:    # not in position
 			mark_price = self.get_mark_price()
 
 			if self.initial_direction.lower() == "buy":
