@@ -10,6 +10,16 @@ from binance.client import Client
 from binance.enums import *
 import requests
 
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+import threading
+
+import sys
+import asyncio
+
+if sys.platform.startswith('win'):
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
 def get_top_volume_pairs(api_key, limit=800):
     url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
     parameters = {
@@ -133,7 +143,7 @@ def main():
                     try:
                         isOk = obj_reverse_dca.isAvailable()
                         print(f"-----------------------------------\n{ticker} => IsAvailable => {isOk}")
-                        if isOk== False: 
+                        if isOk == False: 
                             print(f"count => {pairCount}")
                             continue
                     except Exception as e:
@@ -153,6 +163,7 @@ def main():
                     telegram_bot.send_message(ticker.setting_message)
                 ticker.run()
             nowcount = nowcount + 1
+
             time.sleep(1)
     else : 
         setting_message  =  (
@@ -192,5 +203,29 @@ def main():
             time.sleep(1)
 
 
+# async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     await update.message.reply_text('Bot is starting...')
+#     thread = threading.Thread(target=main)
+#     thread.start()
+
+
+
+
+# async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     await update.message.reply_text('Bot is stopping...')
+    
+
+
 if __name__ == '__main__':
     main()
+    # config = configparser.ConfigParser(inline_comment_prefixes=(";",))
+    # current_dir = os.path.dirname(os.path.abspath(__file__))
+    # config_path = os.path.join(current_dir, 'settings.ini')
+    # config.read(config_path)
+
+    # telegram_api_token = config['telegram']['api_token']
+
+    # application = Application.builder().token(telegram_api_token).build()
+    # application.add_handler(CommandHandler("start", start))
+    # # application.add_handler(CommandHandler("stop", stop))
+    # application.run_polling()

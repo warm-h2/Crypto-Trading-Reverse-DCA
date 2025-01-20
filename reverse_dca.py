@@ -143,7 +143,7 @@ class ReverseDCA:
 					return open_positions[0]
 
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
 				return -1
 				# time.sleep(2)
 	
@@ -191,7 +191,7 @@ class ReverseDCA:
 													 type=ORDER_TYPE_MARKET, quantity=abs(size))   # futures 
 				break
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				# return
 				time.sleep(10)
 
@@ -237,7 +237,7 @@ class ReverseDCA:
 													 quantity=abs(size))   # futures 
 				break
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 
 				time.sleep(10)
 
@@ -259,7 +259,7 @@ class ReverseDCA:
 													 quantity=abs(size))   # futures 
 				break
 			except Exception as e:
-				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
+				# self.telegram_bot.send_message(f"Exception! Placing market order. Retrying... {e}")
 				
 				time.sleep(2)
 
@@ -440,6 +440,7 @@ class ReverseDCA:
 		hma3_klines = self.get_historical_klines(self.get_tf_val(self.hma3_tf), self.get_start_str(self.hma3_tf, self.hma3_period*3))
 		
 		if sma_klines =='None' or hma1_klines=='None' or hma2_klines=='None' or  hma3_klines=='None' :
+			print("Error getting historical klines----1-->")
 			return False
 
 		sma_prices = [float(kline[4]) for kline in sma_klines][:-1]
@@ -505,8 +506,7 @@ class ReverseDCA:
 		hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
 		hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
 		print(f"avg_entry_price => {self.avg_entry_price}")
-		open_position = self.check_opened_position()
-		if open_position == -1:    # not in position
+		if self.avg_entry_price == 0:
 			mark_price = self.get_mark_price()
 
 			if self.initial_direction.lower() == "buy":
