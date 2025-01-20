@@ -208,14 +208,9 @@ def main():
 #     thread = threading.Thread(target=main)
 #     thread.start()
 
-
-
-
 # async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
 #     await update.message.reply_text('Bot is stopping...')
     
-
-
 if __name__ == '__main__':
     main()
     # config = configparser.ConfigParser(inline_comment_prefixes=(";",))
