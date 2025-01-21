@@ -10,15 +10,15 @@ from binance.client import Client
 from binance.enums import *
 import requests
 
-from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes
-import threading
+# from telegram import Update
+# from telegram.ext import Application, CommandHandler, ContextTypes
+# import threading
 
-import sys
-import asyncio
+# import sys
+# import asyncio
 
-if sys.platform.startswith('win'):
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+# if sys.platform.startswith('win'):
+#     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 def get_top_volume_pairs(api_key, limit=800):
     url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
