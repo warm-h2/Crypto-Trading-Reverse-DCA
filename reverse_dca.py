@@ -52,10 +52,6 @@ class ReverseDCA:
 		try:
 			# comprehensive information about the futures trading market on Binance.
 			futures_exchange_info = self.binance_client.futures_exchange_info() 
-			# with open("1.json", "w") as file:
-			# 	file.write(f'------------------{self.ticker}-----------------------\n\n{futures_exchange_info}\n\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-				# json.dump(futures_exchange_info, file, indent =4)
-			# print(f'futures_exchange_info => {futures_exchange_info}')
 			# find and return the information for a specific trading pair (specified by ticker) within the list of futures symbols.
 			symbol_info = next(item for item in futures_exchange_info['symbols'] if item['symbol'] == ticker) 
 			# indicates the number of decimal places allowed for the quantity of a particular trading pair. 
@@ -64,9 +60,6 @@ class ReverseDCA:
 			self.price_precision = int(symbol_info['pricePrecision']) 
 		except Exception as e:
 			print(f"Exception! Getting futures exchange info. {e}. Exiting!")
-			# self.telegram_bot.send_message(f"Exception! Getting futures exchange info. {e}. Exiting!")
-
-			# exit()
  
 	def get_tf_val(self, timeframe):
 		if timeframe == "1M":
@@ -129,8 +122,8 @@ class ReverseDCA:
 				return order
 			except Exception as e:
 				return 'None'
-				self.telegram_bot.send_message(f"Exception! Getting Order information. Retrying...{e}")
-				time.sleep(2)
+				# self.telegram_bot.send_message(f"Exception! Getting Order information. Retrying...{e}")
+				# time.sleep(2)
 
 	def check_signal_reversal(self, current_signals_invalid):
 		if current_signals_invalid:
@@ -153,7 +146,6 @@ class ReverseDCA:
 					return open_positions[0]
 
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Get open positions. Retrying... {e}")
 				return -1
 				# time.sleep(2)
 	
@@ -230,13 +222,11 @@ class ReverseDCA:
 													 side=direction, 
 													 type=ORDER_TYPE_MARKET, 
 													 positionSide=position_side,
-													 quantity=abs(size), 
-													#  recvWindow=60000
+													 quantity=abs(size)
 													 )  # futures 
 				break
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying1... {e}")
-				# return
 				time.sleep(10)
 				# pass
 
@@ -262,11 +252,9 @@ class ReverseDCA:
 			while True:
 				try:
 					self.binance_client.futures_cancel_order(symbol=self.ticker, orderId=order_id)
-					# self.telegram_bot.send_message("Order canceled!")
 					break
 				except Exception as e:
 					self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
-
 					time.sleep(10)
 					
 	def place_stop_market_order(self, stop_price):
@@ -276,7 +264,6 @@ class ReverseDCA:
 
 		# Determine position mode
 		dual_side_position = self.binance_client.futures_get_position_mode()['dualSidePosition']
-
 		if self.stop_market_direction.lower() == "buy":
 			position_side = 'LONG' if dual_side_position else 'BOTH'
 		elif self.stop_market_direction.lower() == "sell":
@@ -295,8 +282,7 @@ class ReverseDCA:
 													 type=FUTURE_ORDER_TYPE_STOP_MARKET, 
 													 stopPrice=stop_price, 
 													 positionSide=position_side,
-													 quantity=abs(size), 
-													#  recvWindow=60000
+													 quantity=abs(size)
 													 )   # futures 
 				break
 			except Exception as e:
@@ -338,8 +324,7 @@ class ReverseDCA:
 													 type=FUTURE_ORDER_TYPE_TAKE_PROFIT_MARKET, 
 													 stopPrice=stop_price, 
 													 positionSide=position_side,
-													 quantity=abs(size), 
-													#  recvWindow=60000
+													 quantity=abs(size)
 													 )   # futures 
 				break
 			except Exception as e:
@@ -361,10 +346,8 @@ class ReverseDCA:
 			stop_loss_price = self.first_entry_price * (1 + self.stop_loss_pct)
 
 		self.telegram_bot.send_message(f"Placing initial Take profit order.")
-		# print(f"Placing initial Take profit order.")
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
 		self.telegram_bot.send_message(f"Placing initial Stop loss order.")
-		# print(f"Placing initial Stop Loss order.")
 		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price) 
 		
 	def reset(self):
@@ -392,7 +375,6 @@ class ReverseDCA:
 
 		if tp_order_status == 'filled':       # hit take profit
 			self.telegram_bot.send_message(f"$$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
-			# print(f"$$$TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
 			self.reset()
 			time.sleep(2)
 			return
@@ -402,7 +384,6 @@ class ReverseDCA:
 				self.telegram_bot.send_message(f"!!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
 			else:
 				self.telegram_bot.send_message(f"### BREAK EVEN HIT! Closing open position and sleeping for 10 seconds")
-			# print(f"!!!STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
 			self.reset()
 			time.sleep(2)
 			return
@@ -433,7 +414,6 @@ class ReverseDCA:
 		print(f"Here is sell_check_tp_sl_increment.  tp_order_status =>{tp_order_status}")
 		if tp_order_status == 'filled':       # hit take profit
 			self.telegram_bot.send_message(f"$$$ TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
-			# print(f"$$$TAKE PROFIT HIT! Closing open position and sleeping for 10 seconds.")
 			self.reset()
 			time.sleep(2)
 			return
@@ -443,7 +423,6 @@ class ReverseDCA:
 				self.telegram_bot.send_message(f"!!! STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
 			else:
 				self.telegram_bot.send_message(f"### BREAK EVEN HIT! Closing open position and sleeping for 10 seconds")
-			# print(f"!!!STOP LOSS HIT! Closing open position and sleeping for 10 seconds")
 			self.reset()
 			time.sleep(2)
 			return
@@ -452,7 +431,6 @@ class ReverseDCA:
 
 			self.increment_num += 1
 			self.telegram_bot.send_message(f"Increment price reached. Scaling volume by {self.volume_scale}x. ({self.increment_num}th order)")
-			# print(f"Increment price reached. Scaling volume by {self.volume_scale}x")
 			scaled_volume = self.current_volume * self.volume_scale
 			self.current_volume = scaled_volume
 			mark_price = self.get_mark_price()
@@ -502,15 +480,11 @@ class ReverseDCA:
 		else:
 			half_length = math.ceil(period / 2)
 			sqrt_length = round(math.sqrt(period))
-
 			hma_prices_series = pd.Series(prices)
-
 			wma_half = self.calculate_wma(hma_prices_series, half_length)
 			wma_full = self.calculate_wma(hma_prices_series, period)
-
 			diff_wma = 2 * wma_half - wma_full
 			hma = self.calculate_wma(diff_wma, sqrt_length)
-			
 			return hma.iloc[-1]
 	
 	def get_historical_klines(self, interval, start_str):
@@ -519,7 +493,6 @@ class ReverseDCA:
 				klines = self.binance_client.futures_historical_klines(symbol=self.ticker, interval=interval, start_str=start_str)
 				return klines
 			except Exception as e:
-				# self.telegram_bot.send_message(f"Exception! Getting Historical Klines. Retrying... {e}")
 				return 'None'
 				time.sleep(2)
 
@@ -534,8 +507,6 @@ class ReverseDCA:
 
 	def isAvailable(self) :		
 		# getting historical candle data
-
-		# print(datetime.now().strftime("%H:%M:%S"))
 		sma_klines = self.get_historical_klines(self.get_tf_val(self.sma_tf), self.get_start_str(self.sma_tf, self.sma_period))				
 		# Parse the closing prices
 		# getting historical candle data
@@ -562,15 +533,6 @@ class ReverseDCA:
 		hma1_last_closed_candle = 0 if self.hma1_tf == "0" or self.hma1_period == 0 else hma1_prices[-1]
 		hma2_last_closed_candle = 0 if self.hma2_tf == "0" or self.hma2_period == 0 else hma2_prices[-1]
 		hma3_last_closed_candle = 0 if self.hma3_tf == "0" or self.hma3_period == 0 else hma3_prices[-1]
-
-		# print(f"{self.ticker}----->  \n"
-			# f"SMA Last Candle's Price is {sma_last_closed_candle} and SMA_{self.sma_period} is {round(current_sma, 4)}. \n" 
-			# f"HMA 1 Last Candle's Price is {hma1_last_closed_candle} and HMA_{self.hma1_period} is {round(current_hma1, 4)}. \n"
-			# f"HMA 2 Last Candle's Price is {hma2_last_closed_candle} and HMA_{self.hma2_period} is {round(current_hma2, 4)}. \n"
-			# f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
-		# print(f"here======1==========>{hma1_last_closed_candle}")
-		# print(f"here======2==========>{current_hma1}")
-		# print(f"here======3==========>{current_sma}")
 							
 		if self.avg_entry_price == 0:
 			if self.initial_direction.lower() == "buy":

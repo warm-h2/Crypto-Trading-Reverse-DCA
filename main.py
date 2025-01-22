@@ -14,7 +14,6 @@ import threading
 import sys
 import asyncio
 
-is_active = False
 # Parsing settigns config file
 config = configparser.ConfigParser(inline_comment_prefixes=";")
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +21,8 @@ config_path = os.path.join(current_dir, 'settings.ini')
 config.read(config_path)
 telegram_api_token = config['telegram']['api_token']
 application = Application.builder().token(telegram_api_token).build()
+
+is_active = False
 
 if sys.platform.startswith('win'):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
@@ -44,7 +45,6 @@ def get_top_volume_pairs(api_key, limit=800):
     if response.status_code == 200:
         data = response.json()
         top_pairs = []
-
         for currency in data['data']:
             if (currency['symbol'] != 'USDT') and (currency['symbol'] != 'FDUSD') and (currency['symbol'] != 'vBNB') and (currency['symbol'] != 'LUNA') and (currency['symbol'] != 'WETH') and (currency['symbol'] != 'PEPE') and (currency['symbol'] != 'WBTC'):
                 pair_name = currency['symbol'] + 'USDT'
@@ -52,12 +52,10 @@ def get_top_volume_pairs(api_key, limit=800):
                 top_pairs.append((pair_name, volume))
 
         top_pairs.sort(key=lambda x: x[1], reverse=True)
-        return top_pairs[:limit]
-    
+        return top_pairs[:limit]   
     else:
         print(f"Error: {response.status_code} - {response.text}")        
         return []
-
 
 def set_active_status(status: bool):
     global is_active
@@ -118,7 +116,6 @@ def main():
                 delta_criteria= 3600
                 while True:
                     print(f"is_active2: {is_active}")
-
                     delta = datetime.now()-past_time
                     print(f'nowcount => {nowcount}  delta=> {delta.total_seconds()}' )
                     if nowcount == 0 or delta.total_seconds()>delta_criteria:
@@ -126,16 +123,12 @@ def main():
                         past_time = datetime.now()
                         coinmarket_api_key = '5e8e7147-6955-433e-892c-e765d5f9ee81'
                         top_volume_pairs = get_top_volume_pairs(coinmarket_api_key)
-                        # print(f'top_volume => ', top_volume_pairs)
-                        # break
-                        # Close the position of all current working bots.
                         while len(pairs)>0:
                             cur_bot = pairs.pop()
                             cur_bot.reset()
                             cur_bot.close_position()
                         print(f'initial pairs => {pairs}')
                         pairCount = 0
-                        # top_volume_pairs = [("TRBUSDT",10929),("ZETAUSDT",29192),("MANTAUSDT",238838)]
                         for pair in top_volume_pairs:
                             print(f"for loop....")
                             if not is_active:
@@ -207,8 +200,6 @@ def main():
                                     )
                 binance_client = Client(binance_api_key, binance_api_secret)
 
-                # print(f'-----------------binance_client------------------------\n{binance_client}\n-----------------------------------')
-                # return
                 # initializing and running the strategy
                 obj_reverse_dca = ReverseDCA(binance_client, telegram_bot, ticker, 
                                             initial_direction, base_order_size, 
