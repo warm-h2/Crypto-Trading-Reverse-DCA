@@ -201,26 +201,7 @@ def main():
                 telegram_bot.logger.warning("Keyboard interrupt detected, stopping the bot.")
                 print("\nProgram interrupted by user.")
             time.sleep(1)
-
-
-# async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     await update.message.reply_text('Bot is starting...')
-#     thread = threading.Thread(target=main)
-#     thread.start()
-
-# async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     await update.message.reply_text('Bot is stopping...')
-    
+            
 if __name__ == '__main__':
     main()
-    # config = configparser.ConfigParser(inline_comment_prefixes=(";",))
-    # current_dir = os.path.dirname(os.path.abspath(__file__))
-    # config_path = os.path.join(current_dir, 'settings.ini')
-    # config.read(config_path)
 
-    # telegram_api_token = config['telegram']['api_token']
-
-    # application = Application.builder().token(telegram_api_token).build()
-    # application.add_handler(CommandHandler("start", start))
-    # # application.add_handler(CommandHandler("stop", stop))
-    # application.run_polling()

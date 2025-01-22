@@ -204,35 +204,30 @@ class ReverseDCA:
 			return False
  
 	def place_market_order(self, size, direction, mark_price):
-     
 		if not self.validate_symbol():
 			return
 		if direction.lower() == "buy":
 			direction = SIDE_BUY
-			position_side = 'LONG'
+			if self.binance_client.futures_get_position_mode()['dualSidePosition']:
+				position_side = 'LONG'
+			else:
+				position_side = 'BOTH' # Assuming NOT hedge mode; use BOTH in One-way Mode
 		elif direction.lower() == "sell":
 			direction = SIDE_SELL
-			position_side = 'SHORT'
+			if self.binance_client.futures_get_position_mode()['dualSidePosition']:
+				position_side = 'SHORT'
+			else:
+				position_side = 'BOTH'  # Assuming NOT hedge mode; use BOTH in One-way Mode
 		else:
 			self.telegram_bot.send_message(f"Invalid direction {direction}!")
-			# print(f"Invalid direction {direction}!")
 			return
 		
-		try:  
-			exchange_info = self.binance_client.futures_exchange_info()  
-			symbols = [s['symbol'] for s in exchange_info['symbols']]  
-			if self.ticker not in symbols:  
-				self.telegram_bot.send_message(f"Invalid symbol {self.ticker}!")  
-				return  
-		except Exception as e:  
-			self.telegram_bot.send_message(f"Error fetching exchange info: {e}")  
-			return  
-  
 		while True:
 			try:
 				print(f"position_side ==>{position_side}")
 				print(f"direction ==>{direction}")
-				order = self.binance_client.futures_create_order(symbol=self.ticker, side=direction, 
+				order = self.binance_client.futures_create_order(symbol=self.ticker, 
+													 side=direction, 
 													 type=ORDER_TYPE_MARKET, 
 													 positionSide=position_side,
 													 quantity=abs(size), 
@@ -279,13 +274,15 @@ class ReverseDCA:
 		if open_position != -1:
 			size = float(open_position['positionAmt'])
 
+		# Determine position mode
+		dual_side_position = self.binance_client.futures_get_position_mode()['dualSidePosition']
+
 		if self.stop_market_direction.lower() == "buy":
-			position_side = 'LONG'
+			position_side = 'LONG' if dual_side_position else 'BOTH'
 		elif self.stop_market_direction.lower() == "sell":
-			position_side = 'SHORT'
+			position_side = 'SHORT' if dual_side_position else 'BOTH'
 		else:
-			self.telegram_bot.send_message(f"Invalid direction {direction}!")
-			# print(f"Invalid direction {direction}!")
+			self.telegram_bot.send_message(f"Invalid direction {self.stop_market_direction}!")
 			return
 
 		stop_price = round(stop_price, self.price_precision)
@@ -293,7 +290,8 @@ class ReverseDCA:
 			print(f"self.price_precision ==>{self.price_precision}")
 			print(f"self.stop_market_direction ==>{self.stop_market_direction}")
 			try:
-				order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, 
+				order = self.binance_client.futures_create_order(symbol=self.ticker, 
+													 side=self.stop_market_direction, 
 													 type=FUTURE_ORDER_TYPE_STOP_MARKET, 
 													 stopPrice=stop_price, 
 													 positionSide=position_side,
@@ -315,14 +313,19 @@ class ReverseDCA:
 		open_position = self.check_opened_position()
 		if open_position != -1:
 			size = float(open_position['positionAmt'])
+		else:
+			self.telegram_bot.send_message(f"No open position available to place take profit order!")
+			return
+		
+		# Determine position mode
+		dual_side_position = self.binance_client.futures_get_position_mode()['dualSidePosition']
 
 		if self.stop_market_direction.lower() == "buy":
-			position_side = 'LONG'
+			position_side = 'LONG' if dual_side_position else 'BOTH'
 		elif self.stop_market_direction.lower() == "sell":
-			position_side = 'SHORT'
+			position_side = 'SHORT' if dual_side_position else 'BOTH'
 		else:
-			self.telegram_bot.send_message(f"Invalid direction {direction}!")
-			# print(f"Invalid direction {direction}!")
+			self.telegram_bot.send_message(f"Invalid direction {self.stop_market_direction}!")
 			return
 
 		stop_price = round(stop_price, self.price_precision)
@@ -330,8 +333,10 @@ class ReverseDCA:
 			try:
 				print(f"self.price_precision ==>{self.price_precision}")
 				print(f"self.price_precision ==>{self.stop_market_direction}")
-				order = self.binance_client.futures_create_order(symbol=self.ticker, side=self.stop_market_direction, 
-													 type=FUTURE_ORDER_TYPE_TAKE_PROFIT_MARKET, stopPrice=stop_price, 
+				order = self.binance_client.futures_create_order(symbol=self.ticker, 
+													 side=self.stop_market_direction, 
+													 type=FUTURE_ORDER_TYPE_TAKE_PROFIT_MARKET, 
+													 stopPrice=stop_price, 
 													 positionSide=position_side,
 													 quantity=abs(size), 
 													#  recvWindow=60000
