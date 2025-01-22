@@ -3,7 +3,6 @@ import math
 import pandas as pd
 import numpy as np
 from binance.enums import *
-import json
 
 class ReverseDCA:
 	def __init__(self, binance_client, telegram_bot, ticker, initial_direction, 
@@ -503,7 +502,6 @@ class ReverseDCA:
 		else:
 			# Use initial stop loss before first increment
 			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
-
 
 	def isAvailable(self) :		
 		# getting historical candle data
