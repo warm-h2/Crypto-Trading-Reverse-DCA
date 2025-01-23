@@ -452,14 +452,6 @@ class ReverseDCA:
 		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price)
 		self.cancel_order(self.take_profit_order_id)
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
-	
-	def update_sl_tp_order(self):
-		if self.increment_num > 0:
-			# Use breakeven threshold after first increment
-			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
-		else:
-			# Use initial stop loss before first increment
-			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
 
 	def calculate_sma(self, prices, period, sma_tf):
 		if period == 0 or sma_tf == '0':
@@ -494,14 +486,6 @@ class ReverseDCA:
 			except Exception as e:
 				return 'None'
 				time.sleep(2)
-
-	def update_sl_tp_order(self):
-		if self.increment_num > 0:
-			# Use breakeven threshold after first increment
-			stop_loss_price = self.avg_entry_price * (1 + self.breakeven_threshold_pct)
-		else:
-			# Use initial stop loss before first increment
-			stop_loss_price = self.first_entry_price * (1 - self.stop_loss_pct)
 
 	def isAvailable(self) :		
 		# getting historical candle data
@@ -579,9 +563,9 @@ class ReverseDCA:
 
 			if self.initial_direction.lower() == "buy":
 				if (sma_last_closed_candle > current_sma or current_sma == 0) and \
-					(hma1_last_closed_candle > current_hma1 or current_hma1 == 0) and \
-					(hma2_last_closed_candle > current_hma2 or current_hma2 == 0) and \
-					(hma3_last_closed_candle > current_hma3 or current_hma3 == 0):
+					(hma1_last_closed_candle > current_hma1 and current_hma1 != 0) or (current_hma1 == 0) and \
+					(hma2_last_closed_candle > current_hma2 and current_hma2 != 0) or (current_hma2 == 0) and \
+					(hma3_last_closed_candle > current_hma3 and current_hma3 != 0) or (current_hma3 == 0):
 					
 					self.telegram_bot.send_message(f"Conditions have been met, so Starting the bot!!! \n"
 													f"SMA Last Candle's Price is {sma_last_closed_candle} and SMA_{self.sma_period} is {round(current_sma, 4)}. \n" 
@@ -606,9 +590,9 @@ class ReverseDCA:
 					self.filter_met = True
 			elif self.initial_direction.lower() == "sell":
 				if (sma_last_closed_candle < current_sma or current_sma == 0) and \
-					(hma1_last_closed_candle < current_hma1 or current_hma1 == 0) and \
-					(hma2_last_closed_candle < current_hma2 or current_hma2 == 0) and \
-					(hma3_last_closed_candle < current_hma3 or current_hma3 == 0) :
+					(hma1_last_closed_candle < current_hma1 and current_hma1 != 0) or (current_hma1 == 0) and \
+					(hma2_last_closed_candle < current_hma2 and current_hma2 != 0) or (current_hma2 == 0) and \
+					(hma3_last_closed_candle < current_hma3 and current_hma3 != 0) or (current_hma3 == 0):
 					
 					self.telegram_bot.send_message(f"Conditions have been met, so Starting the bot!!! \n"
 													f"SMA Last Candle's Price is {sma_last_closed_candle} and SMA_{self.sma_period} is {round(current_sma, 4)}. \n" 
@@ -640,9 +624,9 @@ class ReverseDCA:
 				current_price = self.get_mark_price()
 				if self.initial_direction.lower() == "buy":
 					if (sma_last_closed_candle > current_sma or current_sma == 0) and \
-					   (hma1_last_closed_candle > current_hma1 or current_hma1 == 0) and \
-					   (hma2_last_closed_candle > current_hma2 or current_hma2 == 0) and \
-					   (hma3_last_closed_candle > current_hma3 or current_hma3 == 0):
+					   (hma1_last_closed_candle > current_hma1 and current_hma1 != 0) or (current_hma1 == 0) and \
+						(hma2_last_closed_candle > current_hma2 and current_hma2 != 0) or (current_hma2 == 0) and \
+						(hma3_last_closed_candle > current_hma3 and current_hma3 != 0) or (current_hma3 == 0):
 						
 						self.buy_check_tp_sl_increment(current_price)
 					else:
@@ -655,9 +639,9 @@ class ReverseDCA:
 						self.reset()
 				elif self.initial_direction.lower() == "sell":
 					if (sma_last_closed_candle < current_sma or current_sma == 0) and \
-					   (hma1_last_closed_candle < current_hma1 or current_hma1 == 0) and \
-					   (hma2_last_closed_candle < current_hma2 or current_hma2 == 0) and \
-					   (hma3_last_closed_candle < current_hma3 or current_hma3 == 0) :
+					   (hma1_last_closed_candle < current_hma1 and current_hma1 != 0) or (current_hma1 == 0) and \
+						(hma2_last_closed_candle < current_hma2 and current_hma2 != 0) or (current_hma2 == 0) and \
+						(hma3_last_closed_candle < current_hma3 and current_hma3 != 0) or (current_hma3 == 0):
 						
 						print("Here is already in position. I have met the criteria")
 						self.sell_check_tp_sl_increment(current_price)
