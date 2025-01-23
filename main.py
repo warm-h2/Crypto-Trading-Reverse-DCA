@@ -1,18 +1,17 @@
+import configparser
+import threading
+import requests
 import asyncio
 import time
-from datetime import datetime
-import configparser
+import sys
 import os
+from binance.enums import *
+from telegram import Update
+from datetime import datetime
+from binance.client import Client
 from reverse_dca import ReverseDCA
 from telegram_utils import TelegramBot
-from binance.client import Client
-from binance.enums import *
-import requests
-from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-import threading
-import sys
-import asyncio
 
 # Parsing settigns config file
 config = configparser.ConfigParser(inline_comment_prefixes=";")
@@ -68,12 +67,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text('Bot is stopping...')
+    print("Bot is stopped. You can run it again with \"/start\".")
     set_active_status(False)
 
 def main():
     global is_active
     while True:
-        print(f"is_active: {is_active}")
         if not is_active:
             time.sleep(1)
             continue
@@ -115,7 +114,6 @@ def main():
                 past_time = datetime.now()
                 delta_criteria= 3600
                 while True:
-                    print(f"is_active2: {is_active}")
                     delta = datetime.now()-past_time
                     print(f'nowcount => {nowcount}  delta=> {delta.total_seconds()}' )
                     if nowcount == 0 or delta.total_seconds()>delta_criteria:
@@ -130,7 +128,6 @@ def main():
                         print(f'initial pairs => {pairs}')
                         pairCount = 0
                         for pair in top_volume_pairs:
-                            print(f"for loop....")
                             if not is_active:
                                 break
                             ticker = pair[0]
@@ -210,7 +207,6 @@ def main():
                 # obj_reverse_dca.close_position()
                 # obj_reverse_dca.cancel_all_open_orders()
                 while True:
-                    print(f"is_active4: {is_active}")
                     try:
                         telegram_bot.send_message(obj_reverse_dca.setting_message)
                         obj_reverse_dca.run()
