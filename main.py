@@ -45,6 +45,8 @@ def get_top_volume_pairs(api_key, limit=800):
         data = response.json()
         top_pairs = []
         for currency in data['data']:
+            if not is_active:
+                break
             if (currency['symbol'] != 'USDT') and (currency['symbol'] != 'FDUSD') and (currency['symbol'] != 'vBNB') and (currency['symbol'] != 'LUNA') and (currency['symbol'] != 'WETH') and (currency['symbol'] != 'PEPE') and (currency['symbol'] != 'WBTC'):
                 pair_name = currency['symbol'] + 'USDT'
                 volume = currency['quote']['USD']['volume_24h']
@@ -59,6 +61,8 @@ def get_top_volume_pairs(api_key, limit=800):
 def set_active_status(status: bool):
     global is_active
     is_active = status
+    print(f"set_is_active: {is_active}")
+    ReverseDCA.set_active_status(status)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print("Bot is starting...")
@@ -114,6 +118,8 @@ def main():
                 past_time = datetime.now()
                 delta_criteria= 3600
                 while True:
+                    if not is_active:
+                        break
                     delta = datetime.now()-past_time
                     print(f'nowcount => {nowcount}  delta=> {delta.total_seconds()}' )
                     if nowcount == 0 or delta.total_seconds()>delta_criteria:
@@ -174,6 +180,8 @@ def main():
                                 print("\nProgram interrupted by user.")
                         print(f'after pairs => {pairs}')
                     for ticker in pairs:
+                        if not is_active:
+                            break
                         if nowcount % 3600 == 0:
                             telegram_bot.send_message(ticker.setting_message)
                         ticker.run()
@@ -207,6 +215,8 @@ def main():
                 # obj_reverse_dca.close_position()
                 # obj_reverse_dca.cancel_all_open_orders()
                 while True:
+                    if not is_active:
+                        break
                     try:
                         telegram_bot.send_message(obj_reverse_dca.setting_message)
                         obj_reverse_dca.run()

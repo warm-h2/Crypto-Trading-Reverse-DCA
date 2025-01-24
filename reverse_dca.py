@@ -5,6 +5,7 @@ import numpy as np
 from binance.enums import *
 
 class ReverseDCA:
+	is_active = False
 	def __init__(self, binance_client, telegram_bot, ticker, initial_direction, 
               	base_order_size, volume_scale, breakeven_threshold_pct, stop_loss_pct, 
                increment_pct, take_profit_pct, setting_message, sma_period, sma_tf, hma1_period, hma2_period, hma3_period, hma1_tf, hma2_tf, hma3_tf):
@@ -60,6 +61,12 @@ class ReverseDCA:
 		except Exception as e:
 			print(f"Exception! Getting futures exchange info. {e}. Exiting!")
  
+	@classmethod
+	def set_active_status(cls, status):
+		print(f"reverse1---is active-----> {status}")
+		cls.is_active = status
+		print(f"reverse2---is active-----> {cls.is_active}")
+
 	def get_tf_val(self, timeframe):
 		if timeframe == "1M":
 			return self.binance_client.KLINE_INTERVAL_1MINUTE
@@ -108,6 +115,8 @@ class ReverseDCA:
 	
 	def get_mark_price(self):
 		while True:
+			if not self.is_active:
+				break
 			try:
 				return float(self.binance_client.futures_symbol_ticker(symbol=self.ticker)['price'])    # futures price
 			except Exception as e:
@@ -116,6 +125,8 @@ class ReverseDCA:
 
 	def get_order_info(self, order_id):
 		while True:
+			if not self.is_active:
+				break
 			try:
 				order = self.binance_client.futures_get_order(symbol=self.ticker, orderId=order_id)
 				return order
@@ -136,6 +147,8 @@ class ReverseDCA:
 
 	def check_opened_position(self):
 		while True:
+			if not self.is_active:
+				break
 			try:
 				open_positions = self.binance_client.futures_position_information(symbol=self.ticker)    # returns details relevant to your position.
 				print(f"open_positions => {open_positions}")
@@ -166,6 +179,8 @@ class ReverseDCA:
 				return
 			
 		while True:
+			if not self.is_active:
+				break
 			try:
 				order = self.binance_client.futures_create_order(symbol=self.ticker, side=side, 
 													 type=ORDER_TYPE_MARKET, 
@@ -214,6 +229,8 @@ class ReverseDCA:
 			return
 		
 		while True:
+			if not self.is_active:
+				break
 			try:
 				print(f"position_side ==>{position_side}")
 				print(f"direction ==>{direction}")
@@ -249,6 +266,8 @@ class ReverseDCA:
 		order_status = order['status'].lower()
 		if order_status.lower() != "filled":
 			while True:
+				if not self.is_active:
+					break
 				try:
 					self.binance_client.futures_cancel_order(symbol=self.ticker, orderId=order_id)
 					break
@@ -273,6 +292,8 @@ class ReverseDCA:
 
 		stop_price = round(stop_price, self.price_precision)
 		while True:
+			if not self.is_active:
+				break
 			print(f"self.price_precision ==>{self.price_precision}")
 			print(f"self.stop_market_direction ==>{self.stop_market_direction}")
 			try:
@@ -315,6 +336,10 @@ class ReverseDCA:
 
 		stop_price = round(stop_price, self.price_precision)
 		while True:
+			if not self.is_active:
+				break
+			print(f"self.price_precision ==>{self.price_precision}")
+			print(f"self.price_precision ==>{self.stop_market_direction}")
 			try:
 				print(f"self.price_precision ==>{self.price_precision}")
 				print(f"self.price_precision ==>{self.stop_market_direction}")
@@ -490,6 +515,8 @@ class ReverseDCA:
 	
 	def get_historical_klines(self, interval, start_str):
 		while True:
+			if not self.is_active:
+				break
 			try:
 				klines = self.binance_client.futures_historical_klines(symbol=self.ticker, interval=interval, start_str=start_str)
 				return klines
