@@ -37,7 +37,8 @@ class ReverseDCA:
 		self.hma2_tf = hma2_tf
 		self.hma3_tf = hma3_tf
 		self.filter_met = False
-		self.increment_num = 0
+		self.increment_num = 0	
+		self.result = []
 
 		if self.initial_direction.lower() == "buy":
 			self.stop_market_direction = SIDE_SELL
@@ -63,9 +64,7 @@ class ReverseDCA:
  
 	@classmethod
 	def set_active_status(cls, status):
-		print(f"reverse1---is active-----> {status}")
 		cls.is_active = status
-		print(f"reverse2---is active-----> {cls.is_active}")
 
 	def get_tf_val(self, timeframe):
 		if timeframe == "1M":
@@ -257,9 +256,10 @@ class ReverseDCA:
 			if open_position != -1:
 				position_size = float(open_position['positionAmt'])
 				self.avg_entry_price = float(open_position['entryPrice'])
-				self.telegram_bot.send_message(f"Market {direction} order of size {round(size, self.quantity_precision)} "
+				self.result.append(f"Market {direction} order of size {round(size, self.quantity_precision)} "
 								               f"{self.ticker} filled at ${fill_price}. Market price at that time: ${mark_price}. "
 								   			   f"Current {direction} position size: {position_size} {self.ticker}.")
+				self.telegram_bot.send_message(self.result)
 
 	def cancel_order(self, order_id):
 		order = self.get_order_info(order_id)   # futures
@@ -311,8 +311,10 @@ class ReverseDCA:
 				# pass
 
 		self.stop_order_id = order['orderId']
-		self.telegram_bot.send_message(f"Stop Loss Market {self.stop_market_direction} order of size "
+		self.result.append(f"Stop Loss Market {self.stop_market_direction} order of size "
 								       f"{round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		self.telegram_bot.send_message(self.result)
+
 		return self.stop_order_id
 
 	def place_take_profit_market_order(self, stop_price):
@@ -357,8 +359,9 @@ class ReverseDCA:
 				# pass
 
 		self.stop_order_id = order['orderId']
-		self.telegram_bot.send_message(f"Take Profit Market {self.stop_market_direction} order of size "
+		self.result.append(f"Take Profit Market {self.stop_market_direction} order of size "
 								 	   f"{round(abs(size), self.quantity_precision)} {self.ticker} placed at {stop_price}")
+		self.telegram_bot.send_message(self.result)
 		return self.stop_order_id
 	
 	def place_initial_tpsl_orders(self):
@@ -369,10 +372,10 @@ class ReverseDCA:
 			self.take_profit_price = self.first_entry_price * (1 - self.take_profit_pct)
 			stop_loss_price = self.first_entry_price * (1 + self.stop_loss_pct)
 
-		self.telegram_bot.send_message(f"Placing initial Take profit order.")
+		self.result.append(f"Placing initial Take profit order.")
 		self.take_profit_order_id = self.place_take_profit_market_order(self.take_profit_price)
-		self.telegram_bot.send_message(f"Placing initial Stop loss order.")
-		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price) 
+		self.result.append(f"Placing initial Stop loss order.")
+		self.stop_loss_order_id = self.place_stop_market_order(stop_loss_price)
 		
 	def reset(self):
 		self.first_entry_price = 0
@@ -610,7 +613,7 @@ class ReverseDCA:
 													f"HMA 2 Last Candle's Price is {hma2_last_closed_candle} and HMA_{self.hma2_period} is {round(current_hma2, 4)}. \n"
 													f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
 					order_size = round(self.current_volume / mark_price, self.quantity_precision)
-					self.telegram_bot.send_message(f"****************************************************\n "
+					self.result.append(f"****************************************************\n "
 													f"First entry. Opening new position with base volume {order_size} {self.ticker}")
 					self.place_market_order(order_size, self.initial_direction, mark_price)			
 					self.first_entry_price = self.filled_price
@@ -638,7 +641,7 @@ class ReverseDCA:
 													f"HMA 3 Last Candle's Price is {hma3_last_closed_candle} and HMA_{self.hma3_period} is {round(current_hma3, 4)}. \n")
 					order_size = round(self.current_volume / mark_price, self.quantity_precision)
 					print(f"------------------------------------------------------------\n current_volume => {self.current_volume}   mark_price=>{mark_price}  order_size=>{order_size}\n-------------------------------------------------")
-					self.telegram_bot.send_message(f"****************************************************\n First entry."
+					self.result.append(f"****************************************************\n First entry."
 													f"Opening new position with base volume {order_size} {self.ticker}")
 					self.place_market_order(order_size, self.initial_direction, mark_price)			
 					self.first_entry_price = self.filled_price
