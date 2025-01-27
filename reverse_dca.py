@@ -51,13 +51,9 @@ class ReverseDCA:
 			exit()
 
 		try:
-			# comprehensive information about the futures trading market on Binance.
 			futures_exchange_info = self.binance_client.futures_exchange_info() 
-			# find and return the information for a specific trading pair (specified by ticker) within the list of futures symbols.
 			symbol_info = next(item for item in futures_exchange_info['symbols'] if item['symbol'] == ticker) 
-			# indicates the number of decimal places allowed for the quantity of a particular trading pair. 
 			self.quantity_precision = int(symbol_info['quantityPrecision']) 
-			# indicates the number of decimal places allowed for the price of a particular trading pair on Binance's futures market.
 			self.price_precision = int(symbol_info['pricePrecision']) 
 		except Exception as e:
 			print(f"Exception! Getting futures exchange info. {e}. Exiting!")
@@ -121,6 +117,7 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Getting mark price. Retrying... {e}")
 				time.sleep(2)
+				break
 
 	def get_order_info(self, order_id):
 		while True:
@@ -190,6 +187,7 @@ class ReverseDCA:
 				except Exception as e:
 					self.telegram_bot.send_message(f"Exception! Placing Close position market order. Retrying... {e}")
 					time.sleep(10)
+					break
 	
 	def validate_symbol(self):
 		try:
@@ -244,7 +242,7 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying1... {e}")
 				time.sleep(10)
-				# pass
+				break
 
 		time.sleep(1)
 		_order = self.get_order_info(order['orderId'])
@@ -280,6 +278,7 @@ class ReverseDCA:
 				except Exception as e:
 					self.telegram_bot.send_message(f"Exception! Canceling order. Retrying... {e}")
 					time.sleep(10)
+					break
 					
 	def place_stop_market_order(self, stop_price):
 		open_position = self.check_opened_position()
@@ -315,7 +314,7 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying2... {e}")
 				time.sleep(10)
-				# pass
+				break
 
 		self.stop_order_id = order['orderId']
 		# self.telegram_bot.send_message(f"Stop Loss Market {self.stop_market_direction} order of size "
@@ -374,7 +373,7 @@ class ReverseDCA:
 			except Exception as e:
 				self.telegram_bot.send_message(f"Exception! Placing market order. Retrying3... {e}")
 				time.sleep(10)
-				# pass
+				break
 
 		self.stop_order_id = order['orderId']
 		# self.telegram_bot.send_message(f"Take Profit Market {self.stop_market_direction} order of size "
