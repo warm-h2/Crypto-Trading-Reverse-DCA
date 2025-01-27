@@ -163,7 +163,6 @@ def main():
                             try:
                                 isOk = obj_reverse_dca.isAvailable()
                                 print(f"-----------------------------------\n{ticker} => IsAvailable => {isOk}")
-                                print(f"start button {is_active}")
                                 if isOk == False: 
                                     print(f"count => {pairCount}")
                                     continue
