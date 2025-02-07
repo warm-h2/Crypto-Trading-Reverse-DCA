@@ -4,7 +4,7 @@ import os
 import datetime
 import logging
 import sys
-
+import certifi
 
 class TelegramBot:
     def __init__(self, api_token, chat_id_1, chat_id_2):
@@ -30,15 +30,14 @@ class TelegramBot:
         # Set the unhandled exception hook
         sys.excepthook = self.handle_exception
 
-    def send_message(self, message, print_terminal=True):
+    def send_message(self, message, print_terminal=False):
         api_url = f'https://api.telegram.org/bot{self.api_token}/sendMessage'
 
         try:
             if print_terminal:
                 self.logger.info(message)
-
-            response_1 = requests.post(api_url, json={'chat_id': self.chat_id_1, 'text': message})
-            response_2 = requests.post(api_url, json={'chat_id': self.chat_id_2, 'text': message})
+            response_1 = requests.post(api_url, json={'chat_id': self.chat_id_1, 'text': message},verify=certifi.where())
+            response_2 = requests.post(api_url, json={'chat_id': self.chat_id_2, 'text': message},verify=certifi.where())
             # # print(response.text)
             # print(response_1.status_code)
             # print(response_2.status_code)
@@ -47,7 +46,7 @@ class TelegramBot:
 
     def handle_exception(self, exc_type, exc_value, exc_traceback):
         if issubclass(exc_type, KeyboardInterrupt):
-            self.logger.warning("Keyboard interrupt detected, stopping the application.")
+            self.logger.info("******  Keyboard interrupt detected, stopping the application.")
             sys.exit(1)
         else:
             self.logger.error("Unhandled exception", exc_info=(exc_type, exc_value, exc_traceback))
