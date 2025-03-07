@@ -17,14 +17,3 @@
 ****************************************
 ****************************************
 
-1. Telegram
-    - API_Key = 8039359324:AAHzRbJkZhwu7aGSG7P0bWDZPXjsi0jWeQw 
-    - Channel_chat_id = 8039359324  // Crazy
-    - Channel_Client_Chat_id1 = 7215735113
-    - Channel_Client_Chat_id2 = 214780750
-
-2. Binance
-    - api_key = 'OVx4Z2kLYAPBPp55qjnWQVSFs3WwC9P774LmzY7i8VRFcxEhuqflrFrlklkAwalP'
-    - api_key_secret = 'IE3rIOaUUFqV98Tvoci42rtIDlHOFZzimZjebyI2AusLW3QFJE0zcIwdKugW4bj3'
-    - Email: paybank@gmail.com
-      password: "AY2wh?_Au7D?9k    
