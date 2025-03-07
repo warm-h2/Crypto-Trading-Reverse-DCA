@@ -7,11 +7,11 @@
 2. Entry Conditions
     - A long position is opened when the price crosses above the 1-hour HMA
     - A short position is opened when it crosses below
-    - Positions are limited to a Maz_positions
+    - Positions are limited to a Max_positions
 
 3. Position Management
     - Positions are added based on volume scale for every 2% gain, with incremental amounts set to a total of $162.5
-
+    - Higher leverge means higer risk
 
 ****************************************
 ****************************************
