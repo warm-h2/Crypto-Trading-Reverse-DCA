@@ -12,6 +12,7 @@
 3. Position Management
     - Positions are added based on volume scale for every 2% gain, with incremental amounts set to a total of $162.5
     - Higher leverge means higer risk
+    - If the price moves 2% in the opposite direction, the position is closed
 
 ****************************************
 ****************************************
